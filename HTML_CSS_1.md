@@ -99,60 +99,6 @@ La dichiarazione `<!DOCTYPE>` per HTML5 è:
 
 ---
 
-## `<!DOCTYPE>` — Esempi
-
-**HTML5**
-```html
-<!DOCTYPE html>
-```
-
-**HTML 4.01 Strict** — Contiene tutti gli elementi e attributi HTML, ma NON INCLUDE gli elementi di presentazione o deprecati (come il font). I frame non sono consentiti.
-```html
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-```
-
-**HTML 4.01 Transitional** — Contiene tutti gli elementi e attributi HTML, INCLUSO gli elementi di presentazione e deprecati (come il font). I frame non sono consentiti.
-```html
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-```
-
-**HTML 4.01 Frameset** — Uguale a HTML 4.01 Transitional, ma consente l'uso del frameset.
-```html
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN" "http://www.w3.org/TR/html4/frameset.dtd">
-```
-
----
-
-## XHTML — Varianti DOCTYPE
-
-**XHTML 1.0 Strict**
-```html
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-```
-
-**XHTML 1.0 Transitional**
-```html
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-```
-
-**XHTML 1.0 Frameset**
-```html
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
-```
-
-**XHTML 1.1**
-```html
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
-```
-
----
-
-## Schema di lettura: es. HTML 4.01 Transitional
-
-```html
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-```
-
 | Elemento | Descrizione |
 |----------|-------------|
 | HTML | Il tipo di linguaggio utilizzato è l'HTML |
@@ -188,7 +134,7 @@ I metadati generalmente definiscono: il titolo del documento, il set di caratter
 ## Strumenti
 
 - Le pagine Web possono essere create con un semplice editor di testo come Notepad (PC) o TextEdit (Mac).
-- Per la scrittura di codice HTML si raccomandano editor professionali come **Sublime Text**, **Atom**, **Visual Studio** …
+- Per la scrittura di codice HTML si raccomandano editor professionali come **VISUAL Studio Code** **Sublime Text**, **Atom** …
 - **Strumenti di sviluppo del browser**
 - Disegnare wireframe: [Pencil](https://pencil.evolus.vn/), [Wireframe.cc](https://wireframe.cc/)
 - Utilità: [caniuse.com](https://caniuse.com/), [validator.w3.org](https://validator.w3.org/)
