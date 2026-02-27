@@ -100,6 +100,7 @@ Tutti tag contenuti nell'elemento che possiede quel nome classe: tutte le immagi
     height: 250px;
     background-color: rgb(250, 200, 139);
     margin: 50px auto;
+    padding: 50px 0;
 }
 
 
@@ -110,4 +111,6 @@ Tutti tag contenuti nell'elemento che possiede quel nome classe: tutte le immagi
     margin-left: 25px;
     margin-right: 25px;
     padding: 25px;
+    text-align: center;
+    color: white;
 }
