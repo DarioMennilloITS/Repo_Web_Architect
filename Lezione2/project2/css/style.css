@@ -1,0 +1,70 @@
+/* SELETTORI CSS */ 
+
+/* Selettori per elemento.
+Seleziono in base al tagname
+La regola si applicherà a tutti gli elementi che hanno quel tagname */
+p{
+    color: blue;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+    border: 1px solid black;
+    padding: 5px;
+}
+
+section{
+    width: 100%;
+    height: fit-content;
+}
+
+/* Selettori di classe, by class name. La classe è un attributo che può essere applicato ad ogni elemento dell'HTML. Posso ripetere la classe su quanti elementi voglio.
+La classe viene intercettata con la notazione: .nomeClasse */
+
+.divAlbum{
+    width: 200px;
+    height: 200px;
+    background-color: aquamarine;
+    border: 1px solid black;
+    float: left;
+    margin-right: 20px;
+    margin-left: 20px;
+}
+
+/* Sto esprimendo una gerarchia: .nomeClasse tagname{}.
+Tutti tag contenuti nell'elemento che possiede quel nome classe: tutte le immagini contenute in un div che ha come classe .divAlbum */
+.divAlbum img{
+    width: 100px;
+    height: auto;
+    margin-left: 50px;
+    margin-top: 20px;
+}
+
+.bgRed{
+    background-color: red;
+}
+
+.bgBlue{
+    background-color: blue;
+}
+
+.bgBlack{
+    background-color: black;
+}
+
+.clearfix{
+    clear: both;
+}
+
+
+/* ID . ATT: l'id è univoco: posso avere solo un elemento con quell'id. Gli id vengono selezionati con il # */
+#albumMusicali{
+    background-color: coral;
+    min-height: 400px;
+}
+
+#testiAlbum{
+    text-align: center;
+    background-color: cadetblue;
+}

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<!--   Lo style dritto per dritto nella head sarebbe da evitare  
+    <style>
+        /*  */
+
+        div{
+            width: 400px;
+            height: 400px;
+            background-color: red;
+        }
+
+    </style> -->
+    
+    <!-- Inserisco il Link al mio CSS (Cascading Style Sheet) personale. In questo file sono contenute tuttele regole di stile e formattazione della pagina. ATT: il foglio di stile personale va inserito all'ultimo posto nella head, prima della chiusura -->
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    
+    <!-- main è un tag semantico, specifica la parte principale di una pagina -->
+    <main>
+
+        <section id="albumMusicali">
+
+            <h2>Album Musicali</h2>
+
+            <div class="divAlbum bgRed">
+                <img src="./img/pink-floyd-dark-side-album-cover.webp" alt="">
+            </div>
+            <div class="divAlbum bgBlack">
+                <img src="./img/pink-floyd-dark-side-album-cover.webp" alt="">
+            </div>
+            <div class="divAlbum bgBlue">
+                <img src="./img/pink-floyd-dark-side-album-cover.webp" alt="">
+            </div>
+
+
+        </section>
+
+        <div class="clearfix"></div>
+
+        <section id="testiAlbum">
+            <h2>Testi</h2>
+
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, quia!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, quia!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, quia!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, quia!</p>
+
+            <a href="../">Link 1</a>
+            <a href="../">Link 2</a>
+            <a href="../">Link 3</a>
+            <a href="../">Link 4</a>
+        </section>
+
+    </main>
+
+
+</body>
+</html>
