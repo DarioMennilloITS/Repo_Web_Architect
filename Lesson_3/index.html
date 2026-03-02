@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 3</title>
+    <link rel="stylesheet" href=".css/reset.css">
+    <link rel="stylesheet" href=".css/style.css">
+</head>
+<body>
+    <h1>Form Control</h1>
+    <h3>Registration Module</h3>
+    <p>For info read the following <a href="./pages/informativa.html">Informativa</a></p>
+    <p>To study flexbox go <a href="./pages/flexboxStudio.html">Flexbox</a></p>
+    <form action="#" autocomplete="on">
+        <!-- Anagrafica -->
+         <fieldset>
+            <legend>Anagrafica</legend>
+            <label for="name">Name:</label>
+            <input type="text" name="name" id="name" placeholder="Insert your name." required> <br>
+
+            <label for="surname">Surname:</label>
+            <input type="text" name="surname" id="surname" required> <br>
+
+            <label for="birthday">Birthday:</label>
+            <input type="date" name="birthday" id="birthday" required> <br>
+
+            <label for="age">Age:</label>
+            <input type="number" name="age" id="age" min="1" max="99" required> <br>
+
+         </fieldset>
+
+         
+            <fieldset>
+                <legend>Contact</legend>
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" required> <br>
+
+                <label for="site">Site</label>
+                <input type="text" name="site" id="site" required> <br>
+
+                <label for="search">Search:</label>
+                <input type="search" name="search" id="search" required> <br>
+
+                <label for="time">Time</label>
+                <input type="time" name="time" id="time" required> <br>
+            
+                
+            </fieldset>
+
+
+            <fieldset>
+                <legend>Identification</legend>
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" required> <br>
+
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password" required> <br>
+            </fieldset>
+
+            <fieldset>
+                <legend>Genre</legend>
+                <input type="radio" id="uomo" name="genere" value="uomo">
+                <label for="uomo">Uomo</label>
+                <input type="radio" id="donna" name="genere" value="donna">
+                <label for="donna">Donna</label> <br>
+            </fieldset>
+
+            <fieldset>
+                <legend>Profession</legend>
+                <label for="profession">Profession</label>
+                <select name="profession" id="profession">
+                    <option value="" selected disabled>Choose a profession</option>
+                    <option value="professor">Profressor</option>
+                    <option value="developer">Developer</option>
+                    <option value="student">Student</option>
+
+
+
+
+                </select> <br>
+            </fieldset>
+            
+            <fieldset>
+            <label for="auto">Prefered Car</label>
+            <select name="auto" id="auto">
+            <optgroup label="german cars">
+                <option value="volkswagen">Volkswagen</option>
+                <option value="BMW">BMW</option>
+                <option value="mercedes">Mercedes</option>
+            </optgroup>
+            <optgroup label="italian cars">
+                <option value="fiat">Fiat</option>
+                <option value="ferrari">Ferrari</option>
+                <option value="lamborghini">Lamborghini</option>
+                </select>
+            </optgroup>
+            </fieldset>
+
+
+            <fieldset>
+                <legend>Conditions</legend>
+                <input type="checkbox" id="conditions" name="conditions" value="conditions">
+                <label for="conditions">Accept conditions</label> <br>
+
+                <input type="checkbox" id="privacy" name="privacy" value="privacy">
+                <label for="privacy">Accept privacy conditons!</label> <br>
+            </fieldset>
+
+            <fieldset>
+                <legend>Another Info</legend>
+                <label for="rating">Rating (from 1 to 10)</label>
+                <input type="range" id="rating" name="rating" min="1" max="10" step="1"> <br>
+                <label for="message">Message</label>
+                <textarea name="message" id="message" rows="5" cols="10" placeholder="Write your message..."></textarea> <br>
+            </fieldset>
+
+
+            <!-- <button type="submit" value="send">Send</button> -->
+             <input type="submit" value="Send">
+             <input type="reset" value="Cancel">
+             <input type="button" value="ClickMe" onclick="alert('Hello from JS')">
+
+
+        </form>
+    
+</body>
+</html>

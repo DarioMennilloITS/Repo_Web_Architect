@@ -1,0 +1,42 @@
+/* Pseudo classi */
+a{
+  text-decoration: none;
+  color: black;
+}
+
+a:hover{
+  color: blue;
+  font-size: 24px;
+}
+
+.flex-container{
+  display: flex;
+  margin: 0 auto;
+  width: 80%;
+  height: 600px;
+  border: 1px solid black;
+
+  flex-wrap: wrap;
+  justify-content: space-around;
+  flex-direction: column;  /* main axis */
+  align-items: center;      /* cross axis */
+  gap: 16px;                /* spazio tra i box */
+}
+
+.box{
+  width: 25%;
+  height: 25%;
+  border: 1px solid yellow;
+  background-color: brown;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.photo{
+  display: flex;
+  
+  height: 20%;
+  width: 20%;
+  background-color: aqua;
+  border: 1px solid black;
+}
