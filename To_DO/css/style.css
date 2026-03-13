@@ -1,0 +1,30 @@
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+main {
+  max-width: 400px;
+}
+
+label,
+input,
+button {
+  display: block;
+  margin-bottom: 10px;
+}
+
+input {
+  width: 100%;
+  padding: 6px;
+}
+
+button {
+  padding: 6px 10px;
+}
+
+ul {
+  margin-top: 20px;
+  padding-left: 20px;
+  list-style: disc;
+}
