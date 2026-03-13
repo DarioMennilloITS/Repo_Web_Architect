@@ -8,13 +8,13 @@ let items = [];
 addBtn.addEventListener("click", function () {
   let itemValue = itemInput.value;
   let dateValue = dateInput.value;
-  let [year, month, day] = dateValue.split("-");
-  let formattedDate = `${day}/${month}/${year}`;
+    let dateObj = new Date(dateValue);
+    let formattedDate = dateObj.toLocaleDateString("it-IT");
   let newItem = `${itemValue} - ${formattedDate}`;
 
   items.push(newItem);
 
-  li = document.createElement("li");
+    let li = document.createElement("li");
   li.textContent = newItem;
   todoList.appendChild(li);
 
