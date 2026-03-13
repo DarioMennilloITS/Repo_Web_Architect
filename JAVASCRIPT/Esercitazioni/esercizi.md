@@ -11,7 +11,7 @@ let numeroCasuale = Math.ceil(Math.random() * 90);
 
 ### Esercizio 0
 Hello World
-Scrivere un programma che chiede il nome all’utente per poi restituire un saluto in un tag ’<h1>’ del HTML
+Scrivere un programma che chiede il nome all’utente per poi restituire un saluto in un tag **<h1>** del HTML
 
 ### Esercizio 1
 Scrivere un programma che calcola il perimetro e l’area di un triangolo avente i lati della
