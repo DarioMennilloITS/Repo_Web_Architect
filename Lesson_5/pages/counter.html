@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lesson 5 - Example Page</title>
+    <title>Lesson 5 - Counter</title>
     
     <link rel="stylesheet" href="../css/reset.css">
     <link rel="stylesheet" href="../css/style.css">
@@ -28,15 +28,25 @@
 
     <main>
         <section class="intro">
-            <h2>Example Page</h2>
-            <p>This is a template page. Use it as a reference for creating new pages.</p>
+            <h2>Exercise 1: Counter</h2>
+            <p>A simple interactive counter with increment, decrement and reset functions.</p>
         </section>
 
         <section class="exercise-area">
-            <div class="card">
-                <h3>Sample Card Component</h3>
-                <p>This card demonstrates the wireframe style used throughout the exercises.</p>
-                <button>Sample Button</button>
+            <div class="counter-box">
+                <h3>Current Value</h3>
+                <div id="counterValue" class="counter-display">0</div>
+                <p id="counterMessage" class="message"></p>
+                
+                <div class="counter-controls">
+                    <button id="decrementBtn" class="btn-control">- Decrement</button>
+                    <button id="resetBtn" class="btn-control">Reset</button>
+                    <button id="incrementBtn" class="btn-control">+ Increment</button>
+                </div>
+                
+                <div class="counter-info">
+                    <p>Min: -100 | Max: 100</p>
+                </div>
             </div>
         </section>
     </main>
@@ -45,5 +55,6 @@
         <p>FACUNDO FANTI &copy;</p>
     </footer>
 
+    <script src="../js/counter.js"></script>
 </body>
 </html>

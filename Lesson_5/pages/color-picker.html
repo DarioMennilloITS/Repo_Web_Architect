@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 5 - Color Picker</title>
+    
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    
+    <header>
+        <h1>Corso WSA 25 / 27</h1>
+        <p>Fondamenti di Front-End</p>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="./counter.html">Counter</a></li>
+                <li><a href="./calculator.html">Calculator</a></li>
+                <li><a href="./guess-number.html">Guess Number</a></li>
+                <li><a href="./todo.html">To-Do List</a></li>
+                <li><a href="./color-picker.html">Color Picker</a></li>
+                <li><a href="./lotto.html">Lotto Game</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="intro">
+            <h2>Exercise 5: Color Picker & Preview</h2>
+            <p>Explore colors by adjusting RGB values or generate random colors.</p>
+        </section>
+
+        <section class="exercise-area">
+            <div class="color-box">
+                <h3>Color Explorer</h3>
+                
+                <div class="color-preview-section">
+                    <div id="colorPreview" class="color-preview"></div>
+                </div>
+                
+                <div class="sliders-section">
+                    <div class="slider-group">
+                        <label for="redSlider">Red: <span id="redValue">128</span></label>
+                        <input type="range" id="redSlider" min="0" max="255" value="128">
+                    </div>
+                    
+                    <div class="slider-group">
+                        <label for="greenSlider">Green: <span id="greenValue">128</span></label>
+                        <input type="range" id="greenSlider" min="0" max="255" value="128">
+                    </div>
+                    
+                    <div class="slider-group">
+                        <label for="blueSlider">Blue: <span id="blueValue">128</span></label>
+                        <input type="range" id="blueSlider" min="0" max="255" value="128">
+                    </div>
+                </div>
+                
+                <div class="color-values">
+                    <div class="value-box">
+                        <span class="value-label">RGB:</span>
+                        <code id="rgbValue">rgb(128, 128, 128)</code>
+                    </div>
+                    <div class="value-box">
+                        <span class="value-label">HEX:</span>
+                        <code id="hexValue">#808080</code>
+                    </div>
+                </div>
+                
+                <div class="color-buttons">
+                    <button id="randomColorBtn">Random Color</button>
+                    <button id="copyHexBtn" class="btn-secondary">Copy HEX</button>
+                </div>
+                
+                <p id="copyMessage" class="message"></p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>FACUNDO FANTI &copy;</p>
+    </footer>
+
+    <script src="../js/color-picker.js"></script>
+</body>
+</html>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lesson 5 - Example Page</title>
+    <title>Lesson 5 - To-Do List</title>
     
     <link rel="stylesheet" href="../css/reset.css">
     <link rel="stylesheet" href="../css/style.css">
@@ -28,15 +28,30 @@
 
     <main>
         <section class="intro">
-            <h2>Example Page</h2>
-            <p>This is a template page. Use it as a reference for creating new pages.</p>
+            <h2>Exercise 4: Mini To-Do List</h2>
+            <p>Add tasks, mark them as complete, and keep track of what needs to be done.</p>
         </section>
 
         <section class="exercise-area">
-            <div class="card">
-                <h3>Sample Card Component</h3>
-                <p>This card demonstrates the wireframe style used throughout the exercises.</p>
-                <button>Sample Button</button>
+            <div class="todo-box">
+                <h3>My To-Do List</h3>
+                
+                <div class="todo-input-area">
+                    <input type="text" id="taskInput" placeholder="Enter a new task..." maxlength="50">
+                    <button id="addTaskBtn">Add Task</button>
+                </div>
+                
+                <div class="todo-stats">
+                    <p>Tasks remaining: <span id="tasksRemaining">0</span></p>
+                </div>
+                
+                <ul id="taskList" class="task-list">
+                    <!-- Tasks will be added here dynamically -->
+                </ul>
+                
+                <div id="emptyMessage" class="empty-message">
+                    <p>No tasks yet. Add one above!</p>
+                </div>
             </div>
         </section>
     </main>
@@ -45,5 +60,6 @@
         <p>FACUNDO FANTI &copy;</p>
     </footer>
 
+    <script src="../js/todo.js"></script>
 </body>
 </html>

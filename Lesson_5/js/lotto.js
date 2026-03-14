@@ -1,15 +1,14 @@
 /* ============================================
-   Lotto Game JavaScript
+   ES1 - Gioco del Lotto (Estrazione senza ripetizione)
    ============================================ */
 
-// Wait for DOM to be fully loaded
 document.addEventListener('DOMContentLoaded', function() {
     
     console.log('Lotto game loaded!');
     
     // Game state
-    let availableNumbers = [];  // Numbers still in the pool
-    let drawnNumbers = [];      // Numbers already drawn
+    let availableNumbers = [];
+    let drawnNumbers = [];
     
     // DOM Elements
     const drawBtn = document.getElementById('drawBtn');
@@ -18,7 +17,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const drawnCountEl = document.getElementById('drawnCount');
     const remainingCountEl = document.getElementById('remainingCount');
     const drawnNumbersEl = document.getElementById('drawnNumbers');
-    const numbersGridEl = document.getElementById('numbersGrid');
     
     // Initialize the game
     function initGame() {
@@ -32,14 +30,12 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Reset UI
         currentNumberEl.textContent = '-';
-        currentNumberEl.classList.remove('drawn');
         updateStats();
         renderDrawnNumbers();
-        renderNumbersGrid();
         
         // Enable draw button
         drawBtn.disabled = false;
-        drawBtn.textContent = 'Draw Number';
+        drawBtn.textContent = 'Estrai Numero';
         
         console.log('Game initialized with 90 numbers');
     }
@@ -47,7 +43,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Draw a random number from available numbers
     function drawNumber() {
         if (availableNumbers.length === 0) {
-            alert('All numbers have been drawn!');
+            alert('Tutti i numeri sono stati estratti!');
             return;
         }
         
@@ -61,32 +57,20 @@ document.addEventListener('DOMContentLoaded', function() {
         drawnNumbers.push(drawnNumber);
         
         // Update UI
-        displayCurrentNumber(drawnNumber);
+        currentNumberEl.textContent = drawnNumber;
         updateStats();
         renderDrawnNumbers();
-        updateNumberCell(drawnNumber);
         
         console.log(`Drawn number: ${drawnNumber}`);
         
         // Check if all numbers are drawn
         if (availableNumbers.length === 0) {
             drawBtn.disabled = true;
-            drawBtn.textContent = 'Game Over';
+            drawBtn.textContent = 'Fine';
             setTimeout(() => {
-                alert('🎉 All 90 numbers have been drawn!');
+                alert('Tutti i 90 numeri sono stati estratti!');
             }, 300);
         }
-    }
-    
-    // Display the currently drawn number with animation
-    function displayCurrentNumber(number) {
-        currentNumberEl.textContent = number;
-        currentNumberEl.classList.remove('drawn');
-        
-        // Trigger reflow to restart animation
-        void currentNumberEl.offsetWidth;
-        
-        currentNumberEl.classList.add('drawn');
     }
     
     // Update statistics display
@@ -95,53 +79,34 @@ document.addEventListener('DOMContentLoaded', function() {
         remainingCountEl.textContent = availableNumbers.length;
     }
     
-    // Render the drawn numbers history
+    // Render the drawn numbers
     function renderDrawnNumbers() {
         drawnNumbersEl.innerHTML = '';
+        
+        if (drawnNumbers.length === 0) {
+            const span = document.createElement('span');
+            span.className = 'array-item';
+            span.textContent = 'Nessun numero estratto';
+            drawnNumbersEl.appendChild(span);
+            return;
+        }
         
         // Show drawn numbers in reverse order (newest first)
         const reversedDrawn = [...drawnNumbers].reverse();
         
         reversedDrawn.forEach(num => {
-            const numEl = document.createElement('div');
-            numEl.className = 'drawn-number';
-            numEl.textContent = num;
-            drawnNumbersEl.appendChild(numEl);
+            const span = document.createElement('span');
+            span.className = 'array-item';
+            span.textContent = num;
+            drawnNumbersEl.appendChild(span);
         });
-    }
-    
-    // Render the numbers grid (1-90)
-    function renderNumbersGrid() {
-        numbersGridEl.innerHTML = '';
-        
-        for (let i = 1; i <= 90; i++) {
-            const cell = document.createElement('div');
-            cell.className = 'number-cell';
-            cell.textContent = i;
-            cell.id = `cell-${i}`;
-            
-            // Mark as drawn if already drawn
-            if (drawnNumbers.includes(i)) {
-                cell.classList.add('drawn');
-            }
-            
-            numbersGridEl.appendChild(cell);
-        }
-    }
-    
-    // Update a specific number cell when drawn
-    function updateNumberCell(number) {
-        const cell = document.getElementById(`cell-${number}`);
-        if (cell) {
-            cell.classList.add('drawn');
-        }
     }
     
     // Event listeners
     drawBtn.addEventListener('click', drawNumber);
     
     resetBtn.addEventListener('click', function() {
-        if (confirm('Are you sure you want to reset the game? All drawn numbers will be lost.')) {
+        if (confirm('Sei sicuro di voler resettare il gioco?')) {
             initGame();
         }
     });

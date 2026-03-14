@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ES1 - Gioco del Lotto</title>
+    <title>P2-ES5 - Giudizio Voto</title>
     
     <link rel="stylesheet" href="../css/reset.css">
     <link rel="stylesheet" href="../css/style.css">
@@ -41,38 +41,29 @@
 
     <main>
         <section class="intro">
-            <h2>ES1 - Gioco del Lotto</h2>
+            <h2>P2-ES5 - Giudizio Voto</h2>
         </section>
 
         <section class="exercise-area">
             <div class="exercise-description">
                 <h3>Consegna</h3>
-                <p>Dato un set di <strong>90 numeri (1 a 90)</strong> estrai un numero alla volta. Mi raccomando: <strong>non deve esserci ripetizione</strong>.</p>
+                <p>Usa <strong>switch</strong> per convertire voto numerico in giudizio:<br>
+                <strong>10-9</strong>: Ottimo | <strong>8-7</strong>: Buono | <strong>6</strong>: Sufficiente | <strong>&lt;6</strong>: Insufficiente</p>
             </div>
 
             <div class="exercise-box">
-                <h3>Gioco del Lotto</h3>
+                <h3>Inserisci il voto</h3>
                 
-                <div class="result-area" style="text-align: center;">
-                    <h4>Ultimo numero estratto:</h4>
-                    <div id="currentNumber" class="result-content large" style="font-size: 4rem;">-</div>
+                <div class="input-group">
+                    <label for="votoInput">Voto (1-10):</label>
+                    <input type="number" id="votoInput" min="1" max="10" value="7">
                 </div>
                 
-                <div style="display: flex; gap: 0.5rem; justify-content: center; margin: 1.5rem 0;">
-                    <button id="drawBtn">Estrai Numero</button>
-                    <button id="resetBtn" class="btn-secondary">Reset</button>
-                </div>
-                
-                <div style="text-align: center; font-family: monospace; margin-bottom: 1rem;">
-                    <p>Estratti: <span id="drawnCount">0</span> / 90</p>
-                    <p>Rimanenti: <span id="remainingCount">90</span></p>
-                </div>
+                <button id="valutaBtn">Valuta</button>
                 
                 <div class="result-area">
-                    <h4>Numeri estratti:</h4>
-                    <div id="drawnNumbers" class="array-display" style="margin-top: 1rem;">
-                        <span class="array-item">Nessun numero estratto</span>
-                    </div>
+                    <h4>Giudizio:</h4>
+                    <div id="risultatoOutput" class="result-content large">-</div>
                 </div>
             </div>
         </section>
@@ -82,6 +73,6 @@
         <p>FACUNDO FANTI &copy;</p>
     </footer>
 
-    <script src="../js/lotto.js"></script>
+    <script src="../js/giudizio-voto.js"></script>
 </body>
 </html>

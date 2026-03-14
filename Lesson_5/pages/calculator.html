@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 5 - Calculator</title>
+    
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    
+    <header>
+        <h1>Corso WSA 25 / 27</h1>
+        <p>Fondamenti di Front-End</p>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="./counter.html">Counter</a></li>
+                <li><a href="./calculator.html">Calculator</a></li>
+                <li><a href="./guess-number.html">Guess Number</a></li>
+                <li><a href="./todo.html">To-Do List</a></li>
+                <li><a href="./color-picker.html">Color Picker</a></li>
+                <li><a href="./lotto.html">Lotto Game</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="intro">
+            <h2>Exercise 2: Simple Calculator</h2>
+            <p>Perform basic math operations with two numbers.</p>
+        </section>
+
+        <section class="exercise-area">
+            <div class="calculator-box">
+                <h3>Calculator</h3>
+                
+                <div class="calc-inputs">
+                    <div class="input-group">
+                        <label for="num1">First Number:</label>
+                        <input type="number" id="num1" placeholder="Enter number">
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="operation">Operation:</label>
+                        <select id="operation">
+                            <option value="+">+ Addition</option>
+                            <option value="-">- Subtraction</option>
+                            <option value="*">* Multiplication</option>
+                            <option value="/">/ Division</option>
+                        </select>
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="num2">Second Number:</label>
+                        <input type="number" id="num2" placeholder="Enter number">
+                    </div>
+                </div>
+                
+                <div class="calc-buttons">
+                    <button id="calculateBtn">Calculate</button>
+                    <button id="clearBtn" class="btn-secondary">Clear</button>
+                </div>
+                
+                <div class="calc-result">
+                    <h4>Result:</h4>
+                    <div id="resultDisplay" class="result-display">-</div>
+                    <p id="calcMessage" class="message"></p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>FACUNDO FANTI &copy;</p>
+    </footer>
+
+    <script src="../js/calculator.js"></script>
+</body>
+</html>
