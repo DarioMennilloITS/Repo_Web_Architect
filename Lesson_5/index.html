@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 5 - Template</title>
+    
+    <!-- CSS Reset - always load first -->
+    <link rel="stylesheet" href="./css/reset.css">
+    <!-- Custom styles -->
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    
+    <header>
+        <h1>Corso WSA 25 / 27</h1>
+        <p>Fondamenti di Front-End</p>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="./pages/example.html">Example Page</a></li>
+                <li><a href="./pages/lotto.html">Lotto Game</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="intro">
+            <h2>Welcome to Lesson 5</h2>
+            <p>This is a template file. Customize it for your new lesson content.</p>
+        </section>
+
+        <section class="content">
+            <h2>Game</h2>
+            <p>Select mode.</p>
+            <select name="" id="SceltaMod">
+                <option value="" selected disabled>Select</option>
+                <option value="easymode">Easy Mode</option>
+                <option value="normalmode">Normal Mode</option>
+                <option value="hardmode">Hard Mode</option>
+
+
+
+
+
+            </select>
+            
+            <!-- Example card component -->
+            <div class="card">
+                <h3>Game Mode Selection</h3>
+                <p>Click the button to confirm your game mode selection.</p>
+                <button id="exampleBtn">Click Me</button>
+                <p id="demo" style="margin-top: 1rem; font-weight: bold; color: var(--primary-color);"></p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p> FACUNDO FANTI &copy;</p>
+    </footer>
+
+    <!-- JavaScript file - load at the end of body -->
+    <script src="./js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,212 @@
+/* ============================================
+   Lotto Game Styles
+   ============================================ */
+
+/* Game board container */
+.game-board {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Current number display */
+.current-number-container {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.current-number-container h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.current-number {
+    width: 120px;
+    height: 120px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    font-weight: bold;
+    color: white;
+    margin: 0 auto;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+    transition: transform 0.3s ease;
+}
+
+.current-number.drawn {
+    animation: bounce 0.5s ease;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+}
+
+/* Controls */
+.controls {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.btn-draw {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+}
+
+.btn-draw:hover {
+    background: linear-gradient(135deg, #5a67d8 0%, #6b46a1 100%);
+}
+
+.btn-draw:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+}
+
+.btn-reset {
+    background-color: #e74c3c;
+}
+
+.btn-reset:hover {
+    background-color: #c0392b;
+}
+
+/* Stats */
+.stats {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding: 1rem;
+    background-color: var(--card-bg);
+    border-radius: var(--border-radius);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.stats p {
+    margin: 0.5rem 0;
+    font-size: 1.1rem;
+}
+
+.stats span {
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+/* History container */
+.history-container {
+    margin-bottom: 2rem;
+}
+
+.history-container h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.drawn-numbers {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+    padding: 1rem;
+    background-color: var(--card-bg);
+    border-radius: var(--border-radius);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    min-height: 60px;
+}
+
+.drawn-number {
+    width: 45px;
+    height: 45px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: white;
+    font-size: 0.9rem;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.5); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+/* Numbers grid */
+.numbers-grid-container h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.numbers-grid {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    gap: 0.5rem;
+    padding: 1rem;
+    background-color: var(--card-bg);
+    border-radius: var(--border-radius);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.number-cell {
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ecf0f1;
+    border-radius: var(--border-radius);
+    font-weight: bold;
+    font-size: 0.85rem;
+    transition: all 0.3s ease;
+}
+
+.number-cell:hover {
+    background-color: #d5dbdb;
+}
+
+.number-cell.drawn {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    transform: scale(0.95);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .numbers-grid {
+        grid-template-columns: repeat(6, 1fr);
+    }
+    
+    .current-number {
+        width: 100px;
+        height: 100px;
+        font-size: 2.5rem;
+    }
+    
+    .drawn-number {
+        width: 40px;
+        height: 40px;
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .numbers-grid {
+        grid-template-columns: repeat(5, 1fr);
+        gap: 0.3rem;
+    }
+    
+    .number-cell {
+        font-size: 0.75rem;
+    }
+    
+    .controls {
+        flex-direction: column;
+        align-items: center;
+    }
+}

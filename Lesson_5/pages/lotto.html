@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 5 - Lotto Game</title>
+    
+    <!-- CSS Reset - always load first -->
+    <link rel="stylesheet" href="../css/reset.css">
+    <!-- Custom styles -->
+    <link rel="stylesheet" href="../css/style.css">
+    <!-- Lotto game specific styles -->
+    <link rel="stylesheet" href="../css/lotto.css">
+</head>
+<body>
+    
+    <header>
+        <h1>Corso WSA 25 / 27</h1>
+        <p>Fondamenti di Front-End</p>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="./example.html">Example Page</a></li>
+                <li><a href="./lotto.html">Lotto Game</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="intro">
+            <h2>🎱 Lotto Game</h2>
+            <p>Draw numbers from 1 to 90. Each number can only be drawn once!</p>
+        </section>
+
+        <section class="lotto-game">
+            <div class="game-board">
+                <!-- Current drawn number display -->
+                <div class="current-number-container">
+                    <h3>Last Drawn Number</h3>
+                    <div id="currentNumber" class="current-number">-</div>
+                </div>
+
+                <!-- Game controls -->
+                <div class="controls">
+                    <button id="drawBtn" class="btn-draw">Draw Number</button>
+                    <button id="resetBtn" class="btn-reset">Reset Game</button>
+                </div>
+
+                <!-- Game stats -->
+                <div class="stats">
+                    <p>Numbers drawn: <span id="drawnCount">0</span> / 90</p>
+                    <p>Remaining: <span id="remainingCount">90</span></p>
+                </div>
+
+                <!-- Drawn numbers history -->
+                <div class="history-container">
+                    <h3>Drawn Numbers</h3>
+                    <div id="drawnNumbers" class="drawn-numbers">
+                        <!-- Drawn numbers will appear here -->
+                    </div>
+                </div>
+
+                <!-- All numbers grid -->
+                <div class="numbers-grid-container">
+                    <h3>Number Board</h3>
+                    <div id="numbersGrid" class="numbers-grid">
+                        <!-- Numbers 1-90 will be generated here -->
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p> FACUNDO FANTI &copy;</p>
+    </footer>
+
+    <!-- JavaScript file - load at the end of body -->
+    <script src="../js/lotto.js"></script>
+</body>
+</html>
