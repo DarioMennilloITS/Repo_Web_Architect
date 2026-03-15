@@ -1,0 +1,1100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning Center — Corso WSA</title>
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Corso WSA 25 / 27</h1>
+        <p>Fondamenti di Front-End</p>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="./learning-center.html">Learning Center</a></li>
+                <li><a href="./hello-world.html">Hello</a></li>
+                <li><a href="./triangolo.html">Triangolo</a></li>
+                <li><a href="./prodotto.html">Prodotto</a></li>
+                <li><a href="./estensione-file.html">Estensione</a></li>
+                <li><a href="./prefisso-ja.html">Prefisso</a></li>
+                <li><a href="./vicino-a-100.html">Vicino 100</a></li>
+                <li><a href="./zoom-boom.html">Zoom</a></li>
+                <li><a href="./array-to-string.html">Array</a></li>
+                <li><a href="./random-array.html">Random</a></li>
+                <li><a href="./cerca-parola.html">Cerca</a></li>
+                <li><a href="./giorni-settimana.html">Giorni</a></li>
+                <li><a href="./numeri-pari.html">Pari</a></li>
+                <li><a href="./somma-1-100.html">Somma</a></li>
+                <li><a href="./raddoppia.html">Raddoppia</a></li>
+                <li><a href="./giudizio-voto.html">Voto</a></li>
+                <li><a href="./rettangolo-asterischi.html">Rettangolo</a></li>
+                <li><a href="./triangolo-crescente.html">Triangolo 2</a></li>
+                <li><a href="./palindromi.html">Palindromi</a></li>
+                <li><a href="./lotto.html">Lotto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+
+        <section class="intro">
+            <h2>Learning Center</h2>
+            <p>Each exercise explained layer by layer — HTML structure, CSS presentation, JavaScript logic. Click any exercise to expand it. Use the concept index below to jump to a topic.</p>
+        </section>
+
+        <!-- Concept index -->
+        <nav class="concept-index" aria-label="Concept groups">
+            <a href="#variables">Variables &amp; I/O</a>
+            <a href="#strings">String Methods</a>
+            <a href="#conditionals">Conditionals</a>
+            <a href="#loops">Loops</a>
+            <a href="#arrays">Arrays</a>
+            <a href="#dom">DOM &amp; Events</a>
+        </nav>
+
+
+        <!-- ═══════════════════════════════════════════════════
+             GROUP 1 — VARIABLES & BASIC I/O
+        ════════════════════════════════════════════════════ -->
+        <section id="variables">
+            <h2>Variables &amp; Basic I/O</h2>
+
+            <!-- Hello World -->
+            <details class="learn-entry">
+                <summary>Hello World <span class="concept-tag tag--vars">var</span><span class="concept-tag tag--dom">dom</span></summary>
+                <div class="learn-panels">
+                    <div class="learn-panel panel--html">
+                        <span class="learn-panel-label">&lt;/&gt; HTML</span>
+                        <p>An <code>&lt;input type="text"&gt;</code> collects the user's name. A <code>&lt;button&gt;</code> triggers the action. A <code>&lt;div id="salutoOutput"&gt;</code> is the target where the result is injected.</p>
+                        <p>Each element gets an <code>id</code> attribute so JavaScript can find it by name. The <code>&lt;label for=""&gt;</code> links text to its input — clicking the label focuses the field.</p>
+                        <ul>
+                            <li><code>&lt;input type="text"&gt;</code> — single-line text field</li>
+                            <li><code>id="..."</code> — unique identifier for JS targeting</li>
+                            <li><code>&lt;label for="id"&gt;</code> — accessible label binding</li>
+                        </ul>
+                    </div>
+                    <div class="learn-panel panel--css">
+                        <span class="learn-panel-label">{ } CSS</span>
+                        <p>The <code>.input-group</code> class stacks the label above the input using <code>display: block</code> on the label. This is simpler than flexbox for vertical form layouts.</p>
+                        <p>The <code>.result-area</code> uses a dashed border and a light background to visually distinguish output from input — a common UI pattern for "read-only" zones.</p>
+                        <ul>
+                            <li><code>display: block</code> on label → stacks vertically</li>
+                            <li>Border + background = visual separation of zones</li>
+                            <li><code>font-family: monospace</code> on output → code-like feel</li>
+                        </ul>
+                    </div>
+                    <div class="learn-panel panel--js">
+                        <span class="learn-panel-label">JS ( ) JavaScript</span>
+                        <p>The script waits for the page to fully load with <code>DOMContentLoaded</code>, then reads the input value, builds a string using a <strong>template literal</strong>, and writes it to the DOM.</p>
+                        <div class="code-block"><span class="kw">const</span> name = document.<span class="fn">getElementById</span>(<span class="st">'nomeInput'</span>).value;
+output.innerHTML = <span class="st">`Ciao, <span class="kw">${</span>name<span class="kw">}</span>!`</span>;</div>
+                        <ul>
+                            <li><code>DOMContentLoaded</code> — fires when HTML is parsed</li>
+                            <li><code>.value</code> — always returns a string</li>
+                            <li>Template literals: backticks + <code>${expr}</code></li>
+                            <li><code>innerHTML</code> — sets HTML content of a node</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="learn-concept-bar">
+                    <span>DOMContentLoaded</span><span>getElementById</span><span>template literals</span><span>innerHTML</span><span>event listeners</span>
+                </div>
+            </details>
+
+            <!-- Prodotto -->
+            <details class="learn-entry">
+                <summary>Prodotto tra due numeri <span class="concept-tag tag--vars">operators</span></summary>
+                <div class="learn-panels">
+                    <div class="learn-panel panel--html">
+                        <span class="learn-panel-label">&lt;/&gt; HTML</span>
+                        <p>Two <code>&lt;input type="number"&gt;</code> fields restrict the keyboard to numeric input on mobile and allow browser-level validation. A single button submits. The result area is an empty <code>&lt;div&gt;</code> updated by JS.</p>
+                        <ul>
+                            <li><code>type="number"</code> — numeric keyboard on mobile, rejects non-numbers</li>
+                            <li><code>placeholder="..."</code> — hint text shown when field is empty</li>
+                        </ul>
+                    </div>
+                    <div class="learn-panel panel--css">
+                        <span class="learn-panel-label">{ } CSS</span>
+                        <p>The two inputs share the same <code>.input-group</code> style. The result uses <code>.result-content.large</code> which enlarges the font to make the answer visually prominent — a technique called <strong>typographic hierarchy</strong>.</p>
+                        <ul>
+                            <li>Same class = consistent visual language across forms</li>
+                            <li>Font size increase = signals importance of the output</li>
+                        </ul>
+                    </div>
+                    <div class="learn-panel panel--js">
+                        <span class="learn-panel-label">JS ( ) JavaScript</span>
+                        <p>Input <code>.value</code> is always a string. <code>parseFloat()</code> converts it to a number. <code>isNaN()</code> checks if the conversion failed — if the user typed letters, the result would be <code>NaN</code> (Not a Number).</p>
+                        <div class="code-block"><span class="kw">const</span> a = <span class="fn">parseFloat</span>(input1.value);
+<span class="kw">const</span> b = <span class="fn">parseFloat</span>(input2.value);
+<span class="kw">if</span> (<span class="fn">isNaN</span>(a) || <span class="fn">isNaN</span>(b)) { <span class="cm">/* error */</span> }
+<span class="kw">else</span> result = a * b;</div>
+                        <ul>
+                            <li>All input values are strings — always parse before math</li>
+                            <li><code>parseFloat</code> vs <code>parseInt</code>: float allows decimals</li>
+                            <li><code>isNaN()</code> — safety check before computing</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="learn-concept-bar">
+                    <span>parseFloat</span><span>isNaN</span><span>arithmetic operators</span><span>input validation</span>
+                </div>
+            </details>
+
+            <!-- Triangolo -->
+            <details class="learn-entry">
+                <summary>Perimetro e Area Triangolo <span class="concept-tag tag--vars">Math</span></summary>
+                <div class="learn-panels">
+                    <div class="learn-panel panel--html">
+                        <span class="learn-panel-label">&lt;/&gt; HTML</span>
+                        <p>This exercise has no user input — the triangle sides are hardcoded. The page contains only output containers: two <code>&lt;div&gt;</code> elements that receive the calculated perimeter and area.</p>
+                        <p>A <code>&lt;button&gt;</code> triggers computation on demand rather than running on load, giving the user control.</p>
+                        <ul>
+                            <li>Static data → no <code>&lt;input&gt;</code> needed</li>
+                            <li>Separate output divs for each result</li>
+                        </ul>
+                    </div>
+                    <div class="learn-panel panel--css">
+                        <span class="learn-panel-label">{ } CSS</span>
+                        <p>Two result boxes sit side by side. This is achieved with a flex container — <code>display: flex; gap: 1rem</code> on the parent. Each box has equal width and a border to frame the value.</p>
+                        <ul>
+                            <li>Flexbox distributes space automatically between children</li>
+                            <li><code>gap</code> — spacing between flex items without margins</li>
+                        </ul>
+                    </div>
+                    <div class="learn-panel panel--js">
+                        <span class="learn-panel-label">JS ( ) JavaScript</span>
+                        <p><strong>Perimeter</strong> is simply <code>a + b + c</code>. <strong>Area</strong> uses Heron's formula — no angle needed, only the three sides. Compute the semi-perimeter <code>s</code>, then take a square root.</p>
+                        <div class="code-block"><span class="kw">const</span> s = (a + b + c) / <span class="nu">2</span>;
+<span class="kw">const</span> area = Math.<span class="fn">sqrt</span>(s*(s-a)*(s-b)*(s-c));
+area.<span class="fn">toFixed</span>(<span class="nu">2</span>); <span class="cm">// "3.14" — string!</span></div>
+                        <ul>
+                            <li><code>Math.sqrt()</code> — square root function</li>
+                            <li>Heron's formula — works for any triangle</li>
+                            <li><code>toFixed(n)</code> — rounds to n decimals, returns a <em>string</em></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="learn-concept-bar">
+                    <span>Math.sqrt</span><span>toFixed</span><span>Heron's formula</span><span>floating point</span>
+                </div>
+            </details>
+        </section>
+
+
+        <!-- ═══════════════════════════════════════════════════
+             GROUP 2 — STRING METHODS
+        ════════════════════════════════════════════════════ -->
+        <section id="strings">
+            <h2>String Methods</h2>
+
+            <!-- Estensione File -->
+            <details class="learn-entry">
+                <summary>Estensione File <span class="concept-tag tag--string">string</span></summary>
+                <div class="learn-panels">
+                    <div class="learn-panel panel--html">
+                        <span class="learn-panel-label">&lt;/&gt; HTML</span>
+                        <p>A single text input accepts any filename (e.g. <code>photo.backup.jpg</code>). A button submits. The extension is rendered in a result box.</p>
+                        <ul>
+                            <li><code>type="text"</code> — allows dots and special chars</li>
+                            <li><code>placeholder</code> shows an example filename</li>
+                        </ul>
+                    </div>
+                    <div class="learn-panel panel--css">
+                        <span class="learn-panel-label">{ } CSS</span>
+                        <p>No special styling beyond the shared form system. The result is displayed in <code>.result-content</code> with monospace font — fitting for a filename/extension context.</p>
+                        <ul>
+                            <li>Monospace font signals "technical" output</li>
+                        </ul>
+                    </div>
+                    <div class="learn-panel panel--js">
+                        <span class="learn-panel-label">JS ( ) JavaScript</span>
+                        <p>The key insight: use <code>lastIndexOf('.')</code> not <code>indexOf('.')</code> — a file named <code>my.backup.tar.gz</code> has multiple dots; we want only what comes after the <em>last</em> one.</p>
+                        <div class="code-block"><span class="kw">const</span> pos = filename.<span class="fn">lastIndexOf</span>(<span class="st">'.'</span>);
+<span class="kw">if</span> (pos === -<span class="nu">1</span>) <span class="cm">// no dot found</span>
+<span class="kw">const</span> ext = filename.<span class="fn">slice</span>(pos + <span class="nu">1</span>);</div>
+                        <ul>
+                            <li><code>lastIndexOf</code> — scans from the right</li>
+                            <li>Returns <code>-1</code> if not found — always handle this</li>
+                            <li><code>slice(n)</code> — returns from index <code>n</code> to end</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="learn-concept-bar">
+                    <span>lastIndexOf</span><span>slice</span><span>string indexing</span><span>-1 sentinel</span>
+                </div>
+            </details>
+
+            <!-- Prefisso Ja -->
+            <details class="learn-entry">
+                <summary>Prefisso "Ja" <span class="concept-tag tag--string">string</span></summary>
+                <div class="learn-panels">
+                    <div class="learn-panel panel--html">
+                        <span class="learn-panel-label">&lt;/&gt; HTML</span>
+                        <p>Text input + button. The result area shows both the original and the transformed string so the user can compare them.</p>
+                        <ul>
+                            <li>Showing before/after helps the user understand the transformation</li>
+                        </ul>
+                    </div>
+                    <div class="learn-panel panel--css">
+                        <span class="learn-panel-label">{ } CSS</span>
+                        <p>The result uses two separate <code>&lt;p&gt;</code> elements — original and result — inside the <code>.result-area</code>. CSS gives them different colors to make the comparison obvious at a glance.</p>
+                        <ul>
+                            <li>Color = semantic meaning (neutral vs transformed)</li>
+                        </ul>
+                    </div>
+                    <div class="learn-panel panel--js">
+                        <span class="learn-panel-label">JS ( ) JavaScript</span>
+                        <p>Normalise case first with <code>toLowerCase()</code>, then check with <code>startsWith('ja')</code>. If the prefix is absent, prepend <code>'Ja'</code> with string concatenation.</p>
+                        <div class="code-block"><span class="kw">if</span> (!input.<span class="fn">toLowerCase</span>().<span class="fn">startsWith</span>(<span class="st">'ja'</span>)) {
+  result = <span class="st">'Ja'</span> + input;
+}</div>
+                        <ul>
+                            <li><code>toLowerCase()</code> — normalise before comparing</li>
+                            <li><code>startsWith()</code> — cleaner than <code>indexOf === 0</code></li>
+                            <li><code>'prefix' + str</code> — prepend with concatenation</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="learn-concept-bar">
+                    <span>toLowerCase</span><span>startsWith</span><span>string concatenation</span><span>case normalisation</span>
+                </div>
+            </details>
+
+            <!-- Cerca Parola -->
+            <details class="learn-entry">
+                <summary>Cerca Parola <span class="concept-tag tag--string">string</span></summary>
+                <div class="learn-panels">
+                    <div class="learn-panel panel--html">
+                        <span class="learn-panel-label">&lt;/&gt; HTML</span>
+                        <p>The text to be searched is hardcoded in the JS — no need for an input for it. The user only types the word to search. The result reports whether it was found and at what position.</p>
+                        <ul>
+                            <li>Fixed data can live in JS, not in HTML</li>
+                            <li>Result shows both boolean (found/not) and index position</li>
+                        </ul>
+                    </div>
+                    <div class="learn-panel panel--css">
+                        <span class="learn-panel-label">{ } CSS</span>
+                        <p>The <code>.message.success</code> and <code>.message.error</code> classes toggle visibility and color to give instant visual feedback — green for found, red for not found.</p>
+                        <ul>
+                            <li><code>display: none</code> → <code>display: block</code> toggled by JS</li>
+                            <li>Color communicates result type without text</li>
+                        </ul>
+                    </div>
+                    <div class="learn-panel panel--js">
+                        <span class="learn-panel-label">JS ( ) JavaScript</span>
+                        <p>Both strings are lowercased before comparison. <code>includes()</code> returns a boolean. <code>indexOf()</code> returns the position — useful when you need to know <em>where</em> the word is, not just whether it exists.</p>
+                        <div class="code-block"><span class="kw">const</span> found = text.<span class="fn">toLowerCase</span>()
+  .<span class="fn">includes</span>(word.<span class="fn">toLowerCase</span>());
+
+<span class="cm">// Or for position:</span>
+<span class="kw">const</span> pos = text.<span class="fn">indexOf</span>(word); <span class="cm">// -1 = not found</span></div>
+                        <ul>
+                            <li><code>includes()</code> — returns <code>true/false</code>, modern</li>
+                            <li><code>indexOf()</code> — returns position or <code>-1</code>, classic</li>
+                            <li>Always normalise case before searching</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="learn-concept-bar">
+                    <span>includes</span><span>indexOf</span><span>toLowerCase</span><span>boolean</span>
+                </div>
+            </details>
+        </section>
+
+
+        <!-- ═══════════════════════════════════════════════════
+             GROUP 3 — CONDITIONALS
+        ════════════════════════════════════════════════════ -->
+        <section id="conditionals">
+            <h2>Conditionals</h2>
+
+            <!-- Vicino a 100 -->
+            <details class="learn-entry">
+                <summary>Valore più vicino a 100 <span class="concept-tag tag--cond">if/else</span></summary>
+                <div class="learn-panels">
+                    <div class="learn-panel panel--html">
+                        <span class="learn-panel-label">&lt;/&gt; HTML</span>
+                        <p>Two <code>&lt;input type="number"&gt;</code> fields side by side. The result displays which number is closer to 100 and shows both distances for transparency.</p>
+                        <ul>
+                            <li>Two inputs = two number fields with shared styling</li>
+                            <li>Show work — display intermediate values (distances)</li>
+                        </ul>
+                    </div>
+                    <div class="learn-panel panel--css">
+                        <span class="learn-panel-label">{ } CSS</span>
+                        <p>The two number inputs can be placed side by side with a flex row. The winner is highlighted by toggling a bold class or colour — visual feedback reinforces the logic.</p>
+                        <ul>
+                            <li><code>display: flex; gap</code> — two inputs in a row</li>
+                        </ul>
+                    </div>
+                    <div class="learn-panel panel--js">
+                        <span class="learn-panel-label">JS ( ) JavaScript</span>
+                        <p><code>Math.abs(n - 100)</code> gives the distance from 100 regardless of direction. Compare the two distances with <code>if/else</code>. Handle the tie explicitly.</p>
+                        <div class="code-block"><span class="kw">const</span> dA = Math.<span class="fn">abs</span>(a - <span class="nu">100</span>);
+<span class="kw">const</span> dB = Math.<span class="fn">abs</span>(b - <span class="nu">100</span>);
+<span class="kw">if</span>      (dA < dB) <span class="cm">// a wins</span>
+<span class="kw">else if</span> (dB < dA) <span class="cm">// b wins</span>
+<span class="kw">else</span>             <span class="cm">// tie</span></div>
+                        <ul>
+                            <li><code>Math.abs()</code> — absolute value, removes sign</li>
+                            <li><code>if / else if / else</code> — three-way branch</li>
+                            <li>Compare distances, not the values themselves</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="learn-concept-bar">
+                    <span>Math.abs</span><span>if/else if/else</span><span>comparison operators</span><span>edge cases</span>
+                </div>
+            </details>
+
+            <!-- Giorni Settimana -->
+            <details class="learn-entry">
+                <summary>Giorni della Settimana <span class="concept-tag tag--cond">switch</span></summary>
+                <div class="learn-panels">
+                    <div class="learn-panel panel--html">
+                        <span class="learn-panel-label">&lt;/&gt; HTML</span>
+                        <p>A <code>&lt;select&gt;</code> dropdown lists numbers 1–7. This is better than a text input here — it constrains the user to valid values, eliminating invalid input entirely.</p>
+                        <ul>
+                            <li><code>&lt;select&gt;</code> + <code>&lt;option value="n"&gt;</code> — constrained choice</li>
+                            <li>Preventing invalid input &gt; validating after the fact</li>
+                        </ul>
+                    </div>
+                    <div class="learn-panel panel--css">
+                        <span class="learn-panel-label">{ } CSS</span>
+                        <p>The <code>&lt;select&gt;</code> uses the same <code>.input-group</code> styles as text inputs — <code>appearance: none</code> removes the native OS arrow, allowing custom styling.</p>
+                        <ul>
+                            <li><code>appearance: none</code> — removes native browser styling</li>
+                            <li>Consistent styling across all form elements</li>
+                        </ul>
+                    </div>
+                    <div class="learn-panel panel--js">
+                        <span class="learn-panel-label">JS ( ) JavaScript</span>
+                        <p>A <code>switch</code> statement maps each integer to a day name. It is cleaner than seven <code>if/else</code> blocks when you have many discrete values. <code>break</code> stops execution from "falling through" to the next case.</p>
+                        <div class="code-block"><span class="kw">switch</span> (numero) {
+  <span class="kw">case</span> <span class="nu">1</span>: result = <span class="st">'Lunedì'</span>; <span class="kw">break</span>;
+  <span class="kw">case</span> <span class="nu">2</span>: result = <span class="st">'Martedì'</span>; <span class="kw">break</span>;
+  <span class="cm">// ...</span>
+  <span class="kw">default</span>: result = <span class="st">'Invalido'</span>;
+}</div>
+                        <ul>
+                            <li><code>switch</code> — clean for many discrete values</li>
+                            <li><code>break</code> — prevents fall-through to next case</li>
+                            <li><code>default</code> — catches any unmatched value</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="learn-concept-bar">
+                    <span>switch</span><span>case</span><span>break</span><span>default</span><span>select element</span>
+                </div>
+            </details>
+
+            <!-- Giudizio Voto -->
+            <details class="learn-entry">
+                <summary>Giudizio Voto <span class="concept-tag tag--cond">switch</span></summary>
+                <div class="learn-panels">
+                    <div class="learn-panel panel--html">
+                        <span class="learn-panel-label">&lt;/&gt; HTML</span>
+                        <p>A number input restricted to range 1–10 with <code>min="1" max="10"</code>. The browser enforces these constraints natively, but JS still validates because users can bypass HTML attributes.</p>
+                        <ul>
+                            <li><code>min</code> / <code>max</code> — browser-level hints, not security</li>
+                            <li>Always validate in JS too — HTML validation can be bypassed</li>
+                        </ul>
+                    </div>
+                    <div class="learn-panel panel--css">
+                        <span class="learn-panel-label">{ } CSS</span>
+                        <p>The result text changes colour based on the grade category — green for high grades, red for failures. This is applied by JS toggling a class on the output element.</p>
+                        <ul>
+                            <li>JS adds/removes classes; CSS defines what those classes look like</li>
+                            <li>Separation of concerns: logic in JS, appearance in CSS</li>
+                        </ul>
+                    </div>
+                    <div class="learn-panel panel--js">
+                        <span class="learn-panel-label">JS ( ) JavaScript</span>
+                        <p>Uses <code>parseInt()</code> to ensure integer comparison. The switch maps each integer 1–10 to its Italian judgment. <code>default</code> handles out-of-range values.</p>
+                        <div class="code-block"><span class="kw">const</span> voto = <span class="fn">parseInt</span>(input.value);
+<span class="kw">switch</span> (voto) {
+  <span class="kw">case</span> <span class="nu">10</span>:
+  <span class="kw">case</span> <span class="nu">9</span>:  result = <span class="st">'Ottimo'</span>; <span class="kw">break</span>;
+  <span class="kw">case</span> <span class="nu">8</span>:  result = <span class="st">'Buono'</span>; <span class="kw">break</span>;
+  <span class="cm">// ...</span>
+}</div>
+                        <ul>
+                            <li>Stacking cases (<code>case 10: case 9:</code>) — shared result</li>
+                            <li><code>parseInt()</code> — for integer comparison</li>
+                            <li><code>default</code> — handles invalid grades</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="learn-concept-bar">
+                    <span>switch</span><span>parseInt</span><span>case fall-through</span><span>input validation</span>
+                </div>
+            </details>
+        </section>
+
+
+        <!-- ═══════════════════════════════════════════════════
+             GROUP 4 — LOOPS
+        ════════════════════════════════════════════════════ -->
+        <section id="loops">
+            <h2>Loops</h2>
+
+            <!-- Zoom Boom -->
+            <details class="learn-entry">
+                <summary>Zoom Boom Bangarang <span class="concept-tag tag--loop">for</span><span class="concept-tag tag--cond">modulo</span></summary>
+                <div class="learn-panels">
+                    <div class="learn-panel panel--html">
+                        <span class="learn-panel-label">&lt;/&gt; HTML</span>
+                        <p>A single button triggers generation of 100 numbers. The output is a console-style <code>&lt;div&gt;</code> — the numbers scroll inside a fixed-height box with <code>overflow-y: auto</code>.</p>
+                        <ul>
+                            <li>Fixed-height scrollable container for long output</li>
+                            <li><code>&lt;pre&gt;</code> or monospace div preserves formatting</li>
+                        </ul>
+                    </div>
+                    <div class="learn-panel panel--css">
+                        <span class="learn-panel-label">{ } CSS</span>
+                        <p>The <code>.console-output</code> class gives a dark background with green text — evoking a terminal. Words like ZOOM and BOOM are styled bold in JS with <code>&lt;strong&gt;</code> tags injected into the HTML string.</p>
+                        <ul>
+                            <li>Dark bg + green text = terminal aesthetic</li>
+                            <li>JS can inject HTML tags into <code>innerHTML</code></li>
+                        </ul>
+                    </div>
+                    <div class="learn-panel panel--js">
+                        <span class="learn-panel-label">JS ( ) JavaScript</span>
+                        <p>The modulo operator <code>%</code> returns the remainder of division. The compound condition (both 3 and 5) must be checked <em>first</em> — otherwise it gets swallowed by the single checks.</p>
+                        <div class="code-block"><span class="kw">for</span> (<span class="kw">let</span> i = <span class="nu">1</span>; i <= <span class="nu">100</span>; i++) {
+  <span class="kw">if</span>      (i%<span class="nu">3</span>===<span class="nu">0</span> && i%<span class="nu">5</span>===<span class="nu">0</span>) <span class="st">'BANGARANG'</span>
+  <span class="kw">else if</span> (i%<span class="nu">3</span>===<span class="nu">0</span>)            <span class="st">'ZOOM'</span>
+  <span class="kw">else if</span> (i%<span class="nu">5</span>===<span class="nu">0</span>)            <span class="st">'BOOM'</span>
+  <span class="kw">else</span>                          i
+}</div>
+                        <ul>
+                            <li><code>n % k === 0</code> — divisibility test</li>
+                            <li>Check compound condition before single conditions</li>
+                            <li>This is the classic <strong>FizzBuzz</strong> problem</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="learn-concept-bar">
+                    <span>for loop</span><span>modulo %</span><span>FizzBuzz</span><span>compound conditions</span>
+                </div>
+            </details>
+
+            <!-- Numeri Pari -->
+            <details class="learn-entry">
+                <summary>Numeri Pari <span class="concept-tag tag--loop">for</span></summary>
+                <div class="learn-panels">
+                    <div class="learn-panel panel--html">
+                        <span class="learn-panel-label">&lt;/&gt; HTML</span>
+                        <p>Output-only page: a button runs the loop, the result area fills with even numbers. No input needed — the range (1–100) is fixed.</p>
+                        <ul>
+                            <li>Fixed range → no input → simpler page structure</li>
+                        </ul>
+                    </div>
+                    <div class="learn-panel panel--css">
+                        <span class="learn-panel-label">{ } CSS</span>
+                        <p>Numbers are wrapped in <code>&lt;span&gt;</code> tags and displayed with <code>flex-wrap</code> — they flow like text across the container rather than stacking vertically.</p>
+                        <ul>
+                            <li>Inline spans + flex wrap = natural number flow</li>
+                        </ul>
+                    </div>
+                    <div class="learn-panel panel--js">
+                        <span class="learn-panel-label">JS ( ) JavaScript</span>
+                        <p>Loop from 1 to 100, check <code>i % 2 === 0</code>. Even numbers are collected in an array, then joined. An alternative: start at 2 and increment by 2 — no modulo needed.</p>
+                        <div class="code-block"><span class="kw">const</span> pari = [];
+<span class="kw">for</span> (<span class="kw">let</span> i = <span class="nu">1</span>; i <= <span class="nu">100</span>; i++) {
+  <span class="kw">if</span> (i % <span class="nu">2</span> === <span class="nu">0</span>) pari.<span class="fn">push</span>(i);
+}
+<span class="cm">// Alternative: for (let i=2; i<=100; i+=2)</span></div>
+                        <ul>
+                            <li><code>% 2 === 0</code> — the even number test</li>
+                            <li><code>push()</code> — adds element to end of array</li>
+                            <li><code>i += 2</code> skip — eliminates the if check entirely</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="learn-concept-bar">
+                    <span>for loop</span><span>modulo</span><span>array.push</span><span>even numbers</span>
+                </div>
+            </details>
+
+            <!-- Somma 1-100 -->
+            <details class="learn-entry">
+                <summary>Somma da 1 a 100 <span class="concept-tag tag--loop">for</span><span class="concept-tag tag--vars">Math</span></summary>
+                <div class="learn-panels">
+                    <div class="learn-panel panel--html">
+                        <span class="learn-panel-label">&lt;/&gt; HTML</span>
+                        <p>Two buttons — one for each method — let the user see both approaches produce the same result. Side-by-side output boxes make the comparison explicit.</p>
+                        <ul>
+                            <li>Two buttons = two execution paths, same data</li>
+                            <li>Showing both results reinforces understanding</li>
+                        </ul>
+                    </div>
+                    <div class="learn-panel panel--css">
+                        <span class="learn-panel-label">{ } CSS</span>
+                        <p>The two result boxes use flex layout side by side. Each box has a label at the top (<code>h4</code>) identifying which method produced the result.</p>
+                        <ul>
+                            <li>Labels above results = clear attribution</li>
+                        </ul>
+                    </div>
+                    <div class="learn-panel panel--js">
+                        <span class="learn-panel-label">JS ( ) JavaScript</span>
+                        <p><strong>Method 1:</strong> for loop accumulates a total — O(n). <strong>Method 2:</strong> Gauss's formula — computed in a single operation, O(1). Both yield 5050.</p>
+                        <div class="code-block"><span class="cm">// Loop — O(n)</span>
+<span class="kw">let</span> sum = <span class="nu">0</span>;
+<span class="kw">for</span> (<span class="kw">let</span> i=<span class="nu">1</span>; i<=<span class="nu">100</span>; i++) sum += i;
+
+<span class="cm">// Gauss — O(1)</span>
+<span class="kw">const</span> sum = n * (n + <span class="nu">1</span>) / <span class="nu">2</span>; <span class="cm">// = 5050</span></div>
+                        <ul>
+                            <li>Accumulator pattern: <code>sum += i</code> each iteration</li>
+                            <li>Gauss formula: <code>n*(n+1)/2</code> — O(1)</li>
+                            <li>Mathematical insight beats iteration</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="learn-concept-bar">
+                    <span>for loop</span><span>accumulator</span><span>Gauss formula</span><span>O(1) vs O(n)</span>
+                </div>
+            </details>
+
+            <!-- Raddoppia -->
+            <details class="learn-entry">
+                <summary>Raddoppia fino a 1000 <span class="concept-tag tag--loop">while</span></summary>
+                <div class="learn-panels">
+                    <div class="learn-panel panel--html">
+                        <span class="learn-panel-label">&lt;/&gt; HTML</span>
+                        <p>Button triggers the while loop. The output shows each step of the doubling — <code>1 → 2 → 4 → 8 → ...</code> — so the user can follow the progression.</p>
+                        <ul>
+                            <li>Showing intermediate steps teaches the loop behaviour</li>
+                        </ul>
+                    </div>
+                    <div class="learn-panel panel--css">
+                        <span class="learn-panel-label">{ } CSS</span>
+                        <p>Each step is a <code>&lt;span&gt;</code> with an arrow separator, rendered inline. The final value is bolded to signal termination.</p>
+                        <ul>
+                            <li>Inline spans with separators = progression chain</li>
+                        </ul>
+                    </div>
+                    <div class="learn-panel panel--js">
+                        <span class="learn-panel-label">JS ( ) JavaScript</span>
+                        <p>Use <code>while</code> when the number of iterations is unknown. The condition is checked <em>before</em> each iteration. <code>*= 2</code> is shorthand for <code>val = val * 2</code>.</p>
+                        <div class="code-block"><span class="kw">let</span> val = <span class="nu">1</span>;
+<span class="kw">while</span> (val <= <span class="nu">1000</span>) {
+  steps.<span class="fn">push</span>(val);
+  val *= <span class="nu">2</span>; <span class="cm">// same as: val = val * 2</span>
+}</div>
+                        <ul>
+                            <li><code>while</code> — unknown iteration count</li>
+                            <li><code>*= 2</code> — compound assignment operator</li>
+                            <li>Ensure condition <em>will</em> eventually be false — or infinite loop</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="learn-concept-bar">
+                    <span>while loop</span><span>compound assignment</span><span>loop termination</span>
+                </div>
+            </details>
+
+            <!-- Rettangolo Asterischi -->
+            <details class="learn-entry">
+                <summary>Rettangolo di Asterischi <span class="concept-tag tag--loop">nested loops</span></summary>
+                <div class="learn-panels">
+                    <div class="learn-panel panel--html">
+                        <span class="learn-panel-label">&lt;/&gt; HTML</span>
+                        <p>Two number inputs for rows and columns. Output is wrapped in <code>&lt;pre&gt;</code> — the preformatted text element — which preserves spaces and newlines exactly as written.</p>
+                        <ul>
+                            <li><code>&lt;pre&gt;</code> — preserves whitespace and newlines</li>
+                            <li>Without it, HTML collapses all spaces</li>
+                        </ul>
+                    </div>
+                    <div class="learn-panel panel--css">
+                        <span class="learn-panel-label">{ } CSS</span>
+                        <p>Monospace font in <code>&lt;pre&gt;</code> ensures all asterisks are the same width — essential for the rectangle to look correct. Proportional fonts would misalign columns.</p>
+                        <ul>
+                            <li>Monospace = every char same width = alignment</li>
+                            <li><code>line-height: 1.2</code> — tighter rows = denser shape</li>
+                        </ul>
+                    </div>
+                    <div class="learn-panel panel--js">
+                        <span class="learn-panel-label">JS ( ) JavaScript</span>
+                        <p>Outer loop = rows, inner loop = columns. After each inner loop completes, append <code>\n</code>. The inner loop runs <code>cols</code> times for every single outer iteration.</p>
+                        <div class="code-block"><span class="kw">let</span> output = <span class="st">''</span>;
+<span class="kw">for</span> (<span class="kw">let</span> r=<span class="nu">0</span>; r&lt;rows; r++) {
+  <span class="kw">for</span> (<span class="kw">let</span> c=<span class="nu">0</span>; c&lt;cols; c++) {
+    output += <span class="st">'*'</span>;
+  }
+  output += <span class="st">'\n'</span>; <span class="cm">// new row</span>
+}</div>
+                        <ul>
+                            <li>Nested loops = 2D iteration</li>
+                            <li>Outer = rows, inner = columns</li>
+                            <li><code>\n</code> — newline character</li>
+                            <li>Total iterations: <code>rows × cols</code></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="learn-concept-bar">
+                    <span>nested for loops</span><span>2D iteration</span><span>\n newline</span><span>pre element</span>
+                </div>
+            </details>
+
+            <!-- Triangolo Crescente -->
+            <details class="learn-entry">
+                <summary>Triangolo Crescente <span class="concept-tag tag--loop">nested loops</span></summary>
+                <div class="learn-panels">
+                    <div class="learn-panel panel--html">
+                        <span class="learn-panel-label">&lt;/&gt; HTML</span>
+                        <p>Number input for the height of the triangle. Output in <code>&lt;pre&gt;</code>. The user can experiment with different sizes and see the pattern scale.</p>
+                        <ul>
+                            <li>User-controlled size = interactive exploration</li>
+                        </ul>
+                    </div>
+                    <div class="learn-panel panel--css">
+                        <span class="learn-panel-label">{ } CSS</span>
+                        <p>Same <code>&lt;pre&gt;</code> + monospace approach as the rectangle. The triangle's shape is entirely created by the loop logic — CSS just preserves it.</p>
+                        <ul>
+                            <li>Shape = data structure, CSS = presentation</li>
+                        </ul>
+                    </div>
+                    <div class="learn-panel panel--js">
+                        <span class="learn-panel-label">JS ( ) JavaScript</span>
+                        <p>The key difference from the rectangle: the inner loop limit is <code>j &lt;= i</code> — it grows with each row. Row 1 prints one number, row 2 prints two, etc.</p>
+                        <div class="code-block"><span class="kw">for</span> (<span class="kw">let</span> i=<span class="nu">1</span>; i&lt;=n; i++) {
+  <span class="kw">for</span> (<span class="kw">let</span> j=<span class="nu">1</span>; j&lt;=i; j++) { <span class="cm">// ← grows!</span>
+    row += j + <span class="st">' '</span>;
+  }
+  output += row + <span class="st">'\n'</span>;
+}</div>
+                        <ul>
+                            <li>Variable inner limit <code>j &lt;= i</code> = triangle shape</li>
+                            <li>Fixed inner limit would make a rectangle</li>
+                            <li>The pattern emerges from the constraint, not CSS</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="learn-concept-bar">
+                    <span>nested loops</span><span>variable limit</span><span>triangle pattern</span>
+                </div>
+            </details>
+        </section>
+
+
+        <!-- ═══════════════════════════════════════════════════
+             GROUP 5 — ARRAYS
+        ════════════════════════════════════════════════════ -->
+        <section id="arrays">
+            <h2>Arrays</h2>
+
+            <!-- Array to String -->
+            <details class="learn-entry">
+                <summary>Array to String <span class="concept-tag tag--array">arrays</span></summary>
+                <div class="learn-panels">
+                    <div class="learn-panel panel--html">
+                        <span class="learn-panel-label">&lt;/&gt; HTML</span>
+                        <p>Three buttons — one per method (join, for, reduce) — share the same output area. An input for the separator lets the user try different delimiters.</p>
+                        <ul>
+                            <li>One output, multiple trigger buttons = comparison view</li>
+                            <li>Separator input demonstrates parameterisation</li>
+                        </ul>
+                    </div>
+                    <div class="learn-panel panel--css">
+                        <span class="learn-panel-label">{ } CSS</span>
+                        <p>The three buttons use a flex row with <code>flex-wrap</code>. The active method is highlighted — JS toggles an <code>.active</code> class, CSS defines the highlight colour.</p>
+                        <ul>
+                            <li>Flex row wraps on small screens automatically</li>
+                        </ul>
+                    </div>
+                    <div class="learn-panel panel--js">
+                        <span class="learn-panel-label">JS ( ) JavaScript</span>
+                        <p>Three equivalent approaches: <code>join()</code> is built-in and fastest. The for loop shows what <code>join</code> does internally. <code>reduce()</code> demonstrates functional accumulation.</p>
+                        <div class="code-block"><span class="cm">// 1. Built-in</span>
+array.<span class="fn">join</span>(sep);
+
+<span class="cm">// 2. For loop (manual join)</span>
+<span class="kw">let</span> r = <span class="st">''</span>;
+<span class="kw">for</span> (<span class="kw">let</span> i=<span class="nu">0</span>; i&lt;arr.length; i++)
+  r += arr[i] + (i&lt;arr.length-<span class="nu">1</span> ? sep : <span class="st">''</span>);
+
+<span class="cm">// 3. Reduce</span>
+array.<span class="fn">reduce</span>((acc,cur,i) =>
+  i===<span class="nu">0</span> ? cur : acc+sep+cur, <span class="st">''</span>);</div>
+                        <ul>
+                            <li><code>join()</code> — idiomatic, use this in practice</li>
+                            <li>For loop — shows the algorithm behind join</li>
+                            <li><code>reduce()</code> — functional style, accumulates left-to-right</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="learn-concept-bar">
+                    <span>array.join</span><span>reduce</span><span>accumulator pattern</span><span>functional methods</span>
+                </div>
+            </details>
+
+            <!-- Random Array -->
+            <details class="learn-entry">
+                <summary>Pesca Elemento Casuale <span class="concept-tag tag--array">arrays</span><span class="concept-tag tag--vars">Math.random</span></summary>
+                <div class="learn-panels">
+                    <div class="learn-panel panel--html">
+                        <span class="learn-panel-label">&lt;/&gt; HTML</span>
+                        <p>The array is hardcoded in JS. The page shows the full array and highlights the randomly picked element. A "draw again" button repeats the pick without reloading.</p>
+                        <ul>
+                            <li>Display the source data + the result = transparency</li>
+                        </ul>
+                    </div>
+                    <div class="learn-panel panel--css">
+                        <span class="learn-panel-label">{ } CSS</span>
+                        <p>The <code>.array-display</code> renders each element as a bordered box. The picked element gets an <code>.highlighted</code> class that inverts its colours.</p>
+                        <ul>
+                            <li>Visual array representation = each item as a box</li>
+                            <li>Colour inversion = clear "this one was picked" signal</li>
+                        </ul>
+                    </div>
+                    <div class="learn-panel panel--js">
+                        <span class="learn-panel-label">JS ( ) JavaScript</span>
+                        <p><code>Math.random()</code> returns a float in <code>[0, 1)</code>. Multiply by <code>array.length</code> and floor it — result is always a valid index from <code>0</code> to <code>length - 1</code>.</p>
+                        <div class="code-block"><span class="kw">const</span> i = Math.<span class="fn">floor</span>(
+  Math.<span class="fn">random</span>() * array.length
+);
+<span class="kw">const</span> pick = array[i];</div>
+                        <ul>
+                            <li><code>Math.random()</code> → <code>[0, 1)</code> — never exactly 1</li>
+                            <li><code>Math.floor()</code> → always an integer, rounds down</li>
+                            <li>This is the canonical random-index pattern in JS</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="learn-concept-bar">
+                    <span>Math.random</span><span>Math.floor</span><span>array indexing</span><span>random selection</span>
+                </div>
+            </details>
+
+            <!-- Palindromi -->
+            <details class="learn-entry">
+                <summary>Numeri Palindromi <span class="concept-tag tag--array">arrays</span><span class="concept-tag tag--string">string</span></summary>
+                <div class="learn-panels">
+                    <div class="learn-panel panel--html">
+                        <span class="learn-panel-label">&lt;/&gt; HTML</span>
+                        <p>Output-only: a button finds all palindromic numbers 1–1000. Results are shown as inline badges and a total count is displayed.</p>
+                        <ul>
+                            <li>Count display = quantitative feedback</li>
+                            <li>Badge layout handles variable result count gracefully</li>
+                        </ul>
+                    </div>
+                    <div class="learn-panel panel--css">
+                        <span class="learn-panel-label">{ } CSS</span>
+                        <p>Each palindrome number is a <code>&lt;span&gt;</code> styled as a small bordered badge. The badge grid uses <code>flex-wrap</code> so they flow naturally regardless of how many there are.</p>
+                        <ul>
+                            <li>Flex-wrap = responsive number of items per row</li>
+                        </ul>
+                    </div>
+                    <div class="learn-panel panel--js">
+                        <span class="learn-panel-label">JS ( ) JavaScript</span>
+                        <p>The palindrome check: convert number to string, split into characters, reverse the array, join back to a string, compare with the original. This 3-step chain is the canonical JS palindrome test.</p>
+                        <div class="code-block"><span class="kw">function</span> <span class="fn">isPalindromo</span>(n) {
+  <span class="kw">const</span> s = String(n);
+  <span class="kw">const</span> rev = s.<span class="fn">split</span>(<span class="st">''</span>).<span class="fn">reverse</span>().<span class="fn">join</span>(<span class="st">''</span>);
+  <span class="kw">return</span> s === rev;
+}</div>
+                        <ul>
+                            <li><code>split('')</code> — string → array of chars</li>
+                            <li><code>reverse()</code> — mutates array in place</li>
+                            <li><code>join('')</code> — array → string</li>
+                            <li>This chain is the standard JS palindrome check</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="learn-concept-bar">
+                    <span>split/reverse/join</span><span>palindrome</span><span>string to array</span><span>type conversion</span>
+                </div>
+            </details>
+
+            <!-- Lotto -->
+            <details class="learn-entry">
+                <summary>Gioco del Lotto <span class="concept-tag tag--array">arrays</span><span class="concept-tag tag--vars">Math.random</span></summary>
+                <div class="learn-panels">
+                    <div class="learn-panel panel--html">
+                        <span class="learn-panel-label">&lt;/&gt; HTML</span>
+                        <p>A draw button extracts one number per click. A grid of 90 numbered boxes visually tracks which numbers have been drawn — filled vs outline style. Counters show drawn/remaining.</p>
+                        <ul>
+                            <li>Visual grid = state of the whole game at a glance</li>
+                            <li>Counters = quantitative state alongside visual state</li>
+                        </ul>
+                    </div>
+                    <div class="learn-panel panel--css">
+                        <span class="learn-panel-label">{ } CSS</span>
+                        <p>The 90-number grid uses <code>display: flex; flex-wrap: wrap</code>. Each <code>.lotto-ball</code> is a fixed-size square. Drawn balls get a <code>.drawn</code> class that inverts their colours.</p>
+                        <ul>
+                            <li>Flex-wrap with fixed-size items = auto-fitting grid</li>
+                            <li>Class toggle: JS adds <code>.drawn</code>, CSS defines the style</li>
+                        </ul>
+                    </div>
+                    <div class="learn-panel panel--js">
+                        <span class="learn-panel-label">JS ( ) JavaScript</span>
+                        <p>A pool array starts as <code>[1, 2, ..., 90]</code>. Each draw picks a random index, removes it with <code>splice()</code>, and adds it to the drawn list. Removing from the pool guarantees no repetition.</p>
+                        <div class="code-block"><span class="kw">const</span> pool = Array.<span class="fn">from</span>({length:<span class="nu">90</span>},(_,i)=>i+<span class="nu">1</span>);
+
+<span class="kw">function</span> <span class="fn">draw</span>() {
+  <span class="kw">const</span> i = Math.<span class="fn">floor</span>(Math.<span class="fn">random</span>()*pool.length);
+  <span class="kw">const</span> [n] = pool.<span class="fn">splice</span>(i, <span class="nu">1</span>); <span class="cm">// remove & get</span>
+  drawn.<span class="fn">push</span>(n);
+}</div>
+                        <ul>
+                            <li><code>splice(i, 1)</code> — removes element, returns it</li>
+                            <li>Pool shrinks each draw → index recalculates correctly</li>
+                            <li>Sampling without replacement</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="learn-concept-bar">
+                    <span>splice</span><span>sampling without replacement</span><span>Array.from</span><span>state management</span>
+                </div>
+            </details>
+        </section>
+
+
+        <!-- ═══════════════════════════════════════════════════
+             GROUP 6 — DOM & EVENTS
+        ════════════════════════════════════════════════════ -->
+        <section id="dom">
+            <h2>DOM &amp; Events</h2>
+
+            <!-- Counter -->
+            <details class="learn-entry">
+                <summary>Counter <span class="concept-tag tag--dom">dom</span><span class="concept-tag tag--vars">state</span></summary>
+                <div class="learn-panels">
+                    <div class="learn-panel panel--html">
+                        <span class="learn-panel-label">&lt;/&gt; HTML</span>
+                        <p>Three buttons (decrement, reset, increment) and a large number display. The buttons have descriptive labels <em>and</em> <code>id</code>s for JS targeting. The display is a <code>&lt;div&gt;</code> — not an input.</p>
+                        <ul>
+                            <li>Display is read-only → <code>&lt;div&gt;</code>, not <code>&lt;input&gt;</code></li>
+                            <li>Three buttons = three distinct actions</li>
+                        </ul>
+                    </div>
+                    <div class="learn-panel panel--css">
+                        <span class="learn-panel-label">{ } CSS</span>
+                        <p>The counter number uses a very large <code>font-size</code> (5rem) to make state visually prominent. Buttons are disabled at boundaries — CSS gives disabled buttons reduced opacity so users understand they can't be clicked.</p>
+                        <ul>
+                            <li>Large font = the number IS the interface</li>
+                            <li><code>:disabled</code> pseudo-class → opacity 0.35</li>
+                            <li>Visual affordance: muted = unavailable</li>
+                        </ul>
+                    </div>
+                    <div class="learn-panel panel--js">
+                        <span class="learn-panel-label">JS ( ) JavaScript</span>
+                        <p>A single variable <code>count</code> holds all state. Every click mutates it and triggers a re-render. Buttons are disabled at <code>±100</code> to prevent invalid state rather than showing errors after the fact.</p>
+                        <div class="code-block"><span class="kw">let</span> count = <span class="nu">0</span>;
+
+<span class="kw">function</span> <span class="fn">render</span>() {
+  display.textContent = count;
+  decrementBtn.disabled = (count <= -<span class="nu">100</span>);
+  incrementBtn.disabled = (count >= <span class="nu">100</span>);
+}
+
+incrementBtn.<span class="fn">addEventListener</span>(<span class="st">'click'</span>, () => {
+  count++; <span class="fn">render</span>();
+});</div>
+                        <ul>
+                            <li>State lives in JS variable, DOM reflects it</li>
+                            <li><code>button.disabled = bool</code> — prevent at boundary</li>
+                            <li>Single <code>render()</code> function = predictable UI updates</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="learn-concept-bar">
+                    <span>state variable</span><span>addEventListener</span><span>disabled property</span><span>render function</span>
+                </div>
+            </details>
+
+            <!-- Calculator -->
+            <details class="learn-entry">
+                <summary>Simple Calculator <span class="concept-tag tag--dom">dom</span><span class="concept-tag tag--cond">switch</span></summary>
+                <div class="learn-panels">
+                    <div class="learn-panel panel--html">
+                        <span class="learn-panel-label">&lt;/&gt; HTML</span>
+                        <p>Two number inputs, a <code>&lt;select&gt;</code> for the operator, and a result display. The <code>&lt;select&gt;</code> uses <code>value</code> attributes (<code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>) that JS reads directly.</p>
+                        <ul>
+                            <li><code>&lt;select value="+"&gt;</code> — the value attribute drives JS logic</li>
+                            <li>Label + input + select in a shared grid</li>
+                        </ul>
+                    </div>
+                    <div class="learn-panel panel--css">
+                        <span class="learn-panel-label">{ } CSS</span>
+                        <p>The result is displayed in a large, right-aligned box mimicking a physical calculator display. <code>text-align: right</code> is a small detail that communicates "calculator" immediately.</p>
+                        <ul>
+                            <li>Right-aligned numbers = calculator convention</li>
+                            <li>Large font for result = hierarchy</li>
+                        </ul>
+                    </div>
+                    <div class="learn-panel panel--js">
+                        <span class="learn-panel-label">JS ( ) JavaScript</span>
+                        <p>Switch on the operator string to apply the right operation. Division by zero must be caught explicitly — JavaScript returns <code>Infinity</code> for <code>n/0</code>, which is technically valid but not useful.</p>
+                        <div class="code-block"><span class="kw">const</span> op = operationSelect.value;
+<span class="kw">switch</span> (op) {
+  <span class="kw">case</span> <span class="st">'+'</span>: result = a + b; <span class="kw">break</span>;
+  <span class="kw">case</span> <span class="st">'/'</span>:
+    <span class="kw">if</span> (b === <span class="nu">0</span>) { <span class="cm">/* error */</span> }
+    <span class="kw">else</span> result = a / b;
+    <span class="kw">break</span>;
+}</div>
+                        <ul>
+                            <li><code>select.value</code> returns the selected option's value</li>
+                            <li>Switch on string operator: elegant for multiple cases</li>
+                            <li><code>n / 0</code> returns <code>Infinity</code> — check before dividing</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="learn-concept-bar">
+                    <span>select.value</span><span>switch on string</span><span>division by zero</span><span>Infinity</span>
+                </div>
+            </details>
+
+            <!-- Guess Number -->
+            <details class="learn-entry">
+                <summary>Guess the Number <span class="concept-tag tag--dom">dom</span><span class="concept-tag tag--vars">game loop</span></summary>
+                <div class="learn-panels">
+                    <div class="learn-panel panel--html">
+                        <span class="learn-panel-label">&lt;/&gt; HTML</span>
+                        <p>One input, one submit button, a feedback message area, and an attempt counter. A "new game" button resets state. The range (1–100) is shown as a hint to the user.</p>
+                        <ul>
+                            <li>Show game rules in the UI — don't make users guess the rules too</li>
+                            <li>Feedback area + attempt counter = game HUD</li>
+                        </ul>
+                    </div>
+                    <div class="learn-panel panel--css">
+                        <span class="learn-panel-label">{ } CSS</span>
+                        <p>Feedback uses the <code>.message.success</code> / <code>.message.error</code> system. An additional neutral state (too high / too low) uses a different border colour. The attempt counter grows bold as it increases.</p>
+                        <ul>
+                            <li>Three feedback states: success, error, neutral info</li>
+                            <li>Visual variety = richer feedback vocabulary</li>
+                        </ul>
+                    </div>
+                    <div class="learn-panel panel--js">
+                        <span class="learn-panel-label">JS ( ) JavaScript</span>
+                        <p>The target is generated once with <code>Math.ceil(Math.random() * 100)</code>. Each guess increments an attempt counter and triggers a three-way branch: win, too high, or too low.</p>
+                        <div class="code-block"><span class="kw">let</span> target = Math.<span class="fn">ceil</span>(Math.<span class="fn">random</span>() * <span class="nu">100</span>);
+<span class="kw">let</span> attempts = <span class="nu">0</span>;
+
+<span class="kw">function</span> <span class="fn">guess</span>(n) {
+  attempts++;
+  <span class="kw">if</span>      (n === target) <span class="cm">// WIN</span>
+  <span class="kw">else if</span> (n > target)  <span class="cm">// TOO HIGH</span>
+  <span class="kw">else</span>                  <span class="cm">// TOO LOW</span>
+}</div>
+                        <ul>
+                            <li><code>Math.ceil(random*100)</code> gives integers 1–100 inclusive</li>
+                            <li>Optimal strategy: binary search (halve the range each guess)</li>
+                            <li>State: <code>target</code> and <code>attempts</code> persist across clicks</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="learn-concept-bar">
+                    <span>Math.ceil</span><span>game state</span><span>attempt counter</span><span>binary search strategy</span>
+                </div>
+            </details>
+
+            <!-- Todo -->
+            <details class="learn-entry">
+                <summary>Mini To-Do List <span class="concept-tag tag--dom">dom</span><span class="concept-tag tag--array">arrays</span></summary>
+                <div class="learn-panels">
+                    <div class="learn-panel panel--html">
+                        <span class="learn-panel-label">&lt;/&gt; HTML</span>
+                        <p>A text input and add button at the top. Below it, an empty <code>&lt;ul&gt;</code> that JS fills dynamically. Each <code>&lt;li&gt;</code> is built entirely by JavaScript — the HTML is just a container.</p>
+                        <ul>
+                            <li><code>&lt;ul id="todoList"&gt;</code> — empty shell, JS populates it</li>
+                            <li>Dynamic lists: the HTML is a mount point, not the content</li>
+                        </ul>
+                    </div>
+                    <div class="learn-panel panel--css">
+                        <span class="learn-panel-label">{ } CSS</span>
+                        <p>Completed items get a <code>.done</code> class that applies <code>text-decoration: line-through</code> and greyed text. This is a clear, universal visual convention for "completed".</p>
+                        <ul>
+                            <li><code>text-decoration: line-through</code> = done convention</li>
+                            <li>Greyed text = secondary / deprioritised content</li>
+                        </ul>
+                    </div>
+                    <div class="learn-panel panel--js">
+                        <span class="learn-panel-label">JS ( ) JavaScript</span>
+                        <p>An array of <code>{text, done}</code> objects is the <strong>single source of truth</strong>. Every mutation (add, toggle, delete) changes the array, then calls <code>render()</code> to rebuild the list. Never mutate the DOM directly.</p>
+                        <div class="code-block"><span class="kw">let</span> tasks = [];
+
+<span class="kw">function</span> <span class="fn">render</span>() {
+  list.innerHTML = tasks.<span class="fn">map</span>((t, i) =>
+    <span class="st">`&lt;li class="${t.done ? 'done' : ''}"&gt;
+      ${t.text}
+      &lt;button onclick="remove(${i})"&gt;×&lt;/button&gt;
+    &lt;/li&gt;`</span>
+  ).<span class="fn">join</span>(<span class="st">''</span>);
+}</div>
+                        <ul>
+                            <li>Single source of truth: array = the data, DOM = the view</li>
+                            <li><code>splice(i, 1)</code> — delete task by index</li>
+                            <li><code>map().join('')</code> — array → HTML string</li>
+                            <li>Re-rendering the whole list on each change is simple and correct</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="learn-concept-bar">
+                    <span>single source of truth</span><span>render function</span><span>array.map</span><span>splice</span><span>MVC pattern</span>
+                </div>
+            </details>
+
+            <!-- Color Picker -->
+            <details class="learn-entry">
+                <summary>Color Picker <span class="concept-tag tag--dom">dom</span><span class="concept-tag tag--vars">hex/rgb</span></summary>
+                <div class="learn-panels">
+                    <div class="learn-panel panel--html">
+                        <span class="learn-panel-label">&lt;/&gt; HTML</span>
+                        <p>Three <code>&lt;input type="range" min="0" max="255"&gt;</code> sliders — one per channel (R, G, B). A preview <code>&lt;div&gt;</code> shows the colour live. Outputs display the RGB string and HEX code.</p>
+                        <ul>
+                            <li><code>type="range"</code> — slider UI, <code>min/max</code> constrain range</li>
+                            <li>Live preview: the <code>input</code> event fires continuously while dragging</li>
+                        </ul>
+                    </div>
+                    <div class="learn-panel panel--css">
+                        <span class="learn-panel-label">{ } CSS</span>
+                        <p>The colour preview box has its <code>background-color</code> set inline by JS (<code>element.style.backgroundColor</code>). The three sliders are visually tinted with their respective channel colours.</p>
+                        <ul>
+                            <li>Inline style for dynamic values: <code>element.style.prop</code></li>
+                            <li>Tinted sliders = visual affordance (this controls red)</li>
+                        </ul>
+                    </div>
+                    <div class="learn-panel panel--js">
+                        <span class="learn-panel-label">JS ( ) JavaScript</span>
+                        <p>RGB → HEX conversion: convert each channel (0–255) to hex with <code>toString(16)</code>, then <code>padStart(2, '0')</code> ensures single-digit values (like <code>f</code>) become two digits (<code>0f</code>).</p>
+                        <div class="code-block"><span class="kw">function</span> <span class="fn">toHex</span>(n) {
+  <span class="kw">return</span> n.<span class="fn">toString</span>(<span class="nu">16</span>).<span class="fn">padStart</span>(<span class="nu">2</span>, <span class="st">'0'</span>);
+}
+<span class="kw">const</span> hex = <span class="st">`#${<span class="fn">toHex</span>(r)}${<span class="fn">toHex</span>(g)}${<span class="fn">toHex</span>(b)}`</span>;
+
+preview.style.backgroundColor = <span class="st">`rgb(${r},${g},${b})`</span>;</div>
+                        <ul>
+                            <li><code>toString(16)</code> — converts decimal to hex string</li>
+                            <li><code>padStart(2, '0')</code> — ensures 2-digit hex (<code>5</code>→<code>05</code>)</li>
+                            <li><code>input</code> event — fires continuously while dragging</li>
+                            <li><code>element.style.backgroundColor</code> — set CSS via JS</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="learn-concept-bar">
+                    <span>input[type=range]</span><span>toString(16)</span><span>padStart</span><span>live events</span><span>RGB to HEX</span>
+                </div>
+            </details>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>FACUNDO FANTI &copy;</p>
+    </footer>
+
+</body>
+</html>
