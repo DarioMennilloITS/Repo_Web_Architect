@@ -1,429 +1,770 @@
-/* ============================================
-   Lesson 5 - Wireframe Style
-   ============================================ */
+/* ============================================================
+   CORSO WSA — Wireframe Design System
+   Self-aware. Intentional. Raw.
+   ============================================================ */
 
-/* CSS Variables for wireframe theme */
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap');
+
+/* ── Variables ─────────────────────────────────────────────── */
 :root {
-    --bg-color: #ffffff;
-    --text-color: #333333;
-    --border-color: #333333;
-    --light-gray: #f5f5f5;
-    --medium-gray: #cccccc;
-    --dark-gray: #666666;
-    --accent-color: #000000;
-    --font-mono: 'Courier New', Courier, monospace;
-    --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    --border-width: 2px;
-    --spacing: 1rem;
-    --max-width: 1000px;
+  --paper:       #f3efe6;
+  --paper-dark:  #e8e2d6;
+  --ink:         #1a1714;
+  --ink-mid:     #5a534d;
+  --ink-light:   #9c948c;
+  --grid:        #cec8be;
+  --accent:      #1b4f72;
+  --accent-dim:  #2e86c1;
+  --red:         #922b21;
+
+  --font-sketch: 'Caveat', cursive;
+  --font-mono:   'Courier Prime', 'Courier New', monospace;
+
+  --border-solid: 2px solid var(--ink);
+  --border-dash:  2px dashed var(--ink-mid);
+  --border-dot:   2px dotted var(--ink-light);
+
+  --max-width: 1060px;
+  --gap: 1.25rem;
 }
 
-/* Base styles */
+/* ── Reset supplement ───────────────────────────────────────── */
+* { box-sizing: border-box; }
+*:not(dialog) { margin: 0; }
+
+/* ── Grid-paper background ──────────────────────────────────── */
 body {
-    font-family: var(--font-sans);
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    line-height: 1.6;
+  background-color: var(--paper);
+  background-image:
+    linear-gradient(var(--grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+  background-size: 24px 24px;
+  font-family: var(--font-mono);
+  color: var(--ink);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  line-height: 1.6;
 }
 
-/* Header styles - CENTERED */
+/* ── Header ─────────────────────────────────────────────────── */
 header {
-    border-bottom: var(--border-width) solid var(--border-color);
-    padding: var(--spacing) 2rem;
-    background-color: var(--light-gray);
-    text-align: center;
+  border-bottom: var(--border-solid);
+  background-color: var(--ink);
+  color: var(--paper);
+  padding: 1.5rem 2rem 1rem;
+  position: relative;
+}
+
+header::before {
+  content: '[ WIREFRAME v1.0 ]';
+  position: absolute;
+  top: 0.4rem;
+  right: 1rem;
+  font-size: 0.65rem;
+  font-family: var(--font-mono);
+  color: var(--ink-mid);
+  letter-spacing: 0.1em;
 }
 
 header h1 {
-    font-family: var(--font-mono);
-    font-size: 1.5rem;
-    font-weight: bold;
-    margin-bottom: 0.5rem;
-    text-transform: uppercase;
-    letter-spacing: 2px;
+  font-family: var(--font-sketch);
+  font-size: 2.4rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  line-height: 1;
+  margin-bottom: 0.25rem;
 }
 
 header p {
-    font-family: var(--font-mono);
-    font-size: 0.85rem;
-    color: var(--dark-gray);
+  font-size: 0.8rem;
+  color: var(--ink-light);
+  font-family: var(--font-mono);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
 }
 
-/* Navigation - centered */
+/* ── Nav ─────────────────────────────────────────────────────── */
 nav {
-    margin-top: 1rem;
-    padding-top: 1rem;
-    border-top: 1px dashed var(--border-color);
+  border-top: var(--border-dash);
+  padding-top: 0.75rem;
+  border-color: #3a3530;
 }
 
 nav ul {
-    list-style: none;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 0.4rem;
-}
-
-/* Navigation */
-nav {
-    margin-top: 1rem;
-    padding-top: 1rem;
-    border-top: 1px dashed var(--border-color);
-}
-
-nav ul {
-    list-style: none;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.4rem;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
 }
 
 nav a {
-    display: block;
-    color: var(--text-color);
-    text-decoration: none;
-    padding: 0.4rem 0.75rem;
-    border: var(--border-width) solid var(--border-color);
-    font-family: var(--font-mono);
-    font-size: 0.8rem;
-    transition: all 0.15s;
+  display: block;
+  color: var(--paper);
+  text-decoration: none;
+  padding: 0.3rem 0.7rem;
+  border: 1px dashed #5a534d;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  transition: background 0.1s, color 0.1s;
 }
 
 nav a:hover {
-    background-color: var(--border-color);
-    color: var(--bg-color);
+  background-color: var(--paper);
+  color: var(--ink);
+  border-style: solid;
+  border-color: var(--paper);
 }
 
-/* Main content */
+nav a[href*="index"] {
+  border-color: var(--paper);
+  color: var(--paper);
+  font-weight: 700;
+}
+
+/* ── Main ────────────────────────────────────────────────────── */
 main {
-    flex: 1;
-    max-width: var(--max-width);
-    margin: 0 auto;
-    padding: 2rem var(--spacing);
-    width: 100%;
+  flex: 1;
+  max-width: var(--max-width);
+  width: 100%;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem;
 }
 
-/* Section styles */
+/* ── Section ─────────────────────────────────────────────────── */
 section {
-    margin-bottom: 2.5rem;
+  margin-bottom: 2.5rem;
 }
 
-section h2 {
-    font-family: var(--font-mono);
-    font-size: 1.1rem;
-    margin-bottom: 1rem;
-    padding-bottom: 0.5rem;
-    border-bottom: 2px solid var(--border-color);
+section > h2 {
+  font-family: var(--font-sketch);
+  font-size: 1.5rem;
+  margin-bottom: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
-/* Intro section */
+section > h2::before {
+  content: '//';
+  color: var(--ink-light);
+  font-family: var(--font-mono);
+  font-size: 1rem;
+}
+
+section > h2::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: repeating-linear-gradient(
+    90deg,
+    var(--ink-mid) 0px,
+    var(--ink-mid) 4px,
+    transparent 4px,
+    transparent 10px
+  );
+  margin-left: 0.5rem;
+}
+
+/* ── Intro box ───────────────────────────────────────────────── */
 .intro {
-    padding: 1.5rem;
-    border: var(--border-width) solid var(--border-color);
-    background-color: var(--light-gray);
-    margin-bottom: 2rem;
-    text-align: center;
+  border: var(--border-solid);
+  padding: 1.5rem 2rem;
+  background-color: var(--paper-dark);
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+/* corner ticks */
+.intro::before,
+.intro::after {
+  content: '';
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border-color: var(--accent);
+}
+.intro::before {
+  top: -2px; left: -2px;
+  border-style: solid none none solid;
+  border-width: 3px;
+}
+.intro::after {
+  bottom: -2px; right: -2px;
+  border-style: none solid solid none;
+  border-width: 3px;
 }
 
 .intro h2 {
-    border-bottom: none;
-    margin-bottom: 0.5rem;
-    text-align: center;
+  font-family: var(--font-sketch);
+  font-size: 1.6rem;
+  border-bottom: none;
+  margin-bottom: 0.5rem;
 }
 
-.intro h2::before {
-    content: '> ';
-    color: var(--dark-gray);
-}
+.intro h2::before { content: none; }
+.intro h2::after  { content: none; }
 
 .intro p {
-    margin-bottom: 0;
-    font-size: 0.9rem;
-    text-align: center;
+  font-size: 0.88rem;
+  color: var(--ink-mid);
+  max-width: 680px;
 }
 
-/* Exercise description box */
-.exercise-description {
-    border: var(--border-width) solid var(--border-color);
-    padding: 1.5rem;
-    margin-bottom: 1.5rem;
-    background-color: #fafafa;
-}
+/* annotation label */
+.intro::before,
+.intro::after { border-color: var(--accent); }
 
-.exercise-description h3 {
-    font-family: var(--font-mono);
-    font-size: 0.9rem;
-    margin-bottom: 0.75rem;
-    color: var(--dark-gray);
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-.exercise-description p {
-    font-size: 1rem;
-    line-height: 1.6;
-    margin: 0;
-}
-
-.exercise-description code {
-    background-color: var(--light-gray);
-    padding: 0.1rem 0.3rem;
-    font-family: var(--font-mono);
-    font-size: 0.9em;
-}
-
-/* Exercise grid */
+/* ── Exercise grid ───────────────────────────────────────────── */
 .exercise-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-    gap: 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+  gap: var(--gap);
 }
 
+/* ── Exercise card ───────────────────────────────────────────── */
 .exercise-card {
-    border: var(--border-width) solid var(--border-color);
-    padding: 1.25rem;
-    display: flex;
-    flex-direction: column;
-    transition: all 0.15s;
+  border: var(--border-solid);
+  padding: 1.1rem 1.1rem 1rem;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--paper);
+  position: relative;
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+
+/* top drag-handle bar */
+.exercise-card::before {
+  content: '━━━━━━━━━';
+  display: block;
+  font-size: 0.6rem;
+  color: var(--ink-light);
+  letter-spacing: -1px;
+  margin-bottom: 0.6rem;
+  text-align: center;
+  opacity: 0.5;
+}
+
+/* annotation pin */
+.exercise-card::after {
+  content: attr(data-index);
+  position: absolute;
+  top: -1px;
+  right: -1px;
+  background: var(--ink);
+  color: var(--paper);
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  padding: 0.15rem 0.4rem;
+  line-height: 1;
 }
 
 .exercise-card:hover {
-    background-color: var(--light-gray);
+  transform: translateY(-3px) rotate(0.3deg);
+  box-shadow: 4px 4px 0 var(--ink);
 }
 
 .exercise-card h3 {
-    font-family: var(--font-mono);
-    font-size: 0.9rem;
-    margin-bottom: 0.5rem;
-    font-weight: bold;
+  font-family: var(--font-sketch);
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+  color: var(--ink);
 }
 
 .exercise-card p {
-    font-size: 0.85rem;
-    color: var(--dark-gray);
-    margin-bottom: 1rem;
-    flex: 1;
+  font-size: 0.8rem;
+  color: var(--ink-mid);
+  margin-bottom: 1rem;
+  flex: 1;
+  line-height: 1.5;
 }
 
 .exercise-card a {
-    display: inline-block;
-    padding: 0.4rem 1rem;
-    border: 1px solid var(--border-color);
-    color: var(--text-color);
-    text-decoration: none;
-    font-family: var(--font-mono);
-    font-size: 0.8rem;
-    text-align: center;
-    transition: all 0.15s;
+  display: block;
+  padding: 0.4rem 0;
+  border: var(--border-solid);
+  color: var(--ink);
+  text-decoration: none;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  text-align: center;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: background 0.1s, color 0.1s;
 }
 
 .exercise-card a:hover {
-    background-color: var(--border-color);
-    color: var(--bg-color);
+  background-color: var(--ink);
+  color: var(--paper);
 }
 
-/* Exercise page common styles */
+/* ── Exercise page layout ────────────────────────────────────── */
 .exercise-area {
-    max-width: 600px;
-    margin: 0 auto;
+  max-width: 580px;
 }
 
-.exercise-box {
-    border: var(--border-width) solid var(--border-color);
-    padding: 2rem;
-    background-color: var(--bg-color);
+.exercise-description {
+  border: var(--border-dash);
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 1.5rem;
+  background-color: var(--paper-dark);
+  position: relative;
 }
 
-.exercise-box h3 {
-    font-family: var(--font-mono);
-    font-size: 1rem;
-    margin-bottom: 1.5rem;
-    padding-bottom: 0.5rem;
-    border-bottom: 1px dashed var(--border-color);
+.exercise-description::before {
+  content: 'CONSEGNA';
+  position: absolute;
+  top: -0.6rem;
+  left: 1rem;
+  background: var(--paper-dark);
+  padding: 0 0.4rem;
+  font-size: 0.65rem;
+  font-family: var(--font-mono);
+  letter-spacing: 0.12em;
+  color: var(--ink-mid);
 }
 
-.exercise-box p {
-    margin-bottom: 1rem;
-    font-size: 0.9rem;
+.exercise-description h3 {
+  display: none; /* replaced by ::before */
 }
 
-/* Form elements */
+.exercise-description p {
+  font-size: 0.9rem;
+  line-height: 1.65;
+  color: var(--ink);
+}
+
+.exercise-description code {
+  background-color: var(--paper);
+  border: 1px solid var(--ink-light);
+  padding: 0.1rem 0.35rem;
+  font-family: var(--font-mono);
+  font-size: 0.85em;
+}
+
+/* ── Exercise box ────────────────────────────────────────────── */
+.exercise-box,
+.counter-box,
+.calculator-box,
+.guess-box,
+.todo-box,
+.color-box,
+.lotto-box {
+  border: var(--border-solid);
+  padding: 1.75rem;
+  background-color: var(--paper);
+  position: relative;
+}
+
+.exercise-box h3,
+.counter-box h3,
+.calculator-box h3,
+.guess-box h3,
+.todo-box h3,
+.color-box h3,
+.lotto-box h3 {
+  font-family: var(--font-sketch);
+  font-size: 1.4rem;
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.5rem;
+  border-bottom: var(--border-dash);
+}
+
+/* ── Form elements ───────────────────────────────────────────── */
 .input-group {
-    margin-bottom: 1rem;
+  margin-bottom: 1rem;
 }
 
 .input-group label {
-    display: block;
-    font-family: var(--font-mono);
-    font-size: 0.85rem;
-    margin-bottom: 0.3rem;
+  display: block;
+  font-size: 0.75rem;
+  font-family: var(--font-mono);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 0.3rem;
+  color: var(--ink-mid);
 }
 
 .input-group input[type="text"],
 .input-group input[type="number"],
 .input-group select {
-    width: 100%;
-    padding: 0.5rem;
-    border: var(--border-width) solid var(--border-color);
-    font-family: var(--font-mono);
-    font-size: 0.9rem;
-    background-color: var(--bg-color);
+  width: 100%;
+  padding: 0.5rem 0.6rem;
+  border: var(--border-solid);
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  background-color: var(--paper);
+  color: var(--ink);
+  appearance: none;
 }
 
 .input-group input:focus,
 .input-group select:focus {
-    outline: none;
-    background-color: var(--light-gray);
+  outline: none;
+  background-color: #fff;
+  border-color: var(--accent);
 }
 
-/* Buttons */
+/* ── Buttons ─────────────────────────────────────────────────── */
 button {
-    padding: 0.5rem 1rem;
-    border: var(--border-width) solid var(--border-color);
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    font-family: var(--font-mono);
-    font-size: 0.85rem;
-    cursor: pointer;
-    transition: all 0.15s;
+  padding: 0.5rem 1.1rem;
+  border: var(--border-solid);
+  background-color: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.1s, color 0.1s, transform 0.08s;
+  position: relative;
 }
 
 button:hover {
-    background-color: var(--border-color);
-    color: var(--bg-color);
+  background-color: var(--ink);
+  color: var(--paper);
+  transform: translateY(-1px);
+}
+
+button:active {
+  transform: translateY(1px);
 }
 
 button:disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
+  opacity: 0.35;
+  cursor: not-allowed;
 }
 
 button:disabled:hover {
-    background-color: var(--bg-color);
-    color: var(--text-color);
+  background-color: var(--paper);
+  color: var(--ink);
+  transform: none;
 }
 
 .btn-secondary {
-    background-color: var(--light-gray);
+  border-style: dashed;
+  color: var(--ink-mid);
 }
 
-/* Output/Result areas */
+.btn-control {
+  min-width: 100px;
+}
+
+/* ── Result / output areas ───────────────────────────────────── */
 .result-area {
-    margin-top: 1.5rem;
-    padding: 1rem;
-    border: var(--border-width) solid var(--border-color);
-    background-color: var(--light-gray);
-    min-height: 3rem;
+  margin-top: 1.5rem;
+  border: var(--border-dash);
+  padding: 1rem;
+  background-color: var(--paper-dark);
+  min-height: 3rem;
+  position: relative;
 }
 
 .result-area h4 {
-    font-family: var(--font-mono);
-    font-size: 0.8rem;
-    margin-bottom: 0.5rem;
-    color: var(--dark-gray);
+  font-size: 0.65rem;
+  font-family: var(--font-mono);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-light);
+  margin-bottom: 0.5rem;
 }
 
 .result-content {
-    font-family: var(--font-mono);
-    font-size: 1rem;
-    white-space: pre-wrap;
-    word-break: break-word;
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  white-space: pre-wrap;
+  word-break: break-word;
+  color: var(--ink);
 }
 
 .result-content.large {
-    font-size: 2rem;
-    text-align: center;
+  font-family: var(--font-sketch);
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: center;
+  line-height: 1;
 }
 
-/* Console output style */
+/* ── Console output ──────────────────────────────────────────── */
 .console-output {
-    margin-top: 1.5rem;
-    padding: 1rem;
-    border: var(--border-width) solid var(--border-color);
-    background-color: #1a1a1a;
-    color: #00ff00;
-    font-family: var(--font-mono);
-    font-size: 0.85rem;
-    min-height: 100px;
-    max-height: 300px;
-    overflow-y: auto;
+  margin-top: 1.5rem;
+  padding: 1rem;
+  border: var(--border-solid);
+  background-color: #111;
+  color: #a8d5a2;
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  min-height: 100px;
+  max-height: 280px;
+  overflow-y: auto;
 }
 
 .console-output h4 {
-    color: #fff;
-    font-size: 0.75rem;
-    margin-bottom: 0.5rem;
-    border-bottom: 1px solid #333;
-    padding-bottom: 0.25rem;
+  color: #5a9;
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+  border-bottom: 1px solid #2a2a2a;
+  padding-bottom: 0.3rem;
 }
 
-/* Array display */
+/* ── Array display ───────────────────────────────────────────── */
 .array-display {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    margin: 1rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin: 1rem 0;
 }
 
 .array-item {
-    padding: 0.3rem 0.6rem;
-    border: 1px solid var(--border-color);
-    font-family: var(--font-mono);
-    font-size: 0.8rem;
+  padding: 0.25rem 0.55rem;
+  border: 1px solid var(--ink-mid);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  background-color: var(--paper);
 }
 
-/* Message styles */
+/* ── Messages ────────────────────────────────────────────────── */
 .message {
-    font-family: var(--font-mono);
-    font-size: 0.85rem;
-    margin-top: 0.5rem;
-    padding: 0.5rem;
-    border: 1px solid var(--border-color);
-    display: none;
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  margin-top: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  border: var(--border-dash);
+  display: none;
 }
 
-.message.show {
-    display: block;
-}
+.message.show { display: block; }
 
 .message.success {
-    background-color: #e8f5e9;
-    border-color: #4caf50;
+  border-color: #2e7d32;
+  color: #1b5e20;
+  background-color: #f1f8e9;
 }
 
 .message.error {
-    background-color: #ffebee;
-    border-color: #f44336;
+  border-color: var(--red);
+  color: var(--red);
+  background-color: #fdf2f0;
 }
 
-/* Footer */
+/* ── Counter specific ────────────────────────────────────────── */
+.counter-display {
+  font-family: var(--font-sketch);
+  font-size: 5rem;
+  font-weight: 700;
+  text-align: center;
+  line-height: 1;
+  margin: 1rem 0;
+  border: var(--border-dash);
+  padding: 1rem;
+  background-color: var(--paper-dark);
+  letter-spacing: -0.02em;
+}
+
+.counter-controls {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  margin: 1rem 0;
+  flex-wrap: wrap;
+}
+
+.counter-info {
+  text-align: center;
+  font-size: 0.75rem;
+  color: var(--ink-light);
+  font-family: var(--font-mono);
+  margin-top: 0.5rem;
+}
+
+/* ── Calculator specific ─────────────────────────────────────── */
+.calc-inputs {
+  display: grid;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.calc-buttons {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.calc-result {
+  margin-top: 1rem;
+}
+
+.result-display {
+  font-family: var(--font-sketch);
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: right;
+  border: var(--border-dash);
+  padding: 0.5rem 1rem;
+  background-color: var(--paper-dark);
+  min-height: 3rem;
+  margin: 0.5rem 0;
+  letter-spacing: 0.02em;
+}
+
+/* ── Color picker specific ───────────────────────────────────── */
+.color-preview {
+  width: 100%;
+  height: 80px;
+  border: var(--border-solid);
+  margin: 1rem 0;
+  background-color: #ccc;
+  transition: background-color 0.2s;
+}
+
+/* ── Todo specific ───────────────────────────────────────────── */
+.todo-input-row {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.todo-input-row input {
+  flex: 1;
+  padding: 0.5rem 0.6rem;
+  border: var(--border-solid);
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  background-color: var(--paper);
+}
+
+.todo-list {
+  list-style: none;
+  border: var(--border-dash);
+  min-height: 60px;
+}
+
+.todo-list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 0.75rem;
+  border-bottom: 1px dashed var(--grid);
+  font-size: 0.88rem;
+}
+
+.todo-list li:last-child { border-bottom: none; }
+
+.todo-list li.done {
+  text-decoration: line-through;
+  color: var(--ink-light);
+}
+
+.todo-list li button {
+  padding: 0.15rem 0.4rem;
+  font-size: 0.7rem;
+  border-width: 1px;
+}
+
+/* ── Lotto / number grid ─────────────────────────────────────── */
+.lotto-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin: 1rem 0;
+}
+
+.lotto-ball {
+  width: 38px;
+  height: 38px;
+  border: var(--border-solid);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 700;
+  background-color: var(--paper);
+  transition: background 0.15s;
+}
+
+.lotto-ball.drawn {
+  background-color: var(--ink);
+  color: var(--paper);
+}
+
+/* ── Footer ──────────────────────────────────────────────────── */
 footer {
-    border-top: var(--border-width) solid var(--border-color);
-    padding: var(--spacing);
-    text-align: center;
-    font-family: var(--font-mono);
-    font-size: 0.75rem;
-    color: var(--dark-gray);
+  border-top: var(--border-solid);
+  background-color: var(--ink);
+  color: var(--ink-light);
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
-/* Responsive */
+footer::after {
+  content: '[ END OF DOCUMENT ]';
+  color: #3a3530;
+}
+
+/* ── Animations ──────────────────────────────────────────────── */
+@keyframes sketch-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px) rotate(-0.5deg);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) rotate(0deg);
+  }
+}
+
+.exercise-card {
+  animation: sketch-in 0.25s ease both;
+}
+
+.exercise-card:nth-child(1)  { animation-delay: 0.02s; }
+.exercise-card:nth-child(2)  { animation-delay: 0.04s; }
+.exercise-card:nth-child(3)  { animation-delay: 0.06s; }
+.exercise-card:nth-child(4)  { animation-delay: 0.08s; }
+.exercise-card:nth-child(5)  { animation-delay: 0.10s; }
+.exercise-card:nth-child(6)  { animation-delay: 0.12s; }
+.exercise-card:nth-child(7)  { animation-delay: 0.14s; }
+.exercise-card:nth-child(8)  { animation-delay: 0.16s; }
+.exercise-card:nth-child(9)  { animation-delay: 0.18s; }
+.exercise-card:nth-child(10) { animation-delay: 0.20s; }
+.exercise-card:nth-child(11) { animation-delay: 0.22s; }
+.exercise-card:nth-child(12) { animation-delay: 0.24s; }
+.exercise-card:nth-child(13) { animation-delay: 0.26s; }
+.exercise-card:nth-child(14) { animation-delay: 0.28s; }
+.exercise-card:nth-child(15) { animation-delay: 0.30s; }
+.exercise-card:nth-child(16) { animation-delay: 0.32s; }
+.exercise-card:nth-child(17) { animation-delay: 0.34s; }
+.exercise-card:nth-child(18) { animation-delay: 0.36s; }
+.exercise-card:nth-child(19) { animation-delay: 0.38s; }
+
+/* ── Responsive ──────────────────────────────────────────────── */
 @media (max-width: 768px) {
-    header {
-        padding: var(--spacing);
-    }
-    
-    nav ul {
-        flex-direction: column;
-    }
-    
-    nav a {
-        text-align: center;
-    }
-    
-    .exercise-grid {
-        grid-template-columns: 1fr;
-    }
+  header { padding: 1rem; }
+
+  header h1 { font-size: 1.8rem; }
+
+  nav ul { gap: 0.25rem; }
+
+  main { padding: 1.5rem 1rem; }
+
+  .exercise-grid {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 0.75rem;
+  }
+
+  .counter-display { font-size: 3.5rem; }
+
+  footer { flex-direction: column; gap: 0.25rem; text-align: center; }
 }
