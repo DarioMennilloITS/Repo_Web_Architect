@@ -147,14 +147,14 @@ section > h2 {
   gap: 0.5rem;
 }
 
-section > h2::before {
+section:not(.intro) > h2::before {
   content: '//';
   color: var(--ink-light);
   font-family: var(--font-mono);
   font-size: 1rem;
 }
 
-section > h2::after {
+section:not(.intro) > h2::after {
   content: '';
   flex: 1;
   height: 1px;
@@ -205,8 +205,6 @@ section > h2::after {
   text-align: center;
 }
 
-.intro h2::before { content: none; }
-.intro h2::after  { content: none; }
 
 .intro p {
   font-size: 0.88rem;
