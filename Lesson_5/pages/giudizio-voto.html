@@ -48,7 +48,8 @@
             <h2>P2-ES5 - Giudizio Voto</h2>
         </section>
 
-        <section class="exercise-area">
+        <div class="page-cols">
+<section class="exercise-area">
             <div class="exercise-description">
                 <h3>Consegna</h3>
                 <p>Usa <strong>switch</strong> per convertire voto numerico in giudizio:<br>
@@ -71,6 +72,19 @@
                 </div>
             </div>
         </section>
+    <aside class="logic-panel">
+        <div class="logic-box">
+            <p>A <code>switch</code> on the vote value (1–10) maps each integer to an Italian judgment string. Values outside range are caught by <code>default</code>. Uses <code>parseInt()</code> to ensure integer comparison.</p>
+        </div>
+        <div class="insight-box">
+            <ul class="insight-list">
+                <li>Integer switch is clean for small, known value sets</li>
+                <li>Out-of-range values are silently handled by <code>default</code></li>
+                <li><code>parseInt()</code> vs <code>parseFloat()</code>: use int when decimals are irrelevant</li>
+            </ul>
+        </div>
+    </aside>
+        </div>
     </main>
 
     <footer>

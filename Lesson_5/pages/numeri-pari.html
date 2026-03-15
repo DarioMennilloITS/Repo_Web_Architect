@@ -48,7 +48,8 @@
             <h2>P2-ES2 - Numeri Pari</h2>
         </section>
 
-        <section class="exercise-area">
+        <div class="page-cols">
+<section class="exercise-area">
             <div class="exercise-description">
                 <h3>Consegna</h3>
                 <p>Utilizzando <strong>if</strong> e <strong>for</strong> stampa solo i numeri pari da <strong>1 a 100</strong>.</p>
@@ -65,6 +66,19 @@
                 </div>
             </div>
         </section>
+    <aside class="logic-panel">
+        <div class="logic-box">
+            <p>Loops from 1 to 100 with a <code>for</code> loop. Each iteration checks <code>n % 2 === 0</code> (even). Even numbers are collected in an array, then displayed joined with a separator.</p>
+        </div>
+        <div class="insight-box">
+            <ul class="insight-list">
+                <li><code>n % 2 === 0</code> is the standard even-number test</li>
+                <li>Alternative: start at 2 and increment by 2 (<code>i += 2</code>) — no modulo needed</li>
+                <li>Collecting in an array then joining is cleaner than building a string in the loop</li>
+            </ul>
+        </div>
+    </aside>
+        </div>
     </main>
 
     <footer>

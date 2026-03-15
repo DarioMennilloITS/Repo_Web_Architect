@@ -48,7 +48,8 @@
             <h2>Esercizio 0 - Hello World</h2>
         </section>
 
-        <section class="exercise-area">
+        <div class="page-cols">
+<section class="exercise-area">
             <div class="exercise-description">
                 <h3>Consegna</h3>
                 <p>Scrivere un programma che chiede il nome all'utente per poi restituire un saluto in un tag <code>&lt;h1&gt;</code> del HTML.</p>
@@ -70,6 +71,19 @@
                 </div>
             </div>
         </section>
+    <aside class="logic-panel">
+        <div class="logic-box">
+            <p>Reads the input value with <code>.value</code>, builds a greeting using a <strong>template literal</strong> (<code>`Ciao, ${name}!`</code>), then writes it into the DOM via <code>innerHTML</code>.</p>
+        </div>
+        <div class="insight-box">
+            <ul class="insight-list">
+                <li><code>element.value</code> always returns a string</li>
+                <li>Template literals use backticks and <code>${}</code> for interpolation</li>
+                <li><code>innerHTML</code> sets the HTML content of a node — use <code>textContent</code> when you don't need HTML tags</li>
+            </ul>
+        </div>
+    </aside>
+        </div>
     </main>
 
     <footer>

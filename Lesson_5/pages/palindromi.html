@@ -48,7 +48,8 @@
             <h2>P2-ES8 - Numeri Palindromi</h2>
         </section>
 
-        <section class="exercise-area">
+        <div class="page-cols">
+<section class="exercise-area">
             <div class="exercise-description">
                 <h3>Consegna</h3>
                 <p>Trova tutti i numeri palindromi da <strong>1 a 1000</strong>.<br>
@@ -70,6 +71,19 @@
                 </div>
             </div>
         </section>
+    <aside class="logic-panel">
+        <div class="logic-box">
+            <p>For each number 1–1000: convert to string with <code>.toString()</code>, reverse by <code>split('').reverse().join('')</code>, compare with the original string. If equal → palindrome.</p>
+        </div>
+        <div class="insight-box">
+            <ul class="insight-list">
+                <li><code>split('')</code> turns a string into an array of characters</li>
+                <li><code>.reverse()</code> mutates the array in place</li>
+                <li><code>.join('')</code> collapses the array back to a string — this 3-step chain is the canonical JS palindrome check</li>
+            </ul>
+        </div>
+    </aside>
+        </div>
     </main>
 
     <footer>

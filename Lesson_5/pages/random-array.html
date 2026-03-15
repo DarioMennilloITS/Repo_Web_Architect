@@ -48,7 +48,8 @@
             <h2>Esercizio 15 - Pesca Elemento Casuale</h2>
         </section>
 
-        <section class="exercise-area">
+        <div class="page-cols">
+<section class="exercise-area">
             <div class="exercise-description">
                 <h3>Consegna</h3>
                 <p>Scrivi un programma per pescare un elemento a caso in un array di numeri.</p>
@@ -79,6 +80,19 @@
                 </div>
             </div>
         </section>
+    <aside class="logic-panel">
+        <div class="logic-box">
+            <p>Generates a random index with <code>Math.floor(Math.random() * array.length)</code>, then accesses that index. <code>Math.random()</code> returns a float in <code>[0, 1)</code>; multiplying by length and flooring gives a valid index.</p>
+        </div>
+        <div class="insight-box">
+            <ul class="insight-list">
+                <li><code>Math.random()</code> never returns exactly 1, so the index never overflows</li>
+                <li><code>Math.floor()</code> rounds down — always a whole number</li>
+                <li>This is the standard pattern for random array selection in JS</li>
+            </ul>
+        </div>
+    </aside>
+        </div>
     </main>
 
     <footer>

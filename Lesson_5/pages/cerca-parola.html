@@ -48,7 +48,8 @@
             <h2>Esercizio 16 - Cerca Parola</h2>
         </section>
 
-        <section class="exercise-area">
+        <div class="page-cols">
+<section class="exercise-area">
             <div class="exercise-description">
                 <h3>Consegna</h3>
                 <p>Trova la parola "<strong>clara</strong>" all'interno del seguente testo: "<em>Java Lorem ipsum sit dolor Java aliqua clara et pulcra sunt Java</em>". Quando la trovi stampa la parola, altrimenti stampa: "parola non trovata".</p>
@@ -74,6 +75,19 @@
                 </div>
             </div>
         </section>
+    <aside class="logic-panel">
+        <div class="logic-box">
+            <p>Converts both the text and the search term to lowercase with <code>.toLowerCase()</code>, then uses <code>.includes()</code> (or <code>indexOf()</code>) to check presence. Returns position or boolean.</p>
+        </div>
+        <div class="insight-box">
+            <ul class="insight-list">
+                <li><code>.includes()</code> returns <code>true/false</code> — cleaner than checking <code>indexOf !== -1</code></li>
+                <li><code>indexOf</code> returns <code>-1</code> when not found — the historical pattern</li>
+                <li>Always normalise case before comparing strings</li>
+            </ul>
+        </div>
+    </aside>
+        </div>
     </main>
 
     <footer>

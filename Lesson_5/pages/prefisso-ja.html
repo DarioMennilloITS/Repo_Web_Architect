@@ -48,7 +48,8 @@
             <h2>Esercizio 6 - Prefisso "Ja"</h2>
         </section>
 
-        <section class="exercise-area">
+        <div class="page-cols">
+<section class="exercise-area">
             <div class="exercise-description">
                 <h3>Consegna</h3>
                 <p>Scrivere un programma che crea una nuova stringa, a partire da una fornita, aggiungendo due lettere iniziali: <strong>Ja</strong>. Se la parola fornita comincia con Ja allora verra semplicemente restituita senza aggiunta.<br>Esempio: <code>Torino</code> → <code>JaTorino</code> &nbsp;|&nbsp; <code>Javascript</code> → <code>Javascript</code></p>
@@ -70,6 +71,19 @@
                 </div>
             </div>
         </section>
+    <aside class="logic-panel">
+        <div class="logic-box">
+            <p>Checks if the input string already starts with <code>'ja'</code> using <code>toLowerCase().startsWith('ja')</code>. If not, prepends <code>'Ja'</code> via string concatenation.</p>
+        </div>
+        <div class="insight-box">
+            <ul class="insight-list">
+                <li><code>.toLowerCase()</code> normalises case before comparison</li>
+                <li><code>.startsWith()</code> is cleaner than checking <code>indexOf === 0</code></li>
+                <li>String concatenation with <code>+</code>: <code>'Ja' + input</code></li>
+            </ul>
+        </div>
+    </aside>
+        </div>
     </main>
 
     <footer>

@@ -48,7 +48,8 @@
             <h2>Esercizio 5 - Estensione File</h2>
         </section>
 
-        <section class="exercise-area">
+        <div class="page-cols">
+<section class="exercise-area">
             <div class="exercise-description">
                 <h3>Consegna</h3>
                 <p>Scrivere un programma che estrae e stampa in console l'estensione di un file.<br>Esempio: <code>fileEsercitazione.pdf</code> → <code>pdf</code> oppure <code>index.html</code> → <code>html</code></p>
@@ -70,6 +71,19 @@
                 </div>
             </div>
         </section>
+    <aside class="logic-panel">
+        <div class="logic-box">
+            <p>Uses <code>lastIndexOf('.')</code> to find the position of the final dot in the filename, then <code>slice(pos + 1)</code> to extract everything after it.</p><p>Using <code>lastIndexOf</code> instead of <code>indexOf</code> correctly handles files like <code>my.backup.tar.gz</code>.</p>
+        </div>
+        <div class="insight-box">
+            <ul class="insight-list">
+                <li><code>lastIndexOf</code> scans from right — crucial for multiple dots</li>
+                <li><code>slice(n)</code> returns from index <code>n</code> to end</li>
+                <li>If no dot is found, <code>lastIndexOf</code> returns <code>-1</code> — always handle that case</li>
+            </ul>
+        </div>
+    </aside>
+        </div>
     </main>
 
     <footer>

@@ -36,7 +36,8 @@
             <p>Add tasks, mark them as complete, and keep track of what needs to be done.</p>
         </section>
 
-        <section class="exercise-area">
+        <div class="page-cols">
+<section class="exercise-area">
             <div class="todo-box">
                 <h3>My To-Do List</h3>
                 
@@ -58,6 +59,19 @@
                 </div>
             </div>
         </section>
+    <aside class="logic-panel">
+        <div class="logic-box">
+            <p>An array of <code>{text, done}</code> objects is the <strong>single source of truth</strong>. Every add/complete/delete mutates the array, then a <code>render()</code> function rebuilds the entire list from scratch.</p>
+        </div>
+        <div class="insight-box">
+            <ul class="insight-list">
+                <li>Data and UI are separate: mutate the array, then re-render — don't mutate the DOM directly</li>
+                <li><code>splice(index, 1)</code> removes a task by its position</li>
+                <li>Each rendered item stores its index so event handlers know which task to target</li>
+            </ul>
+        </div>
+    </aside>
+        </div>
     </main>
 
     <footer>

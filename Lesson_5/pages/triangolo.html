@@ -48,7 +48,8 @@
             <h2>Esercizio 1 - Perimetro e Area Triangolo</h2>
         </section>
 
-        <section class="exercise-area">
+        <div class="page-cols">
+<section class="exercise-area">
             <div class="exercise-description">
                 <h3>Consegna</h3>
                 <p>Scrivere un programma che calcola il perimetro e l'area di un triangolo avente i lati della seguente lunghezza: <strong>5, 6, 7</strong>.</p>
@@ -69,6 +70,19 @@
                 </div>
             </div>
         </section>
+    <aside class="logic-panel">
+        <div class="logic-box">
+            <p>Perimeter = sum of all sides. Area uses <strong>Heron's formula</strong>: compute semi-perimeter <code>s = (a+b+c)/2</code>, then <code>area = √(s·(s-a)·(s-b)·(s-c))</code>.</p><p>No angle needed — only the three side lengths.</p>
+        </div>
+        <div class="insight-box">
+            <ul class="insight-list">
+                <li><code>Math.sqrt()</code> computes square root</li>
+                <li>Heron's formula works for any triangle given 3 sides</li>
+                <li><code>toFixed(2)</code> rounds floating-point results for display — it returns a <em>string</em></li>
+            </ul>
+        </div>
+    </aside>
+        </div>
     </main>
 
     <footer>

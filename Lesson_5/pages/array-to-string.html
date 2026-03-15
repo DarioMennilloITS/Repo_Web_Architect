@@ -48,7 +48,8 @@
             <h2>Esercizio 14 - Array to String</h2>
         </section>
 
-        <section class="exercise-area">
+        <div class="page-cols">
+<section class="exercise-area">
             <div class="exercise-description">
                 <h3>Consegna</h3>
                 <p>Scrivi un programma per trasformare un array di elementi (stringhe) in un'unica stringa. Utilizza tutti i metodi che conosci.</p>
@@ -74,6 +75,19 @@
                 </div>
             </div>
         </section>
+    <aside class="logic-panel">
+        <div class="logic-box">
+            <p>Demonstrates three equivalent approaches: <code>Array.join(sep)</code> (built-in), a <code>for</code> loop that concatenates with a guard on the last element, and <code>reduce()</code> with an accumulator.</p>
+        </div>
+        <div class="insight-box">
+            <ul class="insight-list">
+                <li><code>join()</code> is idiomatic and fastest — use it in real code</li>
+                <li>The for-loop version shows <em>what join does internally</em></li>
+                <li><code>reduce((acc, curr, i) => ...)</code> — <code>i === 0</code> skips the separator on the first element</li>
+            </ul>
+        </div>
+    </aside>
+        </div>
     </main>
 
     <footer>

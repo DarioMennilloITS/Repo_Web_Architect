@@ -36,7 +36,8 @@
             <p>Perform basic math operations with two numbers.</p>
         </section>
 
-        <section class="exercise-area">
+        <div class="page-cols">
+<section class="exercise-area">
             <div class="calculator-box">
                 <h3>Calculator</h3>
                 
@@ -74,6 +75,19 @@
                 </div>
             </div>
         </section>
+    <aside class="logic-panel">
+        <div class="logic-box">
+            <p>Reads two number inputs and an operator from a <code>&lt;select&gt;</code>. A <code>switch</code> on the operator string applies the correct arithmetic. Division-by-zero is checked explicitly before dividing.</p>
+        </div>
+        <div class="insight-box">
+            <ul class="insight-list">
+                <li><code>select.value</code> returns the selected option's <code>value</code> attribute as a string</li>
+                <li>Switch on operator string: <code>case '+':</code>, <code>case '-':</code>, etc.</li>
+                <li>Always check for division by zero before performing <code>/</code></li>
+            </ul>
+        </div>
+    </aside>
+        </div>
     </main>
 
     <footer>

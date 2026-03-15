@@ -36,7 +36,8 @@
             <p>I am thinking of a number between 1 and 100. Can you guess it?</p>
         </section>
 
-        <section class="exercise-area">
+        <div class="page-cols">
+<section class="exercise-area">
             <div class="game-box">
                 <h3>Number Guessing Game</h3>
                 
@@ -65,6 +66,19 @@
                 <button id="newGameBtn" class="btn-secondary">New Game</button>
             </div>
         </section>
+    <aside class="logic-panel">
+        <div class="logic-box">
+            <p>A target is set with <code>Math.ceil(Math.random() * 100)</code> once per game. Each guess compares the input to the target, increments an attempt counter, and gives high/low feedback. Win condition triggers a success message.</p>
+        </div>
+        <div class="insight-box">
+            <ul class="insight-list">
+                <li><code>Math.ceil(Math.random() * 100)</code> gives integers 1–100 (inclusive)</li>
+                <li>Binary search is the optimal strategy — halves the search space each guess</li>
+                <li>Attempt counting is just <code>attempts++</code> on each submit</li>
+            </ul>
+        </div>
+    </aside>
+        </div>
     </main>
 
     <footer>

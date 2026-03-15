@@ -48,7 +48,8 @@
             <h2>P2-ES1 - Giorni della Settimana</h2>
         </section>
 
-        <section class="exercise-area">
+        <div class="page-cols">
+<section class="exercise-area">
             <div class="exercise-description">
                 <h3>Consegna</h3>
                 <p>Usa <strong>switch</strong> per stampare il nome del giorno della settimana (<strong>1=Lunedi, 2=Martedi, 3=Mercoledi, 4=Giovedi, 5=Venerdi, 6=Sabato, 7=Domenica</strong>).</p>
@@ -78,6 +79,19 @@
                 </div>
             </div>
         </section>
+    <aside class="logic-panel">
+        <div class="logic-box">
+            <p>A <code>switch</code> statement on the numeric input maps <code>1→Lunedì</code> through <code>7→Domenica</code>. A <code>default</code> branch catches invalid values. Each <code>case</code> ends with <code>break</code> to prevent fall-through.</p>
+        </div>
+        <div class="insight-box">
+            <ul class="insight-list">
+                <li><code>switch</code> is cleaner than a chain of <code>if-else</code> for discrete values</li>
+                <li><code>break</code> stops execution — omitting it causes fall-through to the next case</li>
+                <li><code>default</code> is the <code>else</code> of switch — always include it</li>
+            </ul>
+        </div>
+    </aside>
+        </div>
     </main>
 
     <footer>

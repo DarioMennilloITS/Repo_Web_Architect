@@ -48,7 +48,8 @@
             <h2>P2-ES4 - Raddoppia fino a 1000</h2>
         </section>
 
-        <section class="exercise-area">
+        <div class="page-cols">
+<section class="exercise-area">
             <div class="exercise-description">
                 <h3>Consegna</h3>
                 <p>Dato il numero <code>let numero = 1;</code> raddoppia la variabile numero finche non supera <strong>1000</strong>, poi stampa il risultato.</p>
@@ -75,6 +76,19 @@
                 </div>
             </div>
         </section>
+    <aside class="logic-panel">
+        <div class="logic-box">
+            <p>Uses a <code>while</code> loop because the number of iterations is unknown in advance. Each iteration doubles the value (<code>val *= 2</code>) and logs the step. Terminates when <code>val &gt; 1000</code>.</p>
+        </div>
+        <div class="insight-box">
+            <ul class="insight-list">
+                <li>Use <code>while</code> when you don't know how many iterations you need</li>
+                <li><code>*= 2</code> is shorthand for <code>val = val * 2</code></li>
+                <li>Always ensure the loop condition will eventually become false — otherwise: infinite loop</li>
+            </ul>
+        </div>
+    </aside>
+        </div>
     </main>
 
     <footer>

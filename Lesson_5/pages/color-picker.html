@@ -36,7 +36,8 @@
             <p>Explore colors by adjusting RGB values or generate random colors.</p>
         </section>
 
-        <section class="exercise-area">
+        <div class="page-cols">
+<section class="exercise-area">
             <div class="color-box">
                 <h3>Color Explorer</h3>
                 
@@ -80,6 +81,19 @@
                 <p id="copyMessage" class="message"></p>
             </div>
         </section>
+    <aside class="logic-panel">
+        <div class="logic-box">
+            <p>Three <code>range</code> inputs (0–255) feed R, G, B values. Applied as <code>rgb(r, g, b)</code>. Hex conversion: each channel is converted with <code>n.toString(16).padStart(2, '0')</code> and the three strings are concatenated.</p>
+        </div>
+        <div class="insight-box">
+            <ul class="insight-list">
+                <li><code>input[type=range]</code> fires <code>input</code> events continuously while dragging</li>
+                <li><code>Number.toString(16)</code> converts decimal to hexadecimal string</li>
+                <li><code>padStart(2, '0')</code> ensures single-digit hex values (like <code>f</code>) become <code>0f</code></li>
+            </ul>
+        </div>
+    </aside>
+        </div>
     </main>
 
     <footer>

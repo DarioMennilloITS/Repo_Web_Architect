@@ -48,7 +48,8 @@
             <h2>ES1 - Gioco del Lotto</h2>
         </section>
 
-        <section class="exercise-area">
+        <div class="page-cols">
+<section class="exercise-area">
             <div class="exercise-description">
                 <h3>Consegna</h3>
                 <p>Dato un set di <strong>90 numeri (1 a 90)</strong> estrai un numero alla volta. Mi raccomando: <strong>non deve esserci ripetizione</strong>.</p>
@@ -80,6 +81,19 @@
                 </div>
             </div>
         </section>
+    <aside class="logic-panel">
+        <div class="logic-box">
+            <p>Builds an array of all numbers 1–90. Each draw picks a random index, removes that element with <code>splice(index, 1)</code>, and pushes it to the drawn list. Removing from the source array guarantees no repetitions.</p>
+        </div>
+        <div class="insight-box">
+            <ul class="insight-list">
+                <li><code>splice(i, 1)</code> removes 1 element at index <code>i</code> and returns it — destructive but intentional here</li>
+                <li>The pool shrinks each draw, so <code>Math.random() * pool.length</code> naturally adjusts</li>
+                <li>This is <em>sampling without replacement</em> — the array acts as the pool</li>
+            </ul>
+        </div>
+    </aside>
+        </div>
     </main>
 
     <footer>

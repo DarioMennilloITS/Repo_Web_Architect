@@ -48,7 +48,8 @@
             <h2>Esercizio 3 - Prodotto tra due numeri</h2>
         </section>
 
-        <section class="exercise-area">
+        <div class="page-cols">
+<section class="exercise-area">
             <div class="exercise-description">
                 <h3>Consegna</h3>
                 <p>Programma che esegue il prodotto tra due numeri chiesti all'utente tramite form. Scrivere il diagramma di flusso e creare l'algoritmo.</p>
@@ -75,6 +76,19 @@
                 </div>
             </div>
         </section>
+    <aside class="logic-panel">
+        <div class="logic-box">
+            <p>Reads two input values, converts them with <code>parseFloat()</code>, multiplies, and renders the result. Validates that both inputs are actual numbers before computing.</p>
+        </div>
+        <div class="insight-box">
+            <ul class="insight-list">
+                <li>Input values are always <em>strings</em> — <code>parseFloat</code> / <code>parseInt</code> convert them to numbers</li>
+                <li><code>isNaN()</code> checks if a conversion failed</li>
+                <li>Multiplying two strings gives <code>NaN</code>, not an error — always validate input</li>
+            </ul>
+        </div>
+    </aside>
+        </div>
     </main>
 
     <footer>

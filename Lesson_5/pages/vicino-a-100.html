@@ -48,7 +48,8 @@
             <h2>Esercizio 7 - Valore piu vicino a 100</h2>
         </section>
 
-        <section class="exercise-area">
+        <div class="page-cols">
+<section class="exercise-area">
             <div class="exercise-description">
                 <h3>Consegna</h3>
                 <p>Scrivere un programma per trovare il valore piu vicino a <strong>100</strong> tra una coppia di numeri forniti. Se sono uguali, ritorna un avviso.</p>
@@ -75,6 +76,19 @@
                 </div>
             </div>
         </section>
+    <aside class="logic-panel">
+        <div class="logic-box">
+            <p>Computes <code>Math.abs(n - 100)</code> for each input — the absolute distance from 100. Compares the two distances and returns the number with the smaller one. Handles the tie case explicitly.</p>
+        </div>
+        <div class="insight-box">
+            <ul class="insight-list">
+                <li><code>Math.abs()</code> strips the sign — gives distance regardless of direction</li>
+                <li>Comparing distances, not values: <code>distA &lt; distB</code></li>
+                <li>A tie occurs when both distances are equal — handle it or one answer is silently chosen</li>
+            </ul>
+        </div>
+    </aside>
+        </div>
     </main>
 
     <footer>

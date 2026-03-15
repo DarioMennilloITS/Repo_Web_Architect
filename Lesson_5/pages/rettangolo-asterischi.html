@@ -48,7 +48,8 @@
             <h2>P2-ES6 - Rettangolo di Asterischi</h2>
         </section>
 
-        <section class="exercise-area">
+        <div class="page-cols">
+<section class="exercise-area">
             <div class="exercise-description">
                 <h3>Consegna</h3>
                 <p>Stampa un rettangolo di asterischi usando <strong>for annidati</strong>.<br>
@@ -80,6 +81,20 @@
                 </div>
             </div>
         </section>
+    <aside class="logic-panel">
+        <div class="logic-box">
+            <p>Two <strong>nested for loops</strong>: the outer loop counts rows, the inner loop counts columns. Each inner iteration appends <code>'*'</code> to a row string; after the inner loop finishes a row, <code>'
+'</code> is appended.</p>
+        </div>
+        <div class="insight-box">
+            <ul class="insight-list">
+                <li>Nested loops = 2D iteration: outer = rows, inner = columns</li>
+                <li>The inner loop runs <code>cols</code> times for every single outer iteration</li>
+                <li>Accumulate into a string, wrap in <code>&lt;pre&gt;</code> to preserve whitespace/newlines</li>
+            </ul>
+        </div>
+    </aside>
+        </div>
     </main>
 
     <footer>
