@@ -6,11 +6,11 @@ document.addEventListener('DOMContentLoaded', function() {
     
     console.log('Lotto game loaded!');
     
-    // Game state
+   
     let availableNumbers = [];
     let drawnNumbers = [];
     
-    // DOM Elements
+    
     const drawBtn = document.getElementById('drawBtn');
     const resetBtn = document.getElementById('resetBtn');
     const currentNumberEl = document.getElementById('currentNumber');
@@ -18,52 +18,36 @@ document.addEventListener('DOMContentLoaded', function() {
     const remainingCountEl = document.getElementById('remainingCount');
     const drawnNumbersEl = document.getElementById('drawnNumbers');
     
-    // Initialize the game
+    
     function initGame() {
-        // Create array of numbers 1 to 90
+       
         availableNumbers = [];
         for (let i = 1; i <= 90; i++) {
             availableNumbers.push(i);
         }
         
         drawnNumbers = [];
-        
-        // Reset UI
         currentNumberEl.textContent = '-';
-        updateStats();
-        renderDrawnNumbers();
-        
-        // Enable draw button
         drawBtn.disabled = false;
         drawBtn.textContent = 'Estrai Numero';
-        
         console.log('Game initialized with 90 numbers');
+        updateStats();
+        renderDrawnNumbers();
     }
-    
-    // Draw a random number from available numbers
+
     function drawNumber() {
-        if (availableNumbers.length === 0) {
-            alert('Tutti i numeri sono stati estratti!');
-            return;
-        }
         
-        // Get random index
         const randomIndex = Math.floor(Math.random() * availableNumbers.length);
-        
-        // Remove and get the number from available array
         const drawnNumber = availableNumbers.splice(randomIndex, 1)[0];
-        
-        // Add to drawn numbers
         drawnNumbers.push(drawnNumber);
         
-        // Update UI
+    
         currentNumberEl.textContent = drawnNumber;
         updateStats();
         renderDrawnNumbers();
         
         console.log(`Drawn number: ${drawnNumber}`);
         
-        // Check if all numbers are drawn
         if (availableNumbers.length === 0) {
             drawBtn.disabled = true;
             drawBtn.textContent = 'Fine';
@@ -73,13 +57,11 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
     
-    // Update statistics display
     function updateStats() {
         drawnCountEl.textContent = drawnNumbers.length;
         remainingCountEl.textContent = availableNumbers.length;
     }
     
-    // Render the drawn numbers
     function renderDrawnNumbers() {
         drawnNumbersEl.innerHTML = '';
         
@@ -91,7 +73,7 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
         
-        // Show drawn numbers in reverse order (newest first)
+
         const reversedDrawn = [...drawnNumbers].reverse();
         
         reversedDrawn.forEach(num => {
@@ -102,7 +84,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Event listeners
+
     drawBtn.addEventListener('click', drawNumber);
     
     resetBtn.addEventListener('click', function() {
@@ -111,7 +93,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
-    // Initialize game on load
+    
     initGame();
     
 });
