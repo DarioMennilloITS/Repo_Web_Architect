@@ -1,7 +1,3 @@
-/* ============================================
-   ES - Lotto Simplified (5 numeri, 1 estrazione)
-   ============================================ */
-
 document.addEventListener('DOMContentLoaded', function() {
 
     console.log('Lotto Simplified loaded!');
@@ -11,13 +7,12 @@ document.addEventListener('DOMContentLoaded', function() {
     const resultEl = document.getElementById('result');
 
     function drawNumbers() {
-        // Build pool 1-90
+    
         const pool = [];
         for (let i = 1; i <= 90; i++) {
             pool.push(i);
         }
 
-        // Pick 5 unique numbers
         const drawn = [];
         for (let i = 0; i < 5; i++) {
             const randomIndex = Math.floor(Math.random() * pool.length);
@@ -25,7 +20,6 @@ document.addEventListener('DOMContentLoaded', function() {
             drawn.push(num);
         }
 
-        // Sort ascending
         drawn.sort(function(a, b) { return a - b; });
 
         console.log('Drawn numbers:', drawn);

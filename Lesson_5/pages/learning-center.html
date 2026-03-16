@@ -39,6 +39,7 @@
                 <li><a href="./triangolo-crescente.html">Triangolo 2</a></li>
                 <li><a href="./palindromi.html">Palindromi</a></li>
                 <li><a href="./lotto.html">Lotto</a></li>
+                <li><a href="./lotto-simplified.html">Lotto Semplice</a></li>
                 <li><a href="./counter.html">Counter</a></li>
                 <li><a href="./calculator.html">Calculator</a></li>
                 <li><a href="./guess-number.html">Guess</a></li>
@@ -823,7 +824,7 @@ array.<span class="fn">reduce</span>((acc,cur,i) =>
 
             <!-- Lotto -->
             <details class="learn-entry">
-                <summary>Gioco del Lotto <span class="concept-tag tag--array">arrays</span><span class="concept-tag tag--vars">Math.random</span></summary>
+                <summary><a href="./lotto.html">Gioco del Lotto</a> <span class="concept-tag tag--array">arrays</span><span class="concept-tag tag--vars">Math.random</span></summary>
                 <div class="learn-panels">
                     <div class="learn-panel panel--html">
                         <span class="learn-panel-label">&lt;/&gt; HTML</span>
@@ -860,6 +861,47 @@ array.<span class="fn">reduce</span>((acc,cur,i) =>
                 </div>
                 <div class="learn-concept-bar">
                     <span>splice</span><span>sampling without replacement</span><span>Array.from</span><span>state management</span>
+                </div>
+            </details>
+
+            <!-- Lotto Simplified -->
+            <details class="learn-entry">
+                <summary><a href="./lotto-simplified.html">Lotto Simplified</a> <span class="concept-tag tag--array">arrays</span><span class="concept-tag tag--vars">for loop</span></summary>
+                <div class="learn-panels">
+                    <div class="learn-panel panel--html">
+                        <span class="learn-panel-label">&lt;/&gt; HTML</span>
+                        <p>One button draws 5 numbers at once and disables itself. A reset button restores the initial state. Results appear as <code>.array-item</code> boxes in a flex row.</p>
+                        <ul>
+                            <li>Button disabled after draw — prevents re-draw without reset</li>
+                            <li>Reuses existing <code>.array-display</code> and <code>.array-item</code> classes</li>
+                        </ul>
+                    </div>
+                    <div class="learn-panel panel--css">
+                        <span class="learn-panel-label">{ } CSS</span>
+                        <p>No custom CSS needed — the page uses only existing utility classes from <code>style.css</code>.</p>
+                        <ul>
+                            <li>Reusing shared classes keeps the code minimal</li>
+                            <li><code>justify-content: center</code> inline to center the result row</li>
+                        </ul>
+                    </div>
+                    <div class="learn-panel panel--js">
+                        <span class="learn-panel-label">JS ( ) JavaScript</span>
+                        <p>Builds a pool of 1–90, then loops 5 times using <code>splice()</code> to pick and remove a random number each iteration. Results are sorted before rendering.</p>
+                        <div class="code-block"><span class="kw">const</span> drawn = [];
+<span class="kw">for</span> (<span class="kw">let</span> i = <span class="nu">0</span>; i &lt; <span class="nu">5</span>; i++) {
+  <span class="kw">const</span> idx = Math.<span class="fn">floor</span>(Math.<span class="fn">random</span>()*pool.length);
+  drawn.<span class="fn">push</span>(pool.<span class="fn">splice</span>(idx, <span class="nu">1</span>)[<span class="nu">0</span>]);
+}
+drawn.<span class="fn">sort</span>((a, b) => a - b);</div>
+                        <ul>
+                            <li>Fixed loop of 5 — simpler than a while loop</li>
+                            <li>No duplicate check needed — <code>splice()</code> removes from pool</li>
+                            <li><code>sort((a,b) => a-b)</code> — numeric sort, not lexicographic</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="learn-concept-bar">
+                    <span>splice</span><span>for loop</span><span>sort</span><span>button state</span>
                 </div>
             </details>
         </section>
