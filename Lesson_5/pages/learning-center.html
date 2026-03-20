@@ -45,6 +45,10 @@
                 <li><a href="./guess-number.html">Guess</a></li>
                 <li><a href="./todo.html">Todo</a></li>
                 <li><a href="./color-picker.html">Color</a></li>
+                <li><a href="./parameters.html">Parameters</a></li>
+                <li><a href="./callbacks.html">Callbacks</a></li>
+                <li><a href="./callbacks2.html">Callbacks 2</a></li>
+                <li><a href="./wordle.html">Wordle</a></li>
             </ul>
         </nav>
     </header>
@@ -1132,6 +1136,174 @@ preview.style.backgroundColor = <span class="st">`rgb(${r},${g},${b})`</span>;</
                 </div>
                 <div class="learn-concept-bar">
                     <span>input[type=range]</span><span>toString(16)</span><span>padStart</span><span>live events</span><span>RGB to HEX</span>
+                </div>
+            </details>
+
+            <!-- Parameters -->
+            <details class="learn-entry">
+                <summary>Parameters <span class="concept-tag tag--vars">functions</span></summary>
+                <div class="learn-panels">
+                    <div class="learn-panel panel--html">
+                        <span class="learn-panel-label">&lt;/&gt; HTML</span>
+                        <p>Four text inputs collect user data: nome, cognome, email, eta. Each input has a label and placeholder. The button triggers the function that processes the parameters.</p>
+                        <ul>
+                            <li>Multiple inputs = grouped in a form-like structure</li>
+                            <li>Each input needs an <code>id</code> for JS targeting</li>
+                        </ul>
+                    </div>
+                    <div class="learn-panel panel--css">
+                        <span class="learn-panel-label">{ } CSS</span>
+                        <p>The input groups stack vertically. Each group has a label displayed above its input. The result area uses a distinct background to separate it from input fields.</p>
+                        <ul>
+                            <li>Vertical stacking for form clarity</li>
+                            <li>Result area visually distinct from inputs</li>
+                        </ul>
+                    </div>
+                    <div class="learn-panel panel--js">
+                        <span class="learn-panel-label">JS ( ) JavaScript</span>
+                        <p>Functions accept parameters to customize their behavior. The <code>salutaStudente</code> function takes 4 parameters and returns a formatted string.</p>
+                        <div class="code-block"><span class="kw">function</span> <span class="fn">salutaStudente</span>(nome, cognome, eta, email) {
+  <span class="kw">return</span> <span class="st">`Ciao, mi chiamo ${nome} ${cognome}...`</span>;
+}</div>
+                        <ul>
+                            <li>Parameters are defined in function declaration</li>
+                            <li>Arguments are actual values passed when calling</li>
+                            <li>Template literals interpolate variables</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="learn-concept-bar">
+                    <span>function parameters</span><span>arguments</span><span>template literals</span><span>input validation</span>
+                </div>
+            </details>
+
+            <!-- Callback Functions -->
+            <details class="learn-entry">
+                <summary>Callback Functions <span class="concept-tag tag--vars">functions</span><span class="concept-tag tag--array">callbacks</span></summary>
+                <div class="learn-panels">
+                    <div class="learn-panel panel--html">
+                        <span class="learn-panel-label">&lt;/&gt; HTML</span>
+                        <p>Array display shows the source data. Four buttons trigger different callback operations. The result area shows the transformed output. A log area shows the operation steps.</p>
+                        <ul>
+                            <li>Multiple buttons = multiple callback demonstrations</li>
+                            <li>Log area provides operation transparency</li>
+                        </ul>
+                    </div>
+                    <div class="learn-panel panel--css">
+                        <span class="learn-panel-label">{ } CSS</span>
+                        <p>Buttons arranged in a flex row for easy access. The console-output uses monospace font and dark background for a terminal-like log appearance.</p>
+                        <ul>
+                            <li>Button grouping for related operations</li>
+                            <li>Console styling for log output</li>
+                        </ul>
+                    </div>
+                    <div class="learn-panel panel--js">
+                        <span class="learn-panel-label">JS ( ) JavaScript</span>
+                        <p>A callback is a function passed as an argument. The demo shows custom implementations of <code>map</code>, <code>filter</code>, and <code>reduce</code> patterns.</p>
+                        <div class="code-block"><span class="kw">function</span> <span class="fn">eseguiSuOgniElemento</span>(arr, callback) {
+  <span class="kw">const</span> risultato = [];
+  <span class="kw">for</span> (<span class="kw">let</span> i=<span class="nu">0</span>; i&lt;arr.length; i++) {
+    risultato.<span class="fn">push</span>(<span class="fn">callback</span>(arr[i]));
+  }
+  <span class="kw">return</span> risultato;
+}</div>
+                        <ul>
+                            <li>Callbacks enable flexible, reusable functions</li>
+                            <li><code>map</code>, <code>filter</code>, <code>reduce</code> are callback-based</li>
+                            <li>Method chaining creates data pipelines</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="learn-concept-bar">
+                    <span>callback functions</span><span>map/filter/reduce</span><span>higher-order functions</span><span>method chaining</span>
+                </div>
+            </details>
+
+            <!-- Advanced Callback Functions -->
+            <details class="learn-entry">
+                <summary>Advanced Callbacks <span class="concept-tag tag--vars">async</span><span class="concept-tag tag--array">advanced</span></summary>
+                <div class="learn-panels">
+                    <div class="learn-panel panel--html">
+                        <span class="learn-panel-label">&lt;/&gt; HTML</span>
+                        <p>Multiple sections for different async patterns: timer controls for setTimeout/setInterval, division form with error handling, array methods buttons, and callback hell vs promise comparison demo.</p>
+                        <ul>
+                            <li>Input fields for configuring timer delays</li>
+                            <li>Error handling demonstration with division by zero</li>
+                            <li>Visual comparison of callback patterns</li>
+                        </ul>
+                    </div>
+                    <div class="learn-panel panel--css">
+                        <span class="learn-panel-label">{ } CSS</span>
+                        <p>Section dividers create visual separation between different callback patterns. Console output uses a dark theme for log visibility. Buttons are color-coded by functionality.</p>
+                        <ul>
+                            <li>Section spacing with margin-top</li>
+                            <li>Console styling for async operation logs</li>
+                        </ul>
+                    </div>
+                    <div class="learn-panel panel--js">
+                        <span class="learn-panel-label">JS ( ) JavaScript</span>
+                        <p>Advanced patterns: error-first callbacks <code>(err, result) => {}</code>, async timers, array methods <code>find</code>, <code>some</code>, <code>every</code>, and the evolution from callback hell to promises.</p>
+                        <div class="code-block"><span class="kw">function</span> <span class="fn">dividiConCallback</span>(a, b, callback) {
+  <span class="kw">if</span> (b === <span class="nu">0</span>) {
+    <span class="fn">callback</span>(<span class="kw">new</span> Error(<span class="st">'Divisione per zero'</span>), <span class="kw">null</span>);
+  } <span class="kw">else</span> {
+    <span class="fn">callback</span>(<span class="kw">null</span>, a / b);
+  }
+}</div>
+                        <ul>
+                            <li>Error-first callback pattern</li>
+                            <li>setTimeout/setInterval for async operations</li>
+                            <li>find/some/every array methods</li>
+                            <li>Callback hell vs Promise chains</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="learn-concept-bar">
+                    <span>async callbacks</span><span>error handling</span><span>setTimeout</span><span>setInterval</span><span>promises</span><span>find/some/every</span>
+                </div>
+            </details>
+
+            <!-- Wordle Game -->
+            <details class="learn-entry">
+                <summary>Wordle <span class="concept-tag tag--dom">dom</span><span class="concept-tag tag--vars">game</span></summary>
+                <div class="learn-panels">
+                    <div class="learn-panel panel--html">
+                        <span class="learn-panel-label">&lt;/&gt; HTML</span>
+                        <p>A 7x5 grid displays guesses with color-coded feedback. An input field captures 5-letter words. A letter bank shows tried letters with their status.</p>
+                        <ul>
+                            <li>Grid created dynamically with JavaScript</li>
+                            <li>Input with maxLength="5" enforces word length</li>
+                            <li>Letter bank shows all alphabet letters</li>
+                        </ul>
+                    </div>
+                    <div class="learn-panel panel--css">
+                        <span class="learn-panel-label">{ } CSS</span>
+                        <p>Color coding follows Wordle convention: green for correct position, yellow for wrong position, gray for absent. CSS Grid and Flexbox handle layout.</p>
+                        <ul>
+                            <li>.correct { background-color: #6aaa64 }</li>
+                            <li>.present { background-color: #c9b458 }</li>
+                            <li>.absent { background-color: #787c7e }</li>
+                        </ul>
+                    </div>
+                    <div class="learn-panel panel--js">
+                        <span class="learn-panel-label">JS ( ) JavaScript</span>
+                        <p>Compares each letter of the guess against the secret word. Tracks game state (tries, game over). Updates letter bank with best status for each letter.</p>
+                        <div class="code-block"><span class="kw">if</span> (lettera === parolaSegreta[i]) {
+  cella.classList.add(<span class="st">'correct'</span>);
+} <span class="kw">else if</span> (parolaSegreta.includes(lettera)) {
+  cella.classList.add(<span class="st">'present'</span>);
+} <span class="kw">else</span> {
+  cella.classList.add(<span class="st">'absent'</span>);
+}</div>
+                        <ul>
+                            <li>String comparison with ===</li>
+                            <li>String.includes() checks letter presence</li>
+                            <li>State tracking for win/lose conditions</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="learn-concept-bar">
+                    <span>string comparison</span><span>game state</span><span>DOM manipulation</span><span>event listeners</span>
                 </div>
             </details>
 

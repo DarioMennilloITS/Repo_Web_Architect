@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ES1 - Triangolo</title>
+    <title>Wordle Game</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
@@ -17,7 +17,7 @@
     <header>
         <h1>Corso WSA 25 / 27</h1>
         <p>Fondamenti di Front-End</p>
-                <nav>
+        <nav>
             <ul>
                 <li><a href="../index.html">Home</a></li>
                 <li><a href="./learning-center.html">Learning Center</a></li>
@@ -56,43 +56,53 @@
 
     <main>
         <section class="intro">
-            <h2>Perimetro e Area Triangolo</h2>
+            <h2>Wordle</h2>
+            <p>Indovina la parola di 5 lettere in 7 tentativi!</p>
         </section>
 
         <div class="page-cols">
-<section class="exercise-area">
-            <div class="exercise-description">
-                <h3>Consegna</h3>
-                <p>Scrivere un programma che calcola il perimetro e l'area di un triangolo avente i lati della seguente lunghezza: <strong>5, 6, 7</strong>.</p>
-            </div>
-
-            <div class="exercise-box">
-                <h3>Dati del Triangolo</h3>
-                
-                <p>Lato A: <strong>5</strong></p>
-                <p>Lato B: <strong>6</strong></p>
-                <p>Lato C: <strong>7</strong></p>
-                
-                <button id="calcolaBtn">Calcola</button>
-                
-                <div class="result-area">
-                    <h4>Risultati:</h4>
-                    <div id="risultatoOutput" class="result-content">Clicca "Calcola" per vedere i risultati</div>
+            <section class="exercise-area">
+                <div class="exercise-box">
+                    <h3>Gioco Wordle</h3>
+                    
+                    <div class="game-info">
+                        <p>Tentativi rimasti: <span id="triesLeft">7</span> / 7</p>
+                    </div>
+                    
+                    <div class="wordle-grid" id="wordleGrid">
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="wordInput">Inserisci una parola di 5 lettere:</label>
+                        <input type="text" id="wordInput" class="wordle-input" maxlength="5" placeholder="_____">
+                    </div>
+                    
+                    <button id="btnGuess">Prova</button>
+                    <button id="btnNewGame" class="btn-secondary">Nuova Partita</button>
+                    
+                    <div id="gameMessage" class="game-message hidden"></div>
+                    
+                    <div class="tried-letters">
+                        <h4>Lettere provate:</h4>
+                        <div class="letters-row" id="triedLetters">
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </section>
-    <aside class="logic-panel">
-        <div class="logic-box">
-            <p>Perimeter = sum of all sides. Area uses <strong>Heron's formula</strong>: compute semi-perimeter <code>s = (a+b+c)/2</code>, then <code>area = √(s·(s-a)·(s-b)·(s-c))</code>.</p><p>No angle needed — only the three side lengths.</p>
-        </div>
-        <div class="insight-box">
-            <ul class="insight-list">
-                <li><code>Math.sqrt()</code> computes square root</li>
-                <li>Heron's formula works for any triangle given 3 sides</li>
-                <li><code>toFixed(2)</code> rounds floating-point results for display — it returns a <em>string</em></li>
-            </ul>
-        </div>
-    </aside>
+            </section>
+            
+            <aside class="logic-panel">
+                <div class="logic-box">
+                    <p>Il gioco confronta ogni lettera della tua parola con la parola segreta. <strong>Verde</strong> = lettera corretta nella posizione giusta. <strong>Giallo</strong> = lettera presente ma posizione sbagliata. <strong>Grigio</strong> = lettera non presente.</p>
+                </div>
+                <div class="insight-box">
+                    <ul class="insight-list">
+                        <li>La parola segreta e scelta da una lista di parole italiane</li>
+                        <li>Ogni tentativo deve essere di esattamente 5 lettere</li>
+                        <li>Le lettere provate vengono mostrate con il loro stato</li>
+                        <li>Usa i feedback per indovinare la parola!</li>
+                    </ul>
+                </div>
+            </aside>
         </div>
     </main>
 
@@ -100,6 +110,6 @@
         <p>FACUNDO FANTI &copy;</p>
     </footer>
 
-    <script src="../js/triangolo.js"></script>
+    <script src="../js/wordle.js"></script>
 </body>
 </html>
