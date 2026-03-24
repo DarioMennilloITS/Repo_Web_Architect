@@ -3,17 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wordle Game</title>
+    <title>Calcolatrice Funzioni</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="../favicon.ico">
-    
     <link rel="stylesheet" href="../css/reset.css">
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-    
     <header>
         <h1>Corso WSA 25 / 27</h1>
         <p>Fondamenti di Front-End</p>
@@ -51,56 +49,82 @@
                 <li><a href="./callbacks2.html">Callbacks 2</a></li>
                 <li><a href="./wordle.html">Wordle</a></li>
                 <li><a href="./closure.html">Closure</a></li>
+                <li><a href="./scope-demo.html">Scope</a></li>
+                <li><a href="./conta-lettere.html">Conta</a></li>
+                <li><a href="./tipo-dato.html">Tipo</a></li>
+                <li><a href="./parola-lunga.html">Parola</a></li>
+                <li><a href="./ruota-stringa.html">Ruota</a></li>
+                <li><a href="./array-button.html">Array Btn</a></li>
+                <li><a href="./rimuovi-duplicati.html">Unici</a></li>
+                <li><a href="./somma-array.html">Somma Arr</a></li>
+                <li><a href="./calcolatrice-funzioni.html">Calc Fun</a></li>
+                <li><a href="./form-utente.html">Form</a></li>
+                <li><a href="./rettangolo-callback.html">Rett CB</a></li>
+                <li><a href="./vicino-centro.html">Vicino C</a></li>
+                <li><a href="./title-case.html">Title</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
         <section class="intro">
-            <h2>Wordle</h2>
-            <p>Indovina la parola di 5 lettere in 7 tentativi!</p>
+            <h2>Calcolatrice Funzioni</h2>
+            <p>Quattro operazioni matematiche, ognuna con la sua funzione dedicata.</p>
         </section>
 
         <div class="page-cols">
             <section class="exercise-area">
                 <div class="exercise-box">
-                    <h3>Gioco Wordle</h3>
+                    <h3>Operazioni</h3>
                     
-                    <div class="game-info">
-                        <p>Tentativi rimasti: <span id="triesLeft">7</span> / 7</p>
-                    </div>
-                    
-                    <div class="wordle-grid" id="wordleGrid">
+                    <div class="exercise-description">
+                        <h3>Istruzioni</h3>
+                        <p>Inserisci due numeri e scegli l'operazione. Ogni operazione ha una funzione dedicata e logga su console.</p>
                     </div>
                     
                     <div class="input-group">
-                        <label for="wordInput">Inserisci una parola di 5 lettere:</label>
-                        <input type="text" id="wordInput" class="wordle-input" maxlength="5" placeholder="_____">
+                        <label for="inputNum1">Numero 1:</label>
+                        <input type="number" id="inputNum1" value="5">
                     </div>
                     
-                    <button id="btnGuess">Prova</button>
-                    <button id="btnNewGame" class="btn-secondary">Nuova Partita</button>
+                    <div class="input-group">
+                        <label for="inputNum2">Numero 2:</label>
+                        <input type="number" id="inputNum2" value="9">
+                    </div>
                     
-                    <div id="gameMessage" class="game-message hidden"></div>
+                    <div class="calc-buttons">
+                        <button id="btnAdd">+</button>
+                        <button id="btnSubtract">-</button>
+                        <button id="btnMultiply">×</button>
+                        <button id="btnDivide">÷</button>
+                        <button id="btnAll">Tutte</button>
+                    </div>
                     
-                    <div class="tried-letters">
-                        <h4>Lettere provate:</h4>
-                        <div class="letters-row" id="triedLetters">
+                    <button id="btnClear" class="btn-secondary">Pulisci Console</button>
+                    
+                    <div class="result-area" id="result">
+                        <h4>Risultato</h4>
+                        <div class="result-content">
+                            <em>Clicca un pulsante per calcolare...</em>
                         </div>
+                    </div>
+                    
+                    <div class="console-output" id="consoleOutput">
+                        <div class="console-line">// Console output apparira qui...</div>
                     </div>
                 </div>
             </section>
             
             <aside class="logic-panel">
                 <div class="logic-box">
-                    <p>Il gioco confronta ogni lettera della tua parola con la parola segreta. <strong>Verde</strong> = lettera corretta nella posizione giusta. <strong>Giallo</strong> = lettera presente ma posizione sbagliata. <strong>Grigio</strong> = lettera non presente.</p>
+                    <p>Ogni operazione e una funzione separata: <code>addizione()</code>, <code>sottrazione()</code>, <code>moltiplicazione()</code>, <code>divisione()</code>. Questo dimostra come suddividere il codice in funzioni riutilizzabili.</p>
                 </div>
                 <div class="insight-box">
                     <ul class="insight-list">
-                        <li>La parola segreta e scelta da una lista di parole italiane</li>
-                        <li>Ogni tentativo deve essere di esattamente 5 lettere</li>
-                        <li>Le lettere provate vengono mostrate con il loro stato</li>
-                        <li>Usa i feedback per indovinare la parola!</li>
+                        <li>Funzioni dedicate per ogni operazione</li>
+                        <li>Console.log per debugging</li>
+                        <li>Gestione divisione per zero</li>
+                        <li>Template literals per output</li>
                     </ul>
                 </div>
             </aside>
@@ -111,6 +135,6 @@
         <p>FACUNDO FANTI &copy;</p>
     </footer>
 
-    <script src="../js/wordle.js"></script>
+    <script src="../js/calcolatrice-funzioni.js"></script>
 </body>
 </html>

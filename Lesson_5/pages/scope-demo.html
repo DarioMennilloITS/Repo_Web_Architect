@@ -3,21 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lesson 5 - Counter</title>
+    <title>Scope Demo</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="../favicon.ico">
-    
     <link rel="stylesheet" href="../css/reset.css">
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-    
     <header>
         <h1>Corso WSA 25 / 27</h1>
         <p>Fondamenti di Front-End</p>
-                <nav>
+        <nav>
             <ul>
                 <li><a href="../index.html">Home</a></li>
                 <li><a href="./learning-center.html">Learning Center</a></li>
@@ -51,46 +49,68 @@
                 <li><a href="./callbacks2.html">Callbacks 2</a></li>
                 <li><a href="./wordle.html">Wordle</a></li>
                 <li><a href="./closure.html">Closure</a></li>
+                <li><a href="./scope-demo.html">Scope</a></li>
+                <li><a href="./conta-lettere.html">Conta</a></li>
+                <li><a href="./tipo-dato.html">Tipo</a></li>
+                <li><a href="./parola-lunga.html">Parola</a></li>
+                <li><a href="./ruota-stringa.html">Ruota</a></li>
+                <li><a href="./array-button.html">Array Btn</a></li>
+                <li><a href="./rimuovi-duplicati.html">Unici</a></li>
+                <li><a href="./somma-array.html">Somma Arr</a></li>
+                <li><a href="./calcolatrice-funzioni.html">Calc Fun</a></li>
+                <li><a href="./form-utente.html">Form</a></li>
+                <li><a href="./rettangolo-callback.html">Rett CB</a></li>
+                <li><a href="./vicino-centro.html">Vicino C</a></li>
+                <li><a href="./title-case.html">Title</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
         <section class="intro">
-            <h2>Counter</h2>
-            <p>A simple interactive counter with increment, decrement and reset functions.</p>
+            <h2>Scope Demo</h2>
+            <p>Dichiara funzioni con variabili locali e globali. Sposta il richiamo per capire cosa accade.</p>
         </section>
 
         <div class="page-cols">
-<section class="exercise-area">
-            <div class="counter-box">
-                <h3>Current Value</h3>
-                <div id="counterValue" class="counter-display">0</div>
-                <p id="counterMessage" class="message"></p>
-                
-                <div class="counter-controls">
-                    <button id="decrementBtn" class="btn-control">- Decrement</button>
-                    <button id="resetBtn" class="btn-control">Reset</button>
-                    <button id="incrementBtn" class="btn-control">+ Increment</button>
+            <section class="exercise-area">
+                <div class="exercise-box">
+                    <h3>Demo Scope</h3>
+                    
+                    <div class="exercise-description">
+                        <h3>Istruzioni</h3>
+                        <p>Clicca sui pulsanti per vedere il comportamento delle variabili locali e globali. Controlla la console per i dettagli.</p>
+                    </div>
+                    
+                    <div class="button-group">
+                        <button id="btnLocal">Variabile Locale</button>
+                        <button id="btnGlobal">Variabile Globale</button>
+                        <button id="btnClear" class="btn-secondary">Pulisci Console</button>
+                    </div>
+                    
+                    <div class="output-box" id="output">
+                        <em>Clicca un pulsante per vedere il risultato...</em>
+                    </div>
+                    
+                    <div class="console-output" id="consoleOutput">
+                        <div class="console-line">// Console output apparirà qui...</div>
+                    </div>
                 </div>
-                
-                <div class="counter-info">
-                    <p>Min: -100 | Max: 100</p>
+            </section>
+            
+            <aside class="logic-panel">
+                <div class="logic-box">
+                    <p>Scope Locale: Le variabili dichiarate con <code>const</code> o <code>let</code> all'interno di una funzione sono visibili solo dentro quella funzione.</p>
                 </div>
-            </div>
-        </section>
-    <aside class="logic-panel">
-        <div class="logic-box">
-            <p>A single <code>count</code> variable lives in the script's scope. Each button's <code>click</code> listener mutates it (±1 or reset to 0). After each mutation, the display is updated and boundary buttons are toggled <code>disabled</code>.</p>
-        </div>
-        <div class="insight-box">
-            <ul class="insight-list">
-                <li>State lives in a JS variable — the DOM only reflects it</li>
-                <li>Disable buttons at boundaries to prevent invalid states rather than showing errors</li>
-                <li><code>button.disabled = true</code> makes a button unclickable and greyed out</li>
-            </ul>
-        </div>
-    </aside>
+                <div class="insight-box">
+                    <ul class="insight-list">
+                        <li>Le variabili globali sono accessibili ovunque</li>
+                        <li>Lo scope locale protegge le variabili</li>
+                        <li>JavaScript usa <strong>hoisting</strong></li>
+                        <li>Evita variabili globali quando possibile</li>
+                    </ul>
+                </div>
+            </aside>
         </div>
     </main>
 
@@ -98,6 +118,6 @@
         <p>FACUNDO FANTI &copy;</p>
     </footer>
 
-    <script src="../js/counter.js"></script>
+    <script src="../js/scope-demo.js"></script>
 </body>
 </html>

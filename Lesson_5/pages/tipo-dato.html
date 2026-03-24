@@ -3,21 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lesson 5 - Color Picker</title>
+    <title>Tipo Dato</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="../favicon.ico">
-    
     <link rel="stylesheet" href="../css/reset.css">
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-    
     <header>
         <h1>Corso WSA 25 / 27</h1>
         <p>Fondamenti di Front-End</p>
-                <nav>
+        <nav>
             <ul>
                 <li><a href="../index.html">Home</a></li>
                 <li><a href="./learning-center.html">Learning Center</a></li>
@@ -51,73 +49,74 @@
                 <li><a href="./callbacks2.html">Callbacks 2</a></li>
                 <li><a href="./wordle.html">Wordle</a></li>
                 <li><a href="./closure.html">Closure</a></li>
+                <li><a href="./scope-demo.html">Scope</a></li>
+                <li><a href="./conta-lettere.html">Conta</a></li>
+                <li><a href="./tipo-dato.html">Tipo</a></li>
+                <li><a href="./parola-lunga.html">Parola</a></li>
+                <li><a href="./ruota-stringa.html">Ruota</a></li>
+                <li><a href="./array-button.html">Array Btn</a></li>
+                <li><a href="./rimuovi-duplicati.html">Unici</a></li>
+                <li><a href="./somma-array.html">Somma Arr</a></li>
+                <li><a href="./calcolatrice-funzioni.html">Calc Fun</a></li>
+                <li><a href="./form-utente.html">Form</a></li>
+                <li><a href="./rettangolo-callback.html">Rett CB</a></li>
+                <li><a href="./vicino-centro.html">Vicino C</a></li>
+                <li><a href="./title-case.html">Title</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
         <section class="intro">
-            <h2>Color Picker</h2>
-            <p>Explore colors by adjusting RGB values or generate random colors.</p>
+            <h2>Tipo Dato</h2>
+            <p>Funzione che accetta un argomento e restituisce il tipo di dato.</p>
         </section>
 
         <div class="page-cols">
-<section class="exercise-area">
-            <div class="color-box">
-                <h3>Color Explorer</h3>
-                
-                <div class="color-preview-section">
-                    <div id="colorPreview" class="color-preview"></div>
-                </div>
-                
-                <div class="sliders-section">
-                    <div class="slider-group">
-                        <label for="redSlider">Red: <span id="redValue">128</span></label>
-                        <input type="range" id="redSlider" min="0" max="255" value="128">
+            <section class="exercise-area">
+                <div class="exercise-box">
+                    <h3>Rileva Tipo Dato</h3>
+                    
+                    <div class="exercise-description">
+                        <h3>Istruzioni</h3>
+                        <p>Inserisci un valore per scoprire il suo tipo di dato JavaScript.</p>
                     </div>
                     
-                    <div class="slider-group">
-                        <label for="greenSlider">Green: <span id="greenValue">128</span></label>
-                        <input type="range" id="greenSlider" min="0" max="255" value="128">
+                    <div class="input-group">
+                        <label for="inputValue">Valore da analizzare:</label>
+                        <input type="text" id="inputValue" placeholder="Es: 42, 'hello', true, null, [1,2,3]">
                     </div>
                     
-                    <div class="slider-group">
-                        <label for="blueSlider">Blue: <span id="blueValue">128</span></label>
-                        <input type="range" id="blueSlider" min="0" max="255" value="128">
+                    <button id="btnCheck">Controlla Tipo</button>
+                    
+                    <div class="result-area" id="result">
+                        <h4>Risultato</h4>
+                        <div class="result-content">
+                            <em>Inserisci un valore...</em>
+                        </div>
+                    </div>
+                    
+                    <div class="examples-box" id="examples">
+                        <h4>Esempi Predefiniti</h4>
                     </div>
                 </div>
-                
-                <div class="color-values">
-                    <div class="value-box">
-                        <span class="value-label">RGB:</span>
-                        <code id="rgbValue">rgb(128, 128, 128)</code>
-                    </div>
-                    <div class="value-box">
-                        <span class="value-label">HEX:</span>
-                        <code id="hexValue">#808080</code>
-                    </div>
+            </section>
+            
+            <aside class="logic-panel">
+                <div class="logic-box">
+                    <p>JavaScript ha tipi dinamici. Usa <code>typeof</code> per la maggior parte dei tipi, ma attenzione: <code>typeof null</code> restituisce <code>"object"</code> (bug storico)!</p>
                 </div>
-                
-                <div class="color-buttons">
-                    <button id="randomColorBtn">Random Color</button>
-                    <button id="copyHexBtn" class="btn-secondary">Copy HEX</button>
+                <div class="insight-box">
+                    <ul class="insight-list">
+                        <li><code>typeof "text"</code> → "string"</li>
+                        <li><code>typeof 42</code> → "number"</li>
+                        <li><code>typeof true</code> → "boolean"</li>
+                        <li><code>typeof {}</code> → "object"</li>
+                        <li><code>typeof null</code> → "object" (bug!)</li>
+                        <li><code>Array.isArray([])</code> → true</li>
+                    </ul>
                 </div>
-                
-                <p id="copyMessage" class="message"></p>
-            </div>
-        </section>
-    <aside class="logic-panel">
-        <div class="logic-box">
-            <p>Three <code>range</code> inputs (0–255) feed R, G, B values. Applied as <code>rgb(r, g, b)</code>. Hex conversion: each channel is converted with <code>n.toString(16).padStart(2, '0')</code> and the three strings are concatenated.</p>
-        </div>
-        <div class="insight-box">
-            <ul class="insight-list">
-                <li><code>input[type=range]</code> fires <code>input</code> events continuously while dragging</li>
-                <li><code>Number.toString(16)</code> converts decimal to hexadecimal string</li>
-                <li><code>padStart(2, '0')</code> ensures single-digit hex values (like <code>f</code>) become <code>0f</code></li>
-            </ul>
-        </div>
-    </aside>
+            </aside>
         </div>
     </main>
 
@@ -125,6 +124,6 @@
         <p>FACUNDO FANTI &copy;</p>
     </footer>
 
-    <script src="../js/color-picker.js"></script>
+    <script src="../js/tipo-dato.js"></script>
 </body>
 </html>

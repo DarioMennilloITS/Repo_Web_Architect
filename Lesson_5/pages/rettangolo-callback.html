@@ -3,21 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lesson 5 - Calculator</title>
+    <title>Rettangolo Callback</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="../favicon.ico">
-    
     <link rel="stylesheet" href="../css/reset.css">
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-    
     <header>
         <h1>Corso WSA 25 / 27</h1>
         <p>Fondamenti di Front-End</p>
-                <nav>
+        <nav>
             <ul>
                 <li><a href="../index.html">Home</a></li>
                 <li><a href="./learning-center.html">Learning Center</a></li>
@@ -51,67 +49,84 @@
                 <li><a href="./callbacks2.html">Callbacks 2</a></li>
                 <li><a href="./wordle.html">Wordle</a></li>
                 <li><a href="./closure.html">Closure</a></li>
+                <li><a href="./scope-demo.html">Scope</a></li>
+                <li><a href="./conta-lettere.html">Conta</a></li>
+                <li><a href="./tipo-dato.html">Tipo</a></li>
+                <li><a href="./parola-lunga.html">Parola</a></li>
+                <li><a href="./ruota-stringa.html">Ruota</a></li>
+                <li><a href="./array-button.html">Array Btn</a></li>
+                <li><a href="./rimuovi-duplicati.html">Unici</a></li>
+                <li><a href="./somma-array.html">Somma Arr</a></li>
+                <li><a href="./calcolatrice-funzioni.html">Calc Fun</a></li>
+                <li><a href="./form-utente.html">Form</a></li>
+                <li><a href="./rettangolo-callback.html">Rett CB</a></li>
+                <li><a href="./vicino-centro.html">Vicino C</a></li>
+                <li><a href="./title-case.html">Title</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
         <section class="intro">
-            <h2>Simple Calculator</h2>
-            <p>Perform basic math operations with two numbers.</p>
+            <h2>Rettangolo Callback</h2>
+            <p>Calcola area, perimetro e volume usando funzioni e callback.</p>
         </section>
 
         <div class="page-cols">
-<section class="exercise-area">
-            <div class="calculator-box">
-                <h3>Calculator</h3>
-                
-                <div class="calc-inputs">
-                    <div class="input-group">
-                        <label for="num1">First Number:</label>
-                        <input type="number" id="num1" placeholder="Enter number">
+            <section class="exercise-area">
+                <div class="exercise-box">
+                    <h3>Calcoli Geometrici</h3>
+                    
+                    <div class="exercise-description">
+                        <h3>Istruzioni</h3>
+                        <p>Inserisci le dimensioni e calcola area, perimetro o volume. Il volume usa la funzione area come callback.</p>
                     </div>
                     
                     <div class="input-group">
-                        <label for="operation">Operation:</label>
-                        <select id="operation">
-                            <option value="+">+ Addition</option>
-                            <option value="-">- Subtraction</option>
-                            <option value="*">* Multiplication</option>
-                            <option value="/">/ Division</option>
-                        </select>
+                        <label for="inputBase">Base:</label>
+                        <input type="number" id="inputBase" value="5">
                     </div>
                     
                     <div class="input-group">
-                        <label for="num2">Second Number:</label>
-                        <input type="number" id="num2" placeholder="Enter number">
+                        <label for="inputAltezza">Altezza:</label>
+                        <input type="number" id="inputAltezza" value="3">
                     </div>
+                    
+                    <div class="input-group">
+                        <label for="inputProfondita">Profondita (per volume):</label>
+                        <input type="number" id="inputProfondita" value="2">
+                    </div>
+                    
+                    <div class="button-group">
+                        <button id="btnArea">Area</button>
+                        <button id="btnPerimetro">Perimetro</button>
+                        <button id="btnVolume">Volume</button>
+                    </div>
+                    
+                    <div class="result-area" id="result">
+                        <h4>Risultato</h4>
+                        <div class="result-content">
+                            <em>Clicca un pulsante per calcolare...</em>
+                        </div>
+                    </div>
+                    
+                    <div class="code-display" id="codeDisplay"></div>
                 </div>
-                
-                <div class="calc-buttons">
-                    <button id="calculateBtn">Calculate</button>
-                    <button id="clearBtn" class="btn-secondary">Clear</button>
+            </section>
+            
+            <aside class="logic-panel">
+                <div class="logic-box">
+                    <p>La funzione <code>calcolaVolume(profondita, funzioneArea, base, altezza)</code> accetta una funzione come parametro (callback) per calcolare l'area di base.</p>
                 </div>
-                
-                <div class="calc-result">
-                    <h4>Result:</h4>
-                    <div id="resultDisplay" class="result-display">-</div>
-                    <p id="calcMessage" class="message"></p>
+                <div class="insight-box">
+                    <ul class="insight-list">
+                        <li>Callback: passare funzione come parametro</li>
+                        <li>Funzione area riutilizzabile</li>
+                        <li>Composizione di funzioni</li>
+                        <li>Principio DRY (Don't Repeat Yourself)</li>
+                    </ul>
                 </div>
-            </div>
-        </section>
-    <aside class="logic-panel">
-        <div class="logic-box">
-            <p>Reads two number inputs and an operator from a <code>&lt;select&gt;</code>. A <code>switch</code> on the operator string applies the correct arithmetic. Division-by-zero is checked explicitly before dividing.</p>
-        </div>
-        <div class="insight-box">
-            <ul class="insight-list">
-                <li><code>select.value</code> returns the selected option's <code>value</code> attribute as a string</li>
-                <li>Switch on operator string: <code>case '+':</code>, <code>case '-':</code>, etc.</li>
-                <li>Always check for division by zero before performing <code>/</code></li>
-            </ul>
-        </div>
-    </aside>
+            </aside>
         </div>
     </main>
 
@@ -119,6 +134,6 @@
         <p>FACUNDO FANTI &copy;</p>
     </footer>
 
-    <script src="../js/calculator.js"></script>
+    <script src="../js/rettangolo-callback.js"></script>
 </body>
 </html>

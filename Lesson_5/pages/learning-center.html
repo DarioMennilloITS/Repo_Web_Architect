@@ -49,6 +49,20 @@
                 <li><a href="./callbacks.html">Callbacks</a></li>
                 <li><a href="./callbacks2.html">Callbacks 2</a></li>
                 <li><a href="./wordle.html">Wordle</a></li>
+                <li><a href="./closure.html">Closure</a></li>
+                <li><a href="./scope-demo.html">Scope</a></li>
+                <li><a href="./conta-lettere.html">Conta</a></li>
+                <li><a href="./tipo-dato.html">Tipo</a></li>
+                <li><a href="./parola-lunga.html">Parola</a></li>
+                <li><a href="./ruota-stringa.html">Ruota</a></li>
+                <li><a href="./array-button.html">Array Btn</a></li>
+                <li><a href="./rimuovi-duplicati.html">Unici</a></li>
+                <li><a href="./somma-array.html">Somma Arr</a></li>
+                <li><a href="./calcolatrice-funzioni.html">Calc Fun</a></li>
+                <li><a href="./form-utente.html">Form</a></li>
+                <li><a href="./rettangolo-callback.html">Rett CB</a></li>
+                <li><a href="./vicino-centro.html">Vicino C</a></li>
+                <li><a href="./title-case.html">Title</a></li>
             </ul>
         </nav>
     </header>
@@ -68,6 +82,7 @@
             <a href="#loops">Loops</a>
             <a href="#arrays">Arrays</a>
             <a href="#dom">DOM &amp; Events</a>
+            <a href="#functions">Functions &amp; Closures</a>
         </nav>
 
 
@@ -1307,6 +1322,630 @@ preview.style.backgroundColor = <span class="st">`rgb(${r},${g},${b})`</span>;</
                 </div>
             </details>
 
+        </section>
+
+
+        <!-- ═══════════════════════════════════════════════════
+             GROUP 7 — FUNCTIONS & CLOSURES
+        ════════════════════════════════════════════════════ -->
+        <section id="functions">
+            <h2>Functions &amp; Closures</h2>
+
+            <!-- Closure -->
+            <details class="learn-entry">
+                <summary><a href="./closure.html">Closure &amp; Lexical Scoping</a> <span class="concept-tag tag--vars">functions</span><span class="concept-tag tag--dom">scope</span></summary>
+                <div class="learn-panels">
+                    <div class="learn-panel panel--html">
+                        <span class="learn-panel-label">&lt;/&gt; HTML</span>
+                        <p>Three interactive demonstrations in separate exercise boxes: a private counter with increment/decrement controls, a function factory with two multiplier cards, and a bank account simulator with transaction logging.</p>
+                        <ul>
+                            <li>Each demo uses <code>.exercise-box</code> for consistent framing</li>
+                            <li>Input groups with labels for user input</li>
+                            <li>Result areas update dynamically via JavaScript</li>
+                        </ul>
+                    </div>
+                    <div class="learn-panel panel--css">
+                        <span class="learn-panel-label">{ } CSS</span>
+                        <p>Custom styles for closure demos include <code>.scope-visual</code> for code display with dark background, <code>.demo-grid</code> for side-by-side factory cards, and <code>.transaction-log</code> for scrollable account history.</p>
+                        <ul>
+                            <li><code>.scope-visual</code> — dark terminal-style code block</li>
+                            <li><code>.demo-grid</code> — responsive grid for factory demos</li>
+                            <li><code>.balance-display</code> — prominent account balance</li>
+                            <li><code>.transaction-log</code> — scrollable history with monospace</li>
+                        </ul>
+                    </div>
+                    <div class="learn-panel panel--js">
+                        <span class="learn-panel-label">JS ( ) JavaScript</span>
+                        <p>A closure is a function that remembers its lexical scope even when executed outside that scope. The factory pattern creates functions with persistent private state.</p>
+                        <div class="code-block"><span class="kw">function</span> <span class="fn">createCounter</span>() {
+  <span class="kw">let</span> count = <span class="nu">0</span>;  <span class="cm">// private variable</span>
+  <span class="kw">return</span> {
+    increment: () => ++count,
+    getValue: () => count
+  };
+}
+<span class="kw">const</span> counter = <span class="fn">createCounter</span>();
+counter.<span class="fn">increment</span>(); <span class="cm">// count is 1</span></div>
+                        <ul>
+                            <li>Inner functions access outer scope variables</li>
+                            <li>Variables persist between function calls</li>
+                            <li>Creates true private state in JavaScript</li>
+                            <li>Factory functions return configured closures</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="learn-concept-bar">
+                    <span>lexical scope</span><span>closure</span><span>private variables</span><span>factory pattern</span><span>encapsulation</span>
+                </div>
+            </details>
+        </section>
+
+
+        <!-- ═══════════════════════════════════════════════════
+             GROUP 8 — NEW EXERCISES (ES1-ES13)
+        ════════════════════════════════════════════════════ -->
+        <section id="new-exercises">
+            <h2>Nuovi Esercizi</h2>
+
+            <!-- Scope Demo -->
+            <details class="learn-entry">
+                <summary><a href="./scope-demo.html">Scope Demo</a> <span class="concept-tag tag--vars">scope</span></summary>
+                <div class="learn-panels">
+                    <div class="learn-panel panel--html">
+                        <span class="learn-panel-label">&lt;/&gt; HTML</span>
+                        <p>Two buttons trigger different scope demonstrations. A console-output div shows execution logs. An output-box displays current results.</p>
+                        <ul>
+                            <li>Buttons for local vs global variable demo</li>
+                            <li>Console output area for execution trace</li>
+                        </ul>
+                    </div>
+                    <div class="learn-panel panel--css">
+                        <span class="learn-panel-label">{ } CSS</span>
+                        <p>The console-output uses dark background with green text for terminal appearance. Button-group arranges multiple actions horizontally.</p>
+                        <ul>
+                            <li>.console-output — dark terminal-style logging area</li>
+                            <li>.button-group — flex container for action buttons</li>
+                            <li>.output-box — bordered result display</li>
+                        </ul>
+                    </div>
+                    <div class="learn-panel panel--js">
+                        <span class="learn-panel-label">JS ( ) JavaScript</span>
+                        <p>Demonstrates local vs global scope. Functions can access variables declared in their own scope and outer scopes. Variable hoisting behavior is shown.</p>
+                        <div class="code-block"><span class="kw">function</span> <span class="fn">funzioneConVariabileLocale</span>() {
+  <span class="kw">const</span> variabileLocale = <span class="st">'Sono locale!'</span>;
+  <span class="kw">return</span> variabileLocale;
+}
+<span class="cm">// variabileLocale non e accessibile qui fuori</span></div>
+                        <ul>
+                            <li>Local scope — variables inside functions</li>
+                            <li>Global scope — variables accessible everywhere</li>
+                            <li>Hoisting — variable declaration behavior</li>
+                            <li>Best practice: minimize global variables</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="learn-concept-bar">
+                    <span>local scope</span><span>global scope</span><span>hoisting</span><span>variable visibility</span>
+                </div>
+            </details>
+
+            <!-- Conta Lettere -->
+            <details class="learn-entry">
+                <summary><a href="./conta-lettere.html">Conta Lettere</a> <span class="concept-tag tag--string">string</span></summary>
+                <div class="learn-panels">
+                    <div class="learn-panel panel--html">
+                        <span class="learn-panel-label">&lt;/&gt; HTML</span>
+                        <p>Text input for the string, single character input for the letter to search. Result area highlights found occurrences.</p>
+                        <ul>
+                            <li>maxLength="1" on letter input</li>
+                            <li>Result area with highlighted matches</li>
+                        </ul>
+                    </div>
+                    <div class="learn-panel panel--css">
+                        <span class="learn-panel-label">{ } CSS</span>
+                        <p>Mark element highlights found letters with accent color background. Monospace font for string display.</p>
+                        <ul>
+                            <li>mark — background highlight for matches</li>
+                        </ul>
+                    </div>
+                    <div class="learn-panel panel--js">
+                        <span class="learn-panel-label">JS ( ) JavaScript</span>
+                        <p>Iterate through string comparing each character (case-insensitive). Alternative methods using split() or regex also demonstrated.</p>
+                        <div class="code-block"><span class="kw">function</span> <span class="fn">contaOccorrenze</span>(stringa, lettera) {
+  <span class="kw">let</span> count = <span class="nu">0</span>;
+  <span class="kw">for</span> (<span class="kw">let</span> i = <span class="nu">0</span>; i &lt; str.length; i++) {
+    <span class="kw">if</span> (str[i] === char) count++;
+  }
+  <span class="kw">return</span> count;
+}</div>
+                        <ul>
+                            <li>Case-insensitive comparison with toLowerCase()</li>
+                            <li>Alternative: split(lettera).length - 1</li>
+                            <li>Alternative: regex match with /g flag</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="learn-concept-bar">
+                    <span>string iteration</span><span>case-insensitive</span><span>counting</span><span>split</span>
+                </div>
+            </details>
+
+            <!-- Tipo Dato -->
+            <details class="learn-entry">
+                <summary><a href="./tipo-dato.html">Tipo Dato</a> <span class="concept-tag tag--vars">types</span></summary>
+                <div class="learn-panels">
+                    <div class="learn-panel panel--html">
+                        <span class="learn-panel-label">&lt;/&gt; HTML</span>
+                        <p>Text input accepts any value. Examples box shows predefined type examples with color-coded badges.</p>
+                        <ul>
+                            <li>Type badges with different colors per type</li>
+                            <li>Examples list for reference</li>
+                        </ul>
+                    </div>
+                    <div class="learn-panel panel--css">
+                        <span class="learn-panel-label">{ } CSS</span>
+                        <p>Type badges use border colors to distinguish types: orange for strings, blue for numbers, purple for booleans, etc.</p>
+                        <ul>
+                            <li>.tipo-badge — bordered type indicator</li>
+                            <li>Color coding per data type</li>
+                        </ul>
+                    </div>
+                    <div class="learn-panel panel--js">
+                        <span class="learn-panel-label">JS ( ) JavaScript</span>
+                        <p>typeof operator with special handling for null (returns 'object' — a bug) and arrays (use Array.isArray()).</p>
+                        <div class="code-block"><span class="kw">function</span> <span class="fn">getTipoDato</span>(valore) {
+  <span class="kw">if</span> (valore === <span class="kw">null</span>) <span class="kw">return</span> <span class="st">'null'</span>;
+  <span class="kw">if</span> (Array.<span class="fn">isArray</span>(valore)) <span class="kw">return</span> <span class="st">'array'</span>;
+  <span class="kw">return</span> <span class="kw">typeof</span> valore;
+}</div>
+                        <ul>
+                            <li>typeof — basic type checking</li>
+                            <li>null check — typeof null is 'object'</li>
+                            <li>Array.isArray() — check for arrays</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="learn-concept-bar">
+                    <span>typeof</span><span>Array.isArray</span><span>null check</span><span>type detection</span>
+                </div>
+            </details>
+
+            <!-- Parola Piu Lunga -->
+            <details class="learn-entry">
+                <summary><a href="./parola-lunga.html">Parola Piu Lunga</a> <span class="concept-tag tag--string">string</span></summary>
+                <div class="learn-panels">
+                    <div class="learn-panel panel--html">
+                        <span class="learn-panel-label">&lt;/&gt; HTML</span>
+                        <p>Text input for sentence. Result highlights the longest word found.</p>
+                        <ul>
+                            <li>Single input for the sentence</li>
+                            <li>Result with highlighted longest word</li>
+                        </ul>
+                    </div>
+                    <div class="learn-panel panel--css">
+                        <span class="learn-panel-label">{ } CSS</span>
+                        <p>Mark element highlights the found word. Large font for the result word.</p>
+                        <ul>
+                            <li>mark — highlights the longest word</li>
+                        </ul>
+                    </div>
+                    <div class="learn-panel panel--js">
+                        <span class="learn-panel-label">JS ( ) JavaScript</span>
+                        <p>Split sentence into words, clean punctuation, track longest. Alternative using reduce() also shown.</p>
+                        <div class="code-block"><span class="kw">function</span> <span class="fn">trovaParolaPiuLunga</span>(frase) {
+  <span class="kw">const</span> parole = frase.<span class="fn">split</span>(<span class="st">' '</span>);
+  <span class="kw">let</span> max = <span class="st">''</span>;
+  <span class="kw">for</span> (<span class="kw">let</span> p <span class="kw">of</span> parole) {
+    <span class="kw">if</span> (p.length &gt; max.length) max = p;
+  }
+  <span class="kw">return</span> max;
+}</div>
+                        <ul>
+                            <li>split(' ') — divide by spaces</li>
+                            <li>replace(/[^a-zA-Z]/g, '') — clean punctuation</li>
+                            <li>reduce — alternative functional approach</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="learn-concept-bar">
+                    <span>split</span><span>word iteration</span><span>string cleaning</span><span>reduce</span>
+                </div>
+            </details>
+
+            <!-- Ruota Stringa -->
+            <details class="learn-entry">
+                <summary><a href="./ruota-stringa.html">Ruota Stringa</a> <span class="concept-tag tag--string">animation</span></summary>
+                <div class="learn-panels">
+                    <div class="learn-panel panel--html">
+                        <span class="learn-panel-label">&lt;/&gt; HTML</span>
+                        <p>Text input for string, number input for speed. Large display area for animation. Start/Stop buttons.</p>
+                        <ul>
+                            <li>String input for rotation</li>
+                            <li>Speed control (ms)</li>
+                            <li>Animation display area</li>
+                        </ul>
+                    </div>
+                    <div class="learn-panel panel--css">
+                        <span class="learn-panel-label">{ } CSS</span>
+                        <p>String display uses large monospace font. Rotated character highlighted. Centered flex layout.</p>
+                        <ul>
+                            <li>.string-display — large centered text</li>
+                            <li>.rotated-char — highlighted moved character</li>
+                        </ul>
+                    </div>
+                    <div class="learn-panel panel--js">
+                        <span class="learn-panel-label">JS ( ) JavaScript</span>
+                        <p>Uses setInterval for animation. slice(-1) gets last character, slice(0, -1) gets rest. Concatenate to rotate.</p>
+                        <div class="code-block"><span class="kw">function</span> <span class="fn">ruotaStringa</span>(str) {
+  <span class="kw">const</span> ultimo = str.<span class="fn">slice</span>(-<span class="nu">1</span>);
+  <span class="kw">const</span> resto = str.<span class="fn">slice</span>(<span class="nu">0</span>, -<span class="nu">1</span>);
+  <span class="kw">return</span> ultimo + resto;
+}
+<span class="cm">// setInterval for animation loop</span></div>
+                        <ul>
+                            <li>slice(-1) — last character</li>
+                            <li>slice(0, -1) — all but last</li>
+                            <li>setInterval/clearInterval — animation control</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="learn-concept-bar">
+                    <span>slice</span><span>string rotation</span><span>setInterval</span><span>animation</span>
+                </div>
+            </details>
+
+            <!-- Array Button -->
+            <details class="learn-entry">
+                <summary><a href="./array-button.html">Array Button</a> <span class="concept-tag tag--array">dom</span></summary>
+                <div class="learn-panels">
+                    <div class="learn-panel panel--html">
+                        <span class="learn-panel-label">&lt;/&gt; HTML</span>
+                        <p>Text input for comma-separated values. Multiple buttons: Next, Reset, Auto, Stop. List for displayed elements.</p>
+                        <ul>
+                            <li>Input for array elements</li>
+                            <li>Control buttons</li>
+                            <li>Displayed items list</li>
+                        </ul>
+                    </div>
+                    <div class="learn-panel panel--css">
+                        <span class="learn-panel-label">{ } CSS</span>
+                        <p>Element appearance animation. Item numbers styled distinctly. Progress indicator.</p>
+                        <ul>
+                            <li>.element-appear — animation for new items</li>
+                            <li>.element-index — styled position number</li>
+                            <li>.displayed-list — scrollable list</li>
+                        </ul>
+                    </div>
+                    <div class="learn-panel panel--js">
+                        <span class="learn-panel-label">JS ( ) JavaScript</span>
+                        <p>Index tracks current position. Array[index++] returns current then increments. Auto mode uses setInterval.</p>
+                        <div class="code-block"><span class="kw">let</span> indice = <span class="nu">0</span>;
+<span class="kw">function</span> <span class="fn">mostraElemento</span>() {
+  <span class="kw">if</span> (indice &gt;= array.length) <span class="kw">return</span>;
+  <span class="kw">const</span> elemento = array[indice++];
+  <span class="cm">// display elemento</span>
+}</div>
+                        <ul>
+                            <li>index tracking</li>
+                            <li>post-increment: array[index++]</li>
+                            <li>Auto mode with setInterval</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="learn-concept-bar">
+                    <span>array iteration</span><span>index tracking</span><span>auto-play</span><span>progress</span>
+                </div>
+            </details>
+
+            <!-- Rimuovi Duplicati -->
+            <details class="learn-entry">
+                <summary><a href="./rimuovi-duplicati.html">Rimuovi Duplicati</a> <span class="concept-tag tag--array">arrays</span></summary>
+                <div class="learn-panels">
+                    <div class="learn-panel panel--html">
+                        <span class="learn-panel-label">&lt;/&gt; HTML</span>
+                        <p>Text input for array elements. Results show original with duplicates marked and cleaned result. Method comparison display.</p>
+                        <ul>
+                            <li>Input for array values</li>
+                            <li>Original vs result comparison</li>
+                            <li>Multiple method display</li>
+                        </ul>
+                    </div>
+                    <div class="learn-panel panel--css">
+                        <span class="learn-panel-label">{ } CSS</span>
+                        <p>Array items as boxes. Duplicate items marked in red, unique in green, result in blue.</p>
+                        <ul>
+                            <li>.array-item — boxed display</li>
+                            <li>.duplicate — red highlight</li>
+                            <li>.unique — green highlight</li>
+                            <li>.result — blue highlight</li>
+                        </ul>
+                    </div>
+                    <div class="learn-panel panel--js">
+                        <span class="learn-panel-label">JS ( ) JavaScript</span>
+                        <p>Multiple approaches: Set (modern), filter+indexOf (compatible), manual loop, reduce. Set is fastest for large arrays.</p>
+                        <div class="code-block"><span class="cm">// Modern approach with Set</span>
+<span class="kw">const</span> unici = [...<span class="kw">new</span> <span class="fn">Set</span>(array)];
+
+<span class="cm">// Compatible approach</span>
+<span class="kw">const</span> unici = arr.<span class="fn">filter</span>((item, i) =&gt;
+  arr.<span class="fn">indexOf</span>(item) === i
+);</div>
+                        <ul>
+                            <li>Set — automatic uniqueness</li>
+                            <li>filter + indexOf — first occurrence kept</li>
+                            <li>reduce — manual accumulation</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="learn-concept-bar">
+                    <span>Set</span><span>filter</span><span>indexOf</span><span>reduce</span><span>unique values</span>
+                </div>
+            </details>
+
+            <!-- Somma Array -->
+            <details class="learn-entry">
+                <summary><a href="./somma-array.html">Somma Array</a> <span class="concept-tag tag--array">arrays</span></summary>
+                <div class="learn-panels">
+                    <div class="learn-panel panel--html">
+                        <span class="learn-panel-label">&lt;/&gt; HTML</span>
+                        <p>Two inputs for arrays. Visual table shows step-by-step calculation. Result array displayed.</p>
+                        <ul>
+                            <li>Two array inputs</li>
+                            <li>Step-by-step table</li>
+                            <li>Result visualization</li>
+                        </ul>
+                    </div>
+                    <div class="learn-panel panel--css">
+                        <span class="learn-panel-label">{ } CSS</span>
+                        <p>Array boxes with numbered items. Sum table with aligned columns. Result numbers highlighted.</p>
+                        <ul>
+                            <li>.array-box — array display container</li>
+                            <li>.sum-table — calculation breakdown</li>
+                            <li>.num.result — highlighted result</li>
+                        </ul>
+                    </div>
+                    <div class="learn-panel panel--js">
+                        <span class="learn-panel-label">JS ( ) JavaScript</span>
+                        <p>Iterate to max length, sum corresponding indices. Use 0 for missing values in shorter array.</p>
+                        <div class="code-block"><span class="kw">function</span> <span class="fn">sommaArray</span>(a1, a2) {
+  <span class="kw">const</span> len = Math.<span class="fn">max</span>(a1.length, a2.length);
+  <span class="kw">const</span> risultato = [];
+  <span class="kw">for</span> (<span class="kw">let</span> i = <span class="nu">0</span>; i &lt; len; i++) {
+    risultato.<span class="fn">push</span>((a1[i] || <span class="nu">0</span>) + (a2[i] || <span class="nu">0</span>));
+  }
+  <span class="kw">return</span> risultato;
+}</div>
+                        <ul>
+                            <li>Math.max for array lengths</li>
+                            <li>|| 0 for missing values</li>
+                            <li>Array.from as alternative</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="learn-concept-bar">
+                    <span>array operations</span><span>element-wise sum</span><span>missing values</span><span>Math.max</span>
+                </div>
+            </details>
+
+            <!-- Calcolatrice Funzioni -->
+            <details class="learn-entry">
+                <summary><a href="./calcolatrice-funzioni.html">Calcolatrice Funzioni</a> <span class="concept-tag tag--vars">functions</span></summary>
+                <div class="learn-panels">
+                    <div class="learn-panel panel--html">
+                        <span class="learn-panel-label">&lt;/&gt; HTML</span>
+                        <p>Two number inputs. Four operation buttons plus 'All' button. Console output for function calls.</p>
+                        <ul>
+                            <li>Number inputs</li>
+                            <li>Operation buttons</li>
+                            <li>Console log display</li>
+                        </ul>
+                    </div>
+                    <div class="learn-panel panel--css">
+                        <span class="learn-panel-label">{ } CSS</span>
+                        <p>Operation result display with operators styled. Console output in terminal style. Error states highlighted.</p>
+                        <ul>
+                            <li>.operation-result — styled calculation</li>
+                            <li>.all-operations — multiple results</li>
+                            <li>.console-output — function call logs</li>
+                        </ul>
+                    </div>
+                    <div class="learn-panel panel--js">
+                        <span class="learn-panel-label">JS ( ) JavaScript</span>
+                        <p>Each operation is a separate function. Functions log to console and return values. Division by zero handled explicitly.</p>
+                        <div class="code-block"><span class="kw">function</span> <span class="fn">addizione</span>(a, b) {
+  <span class="kw">const</span> result = a + b;
+  console.<span class="fn">log</span>(<span class="st">`Addizione: ${a} + ${b} = ${result}`</span>);
+  <span class="kw">return</span> result;
+}
+<span class="kw">function</span> <span class="fn">divisione</span>(a, b) {
+  <span class="kw">if</span> (b === <span class="nu">0</span>) <span class="kw">return</span> <span class="st">'Errore: divisione per zero'</span>;
+  <span class="cm">// ...</span>
+}</div>
+                        <ul>
+                            <li>Dedicated function per operation</li>
+                            <li>Console logging for debugging</li>
+                            <li>Error handling for division</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="learn-concept-bar">
+                    <span>function separation</span><span>console.log</span><span>error handling</span><span>debugging</span>
+                </div>
+            </details>
+
+            <!-- Form Utente -->
+            <details class="learn-entry">
+                <summary><a href="./form-utente.html">Form Utente</a> <span class="concept-tag tag--dom">forms</span></summary>
+                <div class="learn-panels">
+                    <div class="learn-panel panel--html">
+                        <span class="learn-panel-label">&lt;/&gt; HTML</span>
+                        <p>Five inputs: nome, cognome, data di nascita, eta (optional), corso. User card display for result.</p>
+                        <ul>
+                            <li>Text inputs for strings</li>
+                            <li>Date input for birth date</li>
+                            <li>User card output</li>
+                        </ul>
+                    </div>
+                    <div class="learn-panel panel--css">
+                        <span class="learn-panel-label">{ } CSS</span>
+                        <p>User card with avatar (initials), header with dark background, details grid, footer with timestamp.</p>
+                        <ul>
+                            <li>.user-card — complete profile card</li>
+                            <li>.user-avatar — initials display</li>
+                            <li>.user-details — information rows</li>
+                        </ul>
+                    </div>
+                    <div class="learn-panel panel--js">
+                        <span class="learn-panel-label">JS ( ) JavaScript</span>
+                        <p>Function accepts 5 parameters. Calculates age from birth date if not provided. Returns formatted user object.</p>
+                        <div class="code-block"><span class="kw">function</span> <span class="fn">creaProfiloUtente</span>(nome, cognome, dataNascita, eta, corso) {
+  <span class="cm">// Calculate age from date if needed</span>
+  <span class="kw">if</span> (!eta &amp;&amp; dataNascita) {
+    eta = calcolaEta(dataNascita);
+  }
+  <span class="kw">return</span> { nome, cognome, eta, corso, ... };
+}</div>
+                        <ul>
+                            <li>Multiple parameters</li>
+                            <li>Age calculation from date</li>
+                            <li>Object return with all data</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="learn-concept-bar">
+                    <span>form handling</span><span>date calculation</span><span>multiple parameters</span><span>object return</span>
+                </div>
+            </details>
+
+            <!-- Rettangolo Callback -->
+            <details class="learn-entry">
+                <summary><a href="./rettangolo-callback.html">Rettangolo Callback</a> <span class="concept-tag tag--vars">callbacks</span></summary>
+                <div class="learn-panels">
+                    <div class="learn-panel panel--html">
+                        <span class="learn-panel-label">&lt;/&gt; HTML</span>
+                        <p>Three inputs: base, altezza, profondita. Three buttons: Area, Perimetro, Volume. Code display for callback demonstration.</p>
+                        <ul>
+                            <li>Dimension inputs</li>
+                            <li>Calculation buttons</li>
+                            <li>Code display area</li>
+                        </ul>
+                    </div>
+                    <div class="learn-panel panel--css">
+                        <span class="learn-panel-label">{ } CSS</span>
+                        <p>Calculation result box with formula display. Code block styling for callback example.</p>
+                        <ul>
+                            <li>.calc-result-box — styled result</li>
+                            <li>.code-display — callback code</li>
+                        </ul>
+                    </div>
+                    <div class="learn-panel panel--js">
+                        <span class="learn-panel-label">JS ( ) JavaScript</span>
+                        <p>calcolaVolume accepts a function parameter (callback) to calculate base area. Demonstrates function passing.</p>
+                        <div class="code-block"><span class="kw">function</span> <span class="fn">calcolaArea</span>(base, altezza) {
+  <span class="kw">return</span> base * altezza;
+}
+<span class="kw">function</span> <span class="fn">calcolaVolume</span>(profondita, fnArea, base, altezza) {
+  <span class="kw">const</span> areaBase = <span class="fn">fnArea</span>(base, altezza); <span class="cm">// callback</span>
+  <span class="kw">return</span> areaBase * profondita;
+}</div>
+                        <ul>
+                            <li>Callback function parameter</li>
+                            <li>Function composition</li>
+                            <li>Reusable area calculation</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="learn-concept-bar">
+                    <span>callbacks</span><span>function parameters</span><span>composition</span><span>DRY principle</span>
+                </div>
+            </details>
+
+            <!-- Vicino al Centro -->
+            <details class="learn-entry">
+                <summary><a href="./vicino-centro.html">Vicino al Centro</a> <span class="concept-tag tag--cond">comparison</span></summary>
+                <div class="learn-panels">
+                    <div class="learn-panel panel--html">
+                        <span class="learn-panel-label">&lt;/&gt; HTML</span>
+                        <p>Two number inputs, target value input (default 100). Number line visualization. Winner/tie display.</p>
+                        <ul>
+                            <li>Two value inputs</li>
+                            <li>Configurable target</li>
+                            <li>Visual number line</li>
+                        </ul>
+                    </div>
+                    <div class="learn-panel panel--css">
+                        <span class="learn-panel-label">{ } CSS</span>
+                        <p>Number line with positioned points. Target point in accent color. Winner point larger and green.</p>
+                        <ul>
+                            <li>.number-line — horizontal line</li>
+                            <li>.point — positioned values</li>
+                            <li>.point.target — accent color</li>
+                            <li>.point.winner — green highlight</li>
+                        </ul>
+                    </div>
+                    <div class="learn-panel panel--js">
+                        <span class="learn-panel-label">JS ( ) JavaScript</span>
+                        <p>Calculate absolute distance from target for each number. Compare distances. Handle tie case explicitly.</p>
+                        <div class="code-block"><span class="kw">function</span> <span class="fn">trovaPiuVicino</span>(num1, num2, target) {
+  <span class="kw">const</span> d1 = Math.<span class="fn">abs</span>(target - num1);
+  <span class="kw">const</span> d2 = Math.<span class="fn">abs</span>(target - num2);
+  <span class="kw">if</span> (d1 === d2) <span class="kw">return</span> <span class="st">'Pareggio!'</span>;
+  <span class="kw">return</span> d1 &lt; d2 ? num1 : num2;
+}</div>
+                        <ul>
+                            <li>Math.abs for distance</li>
+                            <li>Tie handling</li>
+                            <li>Configurable target</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="learn-concept-bar">
+                    <span>Math.abs</span><span>distance calculation</span><span>tie handling</span><span>visualization</span>
+                </div>
+            </details>
+
+            <!-- Title Case -->
+            <details class="learn-entry">
+                <summary><a href="./title-case.html">Title Case</a> <span class="concept-tag tag--string">strings</span></summary>
+                <div class="learn-panels">
+                    <div class="learn-panel panel--html">
+                        <span class="learn-panel-label">&lt;/&gt; HTML</span>
+                        <p>Text input for sentence. Result shows original and converted. Method comparison display.</p>
+                        <ul>
+                            <li>Sentence input</li>
+                            <li>Before/after display</li>
+                            <li>Multiple method examples</li>
+                        </ul>
+                    </div>
+                    <div class="learn-panel panel--css">
+                        <span class="learn-panel-label">{ } CSS</span>
+                        <p>Changed words highlighted. Method list with code samples. CSS method alternative shown.</p>
+                        <ul>
+                            <li>.changed — highlight modifications</li>
+                            <li>.method-list — comparison display</li>
+                        </ul>
+                    </div>
+                    <div class="learn-panel panel--js">
+                        <span class="learn-panel-label">JS ( ) JavaScript</span>
+                        <p>Multiple approaches: split/map/join (modern), regex replace (elegant), for loop (manual), CSS (presentation).</p>
+                        <div class="code-block"><span class="cm">// Modern approach</span>
+frase.<span class="fn">toLowerCase</span>().<span class="fn">split</span>(<span class="st">' '</span>).<span class="fn">map</span>(word =&gt;
+  word[<span class="nu">0</span>].<span class="fn">toUpperCase</span>() + word.<span class="fn">slice</span>(<span class="nu">1</span>)
+).<span class="fn">join</span>(<span class="st">' '</span>);
+
+<span class="cm">// Regex approach</span>
+frase.<span class="fn">toLowerCase</span>().<span class="fn">replace</span>(<span class="st">/\b\w/g</span>, c =&gt; c.<span class="fn">toUpperCase</span>());</div>
+                        <ul>
+                            <li>split/map/join — functional approach</li>
+                            <li>replace with regex — concise</li>
+                            <li>CSS text-transform — presentation only</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="learn-concept-bar">
+                    <span>split/map/join</span><span>regex</span><span>toUpperCase</span><span>capitalize</span><span>CSS alternative</span>
+                </div>
+            </details>
         </section>
 
     </main>

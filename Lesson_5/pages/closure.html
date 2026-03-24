@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closure — Corso WSA</title>
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Corso WSA 25 / 27</h1>
+        <p>Fondamenti di Front-End — Closure & Lexical Scoping</p>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="./learning-center.html">Learning Center</a></li>
+                <li><a href="./closure.html">Closure</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="intro">
+            <h2>Closure</h2>
+            <p>Una <strong>closure</strong> è una funzione che ricorda l'ambiente in cui è stata creata, anche quando quell'ambiente non esiste più. È uno dei concetti più potenti di JavaScript.</p>
+        </section>
+
+        <div class="page-cols">
+            <div class="exercise-area">
+                <!-- Exercise 1: Private Counter -->
+                <div class="exercise-box">
+                    <h3>1. Counter Privato</h3>
+                    <div class="exercise-description">
+                        <p>Una closure può creare variabili "private" che persistono tra le chiamate. Il counter non è accessibile dall'esterno, ma i metodi possono modificarlo.</p>
+                    </div>
+                    <div class="closure-demo">
+                        <h4>Prova il Counter</h4>
+                        <div class="counter-box">
+                            <div class="counter-display closure" id="privateCounter">0</div>
+                            <div class="counter-controls">
+                                <button id="incBtn" class="btn-control">+1</button>
+                                <button id="decBtn" class="btn-control">-1</button>
+                                <button id="resetBtn" class="btn-secondary">Reset</button>
+                            </div>
+                        </div>
+                        <div class="scope-visual" id="counterScope">function createCounter() {
+  let count = 0;  // ← questa variabile "vive" nella closure
+  return {
+    increment: () => ++count,
+    decrement: () => --count,
+    getValue: () => count
+  };
+}</div>
+                    </div>
+                </div>
+
+                <!-- Exercise 2: Function Factory -->
+                <div class="exercise-box">
+                    <h3>2. Function Factory</h3>
+                    <div class="exercise-description">
+                        <p>Le closure permettono di creare funzioni "su misura". Ogni factory crea una nuova funzione con il proprio valore "factor" incapsulato.</p>
+                    </div>
+                    <div class="closure-demo">
+                        <div class="demo-grid">
+                            <div class="demo-card">
+                                <h5>Raddoppia (x2)</h5>
+                                <div class="input-group">
+                                    <input type="number" id="doubleInput" value="5">
+                                </div>
+                                <button id="doubleBtn">Calcola</button>
+                                <div class="multiplier-result" id="doubleResult">-</div>
+                            </div>
+                            <div class="demo-card">
+                                <h5>Triplica (x3)</h5>
+                                <div class="input-group">
+                                    <input type="number" id="tripleInput" value="5">
+                                </div>
+                                <button id="tripleBtn">Calcola</button>
+                                <div class="multiplier-result" id="tripleResult">-</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Exercise 3: Bank Account -->
+                <div class="exercise-box">
+                    <h3>3. Bank Account</h3>
+                    <div class="exercise-description">
+                        <p>Simulazione di un conto bancario con dati privati. Il saldo è protetto dalla closure e può essere modificato solo tramite i metodi pubblici.</p>
+                    </div>
+                    <div class="bank-account">
+                        <div class="balance-display" id="bankBalance">$ 1000</div>
+                        <div class="input-group">
+                            <label for="transactionAmount">Importo:</label>
+                            <input type="number" id="transactionAmount" value="100">
+                        </div>
+                        <div class="account-controls">
+                            <button id="depositBtn">Deposita</button>
+                            <button id="withdrawBtn" class="btn-secondary">Preleva</button>
+                        </div>
+                        <div class="transaction-log" id="transactionLog">[ Log transazioni ]</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sidebar: Insights and Concepts -->
+            <aside class="logic-panel">
+                <div class="insight-box">
+                    <h4>Cos'è una Closure?</h4>
+                    <ul class="insight-list">
+                        <li>Una funzione che ricorda il suo scope</li>
+                        <li>Ha accesso a variabili dell'ambiente esterno</li>
+                        <li>Crea vere private variables in JS</li>
+                        <li>Permette di "nascondere" implementazioni</li>
+                    </ul>
+                </div>
+
+                <div class="logic-box">
+                    <h4>Pattern Comuni</h4>
+                    <ul class="insight-list">
+                        <li><strong>Module Pattern</strong> — Incapsulamento</li>
+                        <li><strong>Factory Functions</strong> — Funzioni generatrici</li>
+                        <li><strong>Data Encapsulation</strong> — Dati privati</li>
+                        <li><strong>Callback con stato</strong> — Event handlers</li>
+                    </ul>
+                </div>
+
+                <div class="logic-box">
+                    <h4>Sintassi Chiave</h4>
+                    <div class="code-block"><span class="kw">function</span> <span class="fn">outer</span>() {
+  <span class="kw">let</span> x = <span class="nu">10</span>;  <span class="cm">// variabile privata</span>
+  
+  <span class="kw">function</span> <span class="fn">inner</span>() {
+    <span class="cm">// ha accesso a x!</span>
+    <span class="kw">return</span> x++;
+  }
+  
+  <span class="kw">return</span> inner;
+}</div>
+                </div>
+
+                <div class="insight-box">
+                    <h4>Quando Usarle?</h4>
+                    <ul class="insight-list">
+                        <li>Quando serve mantenere stato privato</li>
+                        <li>Per creare funzioni configurabili</li>
+                        <li>Nel module pattern prima di ES6</li>
+                        <li>Negli event handler che ricordano dati</li>
+                    </ul>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <footer>
+        <p>FACUNDO FANTI &copy;</p>
+    </footer>
+
+    <script src="../js/closure.js"></script>
+</body>
+</html>

@@ -3,21 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ES5 - Estensione File</title>
+    <title>Parola Piu Lunga</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="../favicon.ico">
-    
     <link rel="stylesheet" href="../css/reset.css">
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-    
     <header>
         <h1>Corso WSA 25 / 27</h1>
         <p>Fondamenti di Front-End</p>
-                <nav>
+        <nav>
             <ul>
                 <li><a href="../index.html">Home</a></li>
                 <li><a href="./learning-center.html">Learning Center</a></li>
@@ -50,50 +48,68 @@
                 <li><a href="./callbacks.html">Callbacks</a></li>
                 <li><a href="./callbacks2.html">Callbacks 2</a></li>
                 <li><a href="./wordle.html">Wordle</a></li>
+                <li><a href="./closure.html">Closure</a></li>
+                <li><a href="./scope-demo.html">Scope</a></li>
+                <li><a href="./conta-lettere.html">Conta</a></li>
+                <li><a href="./tipo-dato.html">Tipo</a></li>
+                <li><a href="./parola-lunga.html">Parola</a></li>
+                <li><a href="./ruota-stringa.html">Ruota</a></li>
+                <li><a href="./array-button.html">Array Btn</a></li>
+                <li><a href="./rimuovi-duplicati.html">Unici</a></li>
+                <li><a href="./somma-array.html">Somma Arr</a></li>
+                <li><a href="./calcolatrice-funzioni.html">Calc Fun</a></li>
+                <li><a href="./form-utente.html">Form</a></li>
+                <li><a href="./rettangolo-callback.html">Rett CB</a></li>
+                <li><a href="./vicino-centro.html">Vicino C</a></li>
+                <li><a href="./title-case.html">Title</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
         <section class="intro">
-            <h2>Estensione File</h2>
+            <h2>Parola Piu Lunga</h2>
+            <p>Trova la parola piu lunga all'interno di una frase.</p>
         </section>
 
         <div class="page-cols">
-<section class="exercise-area">
-            <div class="exercise-description">
-                <h3>Consegna</h3>
-                <p>Scrivere un programma che estrae e stampa in console l'estensione di un file.<br>Esempio: <code>fileEsercitazione.pdf</code> → <code>pdf</code> oppure <code>index.html</code> → <code>html</code></p>
-            </div>
-
-            <div class="exercise-box">
-                <h3>Inserisci il nome del file</h3>
-                
-                <div class="input-group">
-                    <label for="fileInput">Nome file:</label>
-                    <input type="text" id="fileInput" placeholder="es: documento.pdf">
+            <section class="exercise-area">
+                <div class="exercise-box">
+                    <h3>Trova Parola Piu Lunga</h3>
+                    
+                    <div class="exercise-description">
+                        <h3>Istruzioni</h3>
+                        <p>Inserisci una frase e scopri quale e la parola piu lunga. Esempio: "mi chiamo Massimiliano" rarr; "Massimiliano"</p>
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="inputSentence">Frase:</label>
+                        <input type="text" id="inputSentence" placeholder="Es: mi chiamo Massimiliano" value="mi chiamo Massimiliano">
+                    </div>
+                    
+                    <button id="btnFind">Trova Parola Piu Lunga</button>
+                    
+                    <div class="result-area" id="result">
+                        <h4>Risultato</h4>
+                        <div class="result-content">
+                            <em>Inserisci una frase...</em>
+                        </div>
+                    </div>
                 </div>
-                
-                <button id="estraiBtn">Estrai Estensione</button>
-                
-                <div class="result-area">
-                    <h4>Estensione:</h4>
-                    <div id="estensioneOutput" class="result-content large">-</div>
+            </section>
+            
+            <aside class="logic-panel">
+                <div class="logic-box">
+                    <p>La funzione divide la frase in parole, poi itera per trovare quella con la lunghezza massima.</p>
                 </div>
-            </div>
-        </section>
-    <aside class="logic-panel">
-        <div class="logic-box">
-            <p>Uses <code>lastIndexOf('.')</code> to find the position of the final dot in the filename, then <code>slice(pos + 1)</code> to extract everything after it.</p><p>Using <code>lastIndexOf</code> instead of <code>indexOf</code> correctly handles files like <code>my.backup.tar.gz</code>.</p>
-        </div>
-        <div class="insight-box">
-            <ul class="insight-list">
-                <li><code>lastIndexOf</code> scans from right — crucial for multiple dots</li>
-                <li><code>slice(n)</code> returns from index <code>n</code> to end</li>
-                <li>If no dot is found, <code>lastIndexOf</code> returns <code>-1</code> — always handle that case</li>
-            </ul>
-        </div>
-    </aside>
+                <div class="insight-box">
+                    <ul class="insight-list">
+                        <li>Usa <code>split(' ')</code> per separare le parole</li>
+                        <li>Rimuovi punteggiatura con <code>replace(/[^a-zA-Z]/g, '')</code></li>
+                        <li>Metodo alternativo: <code>reduce()</code></li>
+                    </ul>
+                </div>
+            </aside>
         </div>
     </main>
 
@@ -101,6 +117,6 @@
         <p>FACUNDO FANTI &copy;</p>
     </footer>
 
-    <script src="../js/estensione-file.js"></script>
+    <script src="../js/parola-lunga.js"></script>
 </body>
 </html>

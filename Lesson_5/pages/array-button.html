@@ -3,17 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wordle Game</title>
+    <title>Array Button</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="../favicon.ico">
-    
     <link rel="stylesheet" href="../css/reset.css">
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-    
     <header>
         <h1>Corso WSA 25 / 27</h1>
         <p>Fondamenti di Front-End</p>
@@ -51,56 +49,79 @@
                 <li><a href="./callbacks2.html">Callbacks 2</a></li>
                 <li><a href="./wordle.html">Wordle</a></li>
                 <li><a href="./closure.html">Closure</a></li>
+                <li><a href="./scope-demo.html">Scope</a></li>
+                <li><a href="./conta-lettere.html">Conta</a></li>
+                <li><a href="./tipo-dato.html">Tipo</a></li>
+                <li><a href="./parola-lunga.html">Parola</a></li>
+                <li><a href="./ruota-stringa.html">Ruota</a></li>
+                <li><a href="./array-button.html">Array Btn</a></li>
+                <li><a href="./rimuovi-duplicati.html">Unici</a></li>
+                <li><a href="./somma-array.html">Somma Arr</a></li>
+                <li><a href="./calcolatrice-funzioni.html">Calc Fun</a></li>
+                <li><a href="./form-utente.html">Form</a></li>
+                <li><a href="./rettangolo-callback.html">Rett CB</a></li>
+                <li><a href="./vicino-centro.html">Vicino C</a></li>
+                <li><a href="./title-case.html">Title</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
         <section class="intro">
-            <h2>Wordle</h2>
-            <p>Indovina la parola di 5 lettere in 7 tentativi!</p>
+            <h2>Array Button</h2>
+            <p>Stampa gli elementi di un array uno a uno ad ogni click del pulsante.</p>
         </section>
 
         <div class="page-cols">
             <section class="exercise-area">
                 <div class="exercise-box">
-                    <h3>Gioco Wordle</h3>
+                    <h3>Elementi Array</h3>
                     
-                    <div class="game-info">
-                        <p>Tentativi rimasti: <span id="triesLeft">7</span> / 7</p>
-                    </div>
-                    
-                    <div class="wordle-grid" id="wordleGrid">
+                    <div class="exercise-description">
+                        <h3>Istruzioni</h3>
+                        <p>Inserisci una lista di elementi separati da virgola. Clicca il pulsante per mostrarli uno alla volta.</p>
                     </div>
                     
                     <div class="input-group">
-                        <label for="wordInput">Inserisci una parola di 5 lettere:</label>
-                        <input type="text" id="wordInput" class="wordle-input" maxlength="5" placeholder="_____">
+                        <label for="inputArray">Elementi (separati da virgola):</label>
+                        <input type="text" id="inputArray" placeholder="Es: mela, pera, banana, arancia" value="mela, pera, banana, arancia, uva">
                     </div>
                     
-                    <button id="btnGuess">Prova</button>
-                    <button id="btnNewGame" class="btn-secondary">Nuova Partita</button>
+                    <div class="button-group">
+                        <button id="btnNext">Prossimo Elemento</button>
+                        <button id="btnReset" class="btn-secondary">Reset</button>
+                        <button id="btnAuto" class="btn-secondary">Auto</button>
+                        <button id="btnStopAuto" class="btn-secondary">Stop</button>
+                    </div>
                     
-                    <div id="gameMessage" class="game-message hidden"></div>
+                    <div class="input-group">
+                        <label for="autoSpeed">Velocita auto (ms):</label>
+                        <input type="number" id="autoSpeed" value="1000" min="200" max="3000" step="200">
+                    </div>
                     
-                    <div class="tried-letters">
-                        <h4>Lettere provate:</h4>
-                        <div class="letters-row" id="triedLetters">
+                    <div class="result-area">
+                        <h4>Elemento Corrente</h4>
+                        <div id="currentElement" class="result-content large">
+                            <em>Clicca "Prossimo Elemento" per iniziare...</em>
                         </div>
+                        <p id="progress" class="result-content">Progresso: 0 / 5</p>
                     </div>
+                    
+                    <h4>Elementi Mostrati:</h4>
+                    <ul class="displayed-list" id="displayedList"></ul>
                 </div>
             </section>
             
             <aside class="logic-panel">
                 <div class="logic-box">
-                    <p>Il gioco confronta ogni lettera della tua parola con la parola segreta. <strong>Verde</strong> = lettera corretta nella posizione giusta. <strong>Giallo</strong> = lettera presente ma posizione sbagliata. <strong>Grigio</strong> = lettera non presente.</p>
+                    <p>Un indice mantiene traccia della posizione corrente. Ad ogni click, l'elemento all'indice viene mostrato e l'indice viene incrementato.</p>
                 </div>
                 <div class="insight-box">
                     <ul class="insight-list">
-                        <li>La parola segreta e scelta da una lista di parole italiane</li>
-                        <li>Ogni tentativo deve essere di esattamente 5 lettere</li>
-                        <li>Le lettere provate vengono mostrate con il loro stato</li>
-                        <li>Usa i feedback per indovinare la parola!</li>
+                        <li>Usa un indice per tracciare la posizione</li>
+                        <li><code>array[index++]</code> post-incremento</li>
+                        <li>Disabilita il pulsante alla fine</li>
+                        <li>Modalita auto con setInterval</li>
                     </ul>
                 </div>
             </aside>
@@ -111,6 +132,6 @@
         <p>FACUNDO FANTI &copy;</p>
     </footer>
 
-    <script src="../js/wordle.js"></script>
+    <script src="../js/array-button.js"></script>
 </body>
 </html>
