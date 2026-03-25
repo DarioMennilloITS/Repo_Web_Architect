@@ -1,58 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Jacquard+12&display=swap');
 
-main {
-    background-color: rgb(219, 207, 207);
-    width: 90%;
-    max-width: 1200px;
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --primary: #220C10;
+    --secondary: #506C64;
+    --text-color: #CDD3D5;
+    --bg-color: #75B8C8;
+
+
+}
+
+body{
+    font-family: "Jacquard 12", system-ui;
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+
+.container{
+    padding: 1rem;
+    max-width: 960px;
     margin: 0 auto;
-    padding: 20px;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
-h2 {
-    text-align: center;
-    margin-bottom: 20px;
-    padding-top: 20px;
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
+.social{
+    display: flex;
 
-.album, .songs {
+}
+.social a{
     display: flex;
     justify-content: center;
-    gap: 20px;              
-    flex-wrap: nowrap;         
+    align-items: center;
+    background-color: var(--secondary);
+    color: var(--text-color);
+    border-radius: 100%;
+    width: 30px;
+    height: 30px;
+    text-decoration: none;
+
+}
+.logo{
+    height: 35px;
+    color: blue;
 }
 
+nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--secondary);
+    color: var(--text-color);
+    padding: .5rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border-radius: .4rem;
 
-.divAlbum, .songBox {
-    background: beige;
-    flex: 0 0 250px;        
-    padding: 10px;
+}
+nav ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    gap: 1.5rem;
+}
+nav a{
+    color: var(--text-color);
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.intro{
+    display: flex;
+    gap: 1rem;
+    padding: 1rem;
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+.claim{
+    flex: 1;
+    border: 1px solid;
+    min-height: 300px;
+    text-align: center;
+}
+
+.claim h1{
+    text-align: center;
+}
+.claim p{
+    text-align: justify;
+}
+
+.card h3{
+    text-align: center;
+}
+
+/* 8-bit Wizard */
+.wizard{
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+    z-index: 100;
+    display: block;
+    text-decoration: none;
+}
+
+.card-master{
+    flex: 1;
     display: flex;
     flex-direction: column;
-    align-items: center;      
-    text-align: center;
-    border-radius: 10px;      
-}
-
-
-.divAlbum img, .songBox img {
-    width: 250px;
-    height: 250px;
-    object-fit: cover; 
-    display: block;
-    margin-bottom: 10px;
-}
-
-
-.titles {
-    font-weight: bold;
-}
-
-hr {
-    margin: 40px 0;
-    border: 1px solid #ccc;
-}
-
-p {
-    text-align: center;
+    gap: 1rem;
+    border: 1px solid;
 }
