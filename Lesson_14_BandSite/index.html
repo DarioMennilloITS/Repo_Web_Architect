@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Kraftwerk</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+    <header>
+        <h1>Kraft<span>werk</span></h1>
+        <p>German Electronic Music Pioneers // Since 1968</p>
+        <nav>
+            <a href="#" class="active">Home</a>
+            <a href="#">Band</a>
+            <a href="#">Albums</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="page-title">
+            <h2>The Classic Lineup</h2>
+            <p>Click on any artist so read their biography</p>
+        </div>
+
+        <div class="members-grid">
+            <div class="member-card" data-member="ralf">
+                <div class="img-wrapper">
+                    <img src="./img/ralf-hutter.jpg"
+                        alt="Ralf Hütter of Kraftwerk">
+                    <div class="overlay">
+                          <span>Access Bio</span>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <h5>Ralf Hütter</h5>
+                    <p class="role">Keyboards / Vocals</p>
+                </div>
+            </div>
+
+            <div class="member-card" data-member="florian">
+                <div class="img-wrapper">
+                    <img src="./img/florian-schneider.jpg"
+                        alt="Florian Schneider of Kraftwerk">
+                    <div class="overlay">
+                        <span>Access Bio</span>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <h5>Florian Schneider</h5>
+                    <p class="role">Flutes / Synthesizers</p>
+                </div>
+            </div>
+
+            <div class="member-card" data-member="wolfgang">
+                <div class="img-wrapper">
+                    <img src="./img/wolfgang-flur.jpg"
+                        alt="Wolfgang Flür of Kraftwerk">
+                    <div class="overlay">
+                        <span>Access Bio</span>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <h5>Wolfgang Flür</h5>
+                    <p class="role">Electronic Percussion</p>
+                </div>
+            </div>
+
+            <div class="member-card" data-member="karl">
+                <div class="img-wrapper">
+                    <img src="./img/karl-barthos.png"
+                        alt="Karl Bartos of Kraftwerk">
+                    <div class="overlay">
+                        <span>Access Bio</span>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <h5>Karl Bartos</h5>
+                    <p class="role">Percussion / Synths</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div class="bio-modal" id="bioModal" aria-hidden="true">
+        <div class="modal-backdrop" id="modalBackdrop"></div>
+        <div class="modal-content">
+            <button class="modal-close" id="modalClose" aria-label="Close biography">&times;</button>
+            <img class="modal-image" id="modalImage" src="" alt="">
+            <div class="modal-text">
+                <h3 id="modalName"></h3>
+                <p class="role" id="modalRole"></p>
+                <p class="bio" id="modalBio"></p>
+                <span class="years" id="modalYears"></span>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        Kraftwerk // 1968 — 2022 // Frontend Exercise. Facundo Fanti 2026
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>

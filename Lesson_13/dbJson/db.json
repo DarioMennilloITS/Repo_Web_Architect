@@ -1,0 +1,39 @@
+{
+  "autore": {
+    "nome": "Facundo Fanti",
+    "cognome": "Fanti",
+    "email": "facundo.fanti@gmail.com",
+    "corso": "WSA"
+  },
+  "studenti": [
+    {
+      "id": 1,
+      "nome": "Andrea",
+      "cognome": "Fanti",
+      "email": "andrea.fanti@gmail.com",
+      "matricola": "123456789",
+      "corso": "WSA"
+    },
+    {
+      "id": 2,
+      "nome": "Giulia",
+      "cog  nome": "Fanti",
+      "email": "giulia.fanti@gmail.com",
+      "matricola": "987654321",
+      "corso": "WSA"
+    },
+    {
+      "id": 3,
+      "nome": "Luca",
+      "cognome": "Fanti",
+      "email": "luca.fanti@gmail.com",
+      "matricola": "876543210",
+      "corso": "WSA"
+    },
+    {
+      "nome": "Paolo",
+      "cognome": "Rossi",
+      "id": 5
+    }
+  ]
+}

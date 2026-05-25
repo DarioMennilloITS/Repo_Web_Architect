@@ -1,0 +1,430 @@
+/* ── Variables ─────────────────────────────────────────────── */
+:root {
+    --bg:          #0a0a0f;
+    --surface:     #141419;
+    --surface-lit: #1e1e26;
+    --text:        #e8e8e8;
+    --text-dim:    #8a8a94;
+    --text-faint:  #4a4a52;
+    --accent:      #e30613;
+    --accent-dim:  #b3050f;
+    --grid:        #1f1f28;
+    --border:      #2a2a34;
+
+    --font-head:   'Helvetica Neue', Helvetica, Arial, sans-serif;
+    --font-mono:   'Courier New', Courier, monospace;
+}
+
+/* ── Base ──────────────────────────────────────────────────── */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg);
+    background-image:
+        linear-gradient(var(--grid) 1px, transparent 1px),
+        linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+    background-size: 40px 40px;
+    font-family: var(--font-mono);
+    color: var(--text);
+    min-height: 100vh;
+    line-height: 1.6;
+}
+
+/* ── Header ────────────────────────────────────────────────── */
+header {
+    border-bottom: 2px solid var(--accent);
+    background-color: var(--surface);
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+}
+
+header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--accent);
+}
+
+header h1 {
+    font-family: var(--font-head);
+    font-size: 3rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+    color: var(--text);
+}
+
+header h1 span {
+    color: var(--accent);
+}
+
+header p {
+    font-size: 0.8rem;
+    color: var(--text-dim);
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+}
+
+/* ── Nav ───────────────────────────────────────────────────── */
+nav {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+nav a {
+    display: block;
+    padding: 0.4rem 1rem;
+    border: 1px solid var(--border);
+    color: var(--text-dim);
+    text-decoration: none;
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    transition: all 0.2s ease;
+    background: transparent;
+}
+
+nav a:hover,
+nav a.active {
+    border-color: var(--accent);
+    color: var(--accent);
+    background: rgba(227, 6, 19, 0.08);
+}
+
+/* ── Main ──────────────────────────────────────────────────── */
+main {
+    padding: 3rem 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.page-title {
+    text-align: center;
+    margin-bottom: 3.5rem;
+}
+
+.page-title h2 {
+    font-family: var(--font-head);
+    font-size: 1.4rem;
+    font-weight: 400;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--text);
+    margin-bottom: 0.75rem;
+}
+
+.page-title h2::before,
+.page-title h2::after {
+    content: '////';
+    color: var(--accent);
+    margin: 0 1rem;
+    font-size: 0.9rem;
+    letter-spacing: 0.1em;
+}
+
+.page-title p {
+    color: var(--text-dim);
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+    max-width: 480px;
+    margin: 0 auto;
+}
+
+/* ── Members Grid ──────────────────────────────────────────── */
+.members-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2rem;
+}
+
+/* ── Member Cards ──────────────────────────────────────────── */
+.member-card {
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+}
+
+.member-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--accent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 2;
+}
+
+.member-card:hover {
+    border-color: var(--accent-dim);
+    transform: translateY(-4px);
+    box-shadow:
+        0 8px 24px rgba(0, 0, 0, 0.5),
+        0 0 0 1px rgba(227, 6, 19, 0.15);
+}
+
+.member-card:hover::before {
+    opacity: 1;
+}
+
+.member-card .img-wrapper {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 1 / 1;
+    background: var(--bg);
+}
+
+.member-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.4s ease;
+    display: block;
+    filter: grayscale(30%) contrast(1.1);
+}
+
+.member-card:hover img {
+    transform: scale(1.06);
+    filter: grayscale(0%) contrast(1.15);
+}
+
+.member-card .overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(10, 10, 15, 0.75);
+    opacity: 0;
+    transition: opacity 0.35s ease;
+}
+
+.member-card:hover .overlay {
+    opacity: 1;
+}
+
+.member-card .overlay span {
+    color: var(--text);
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    border: 1px solid var(--accent);
+    padding: 0.6rem 1.2rem;
+    background: rgba(227, 6, 19, 0.12);
+    transition: background 0.2s ease;
+}
+
+.member-card .overlay span:hover {
+    background: rgba(227, 6, 19, 0.25);
+}
+
+.member-card .card-body {
+    padding: 1.25rem 1.5rem;
+    text-align: center;
+    border-top: 1px solid var(--border);
+}
+
+.member-card .card-body h5 {
+    font-family: var(--font-head);
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 0.4rem;
+    color: var(--text);
+}
+
+.member-card .card-body p.role {
+    font-size: 0.7rem;
+    color: var(--text-dim);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 0;
+}
+
+/* ── Modal / Lightbox ──────────────────────────────────────── */
+.bio-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+}
+
+.bio-modal.active {
+    display: flex;
+}
+
+.bio-modal .modal-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(5, 5, 8, 0.92);
+    backdrop-filter: blur(6px);
+    cursor: pointer;
+}
+
+.bio-modal .modal-content {
+    position: relative;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    max-width: 560px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    animation: modal-in 0.3s ease both;
+    z-index: 1;
+    box-shadow:
+        0 24px 64px rgba(0, 0, 0, 0.6),
+        0 0 0 1px rgba(227, 6, 19, 0.2);
+}
+
+.bio-modal .modal-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--accent);
+}
+
+@keyframes modal-in {
+    from {
+        opacity: 0;
+        transform: translateY(16px) scale(0.98);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.bio-modal .modal-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 36px;
+    height: 36px;
+    
+    border: 1px solid var(--border);
+    background: var(--surface);
+    color: var(--text-dim);
+    font-size: 1.4rem;
+    line-height: 1;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    z-index: 2;
+    font-family: var(--font-head);
+}
+
+.bio-modal .modal-close:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    background: rgba(227, 6, 19, 0.1);
+}
+
+.bio-modal .modal-image {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-bottom: 1px solid var(--border);
+    display: block;
+    filter: grayscale(20%) contrast(1.1);
+}
+
+.bio-modal .modal-text {
+    padding: 2rem 2.25rem 2.25rem;
+    text-align: center;
+}
+
+.bio-modal .modal-text h3 {
+    font-family: var(--font-head);
+    font-size: 1.6rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 0.3rem;
+    color: var(--text);
+}
+
+.bio-modal .modal-text .role {
+    font-size: 0.75rem;
+    color: var(--accent);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+}
+
+.bio-modal .modal-text .bio {
+    font-size: 0.85rem;
+    line-height: 1.75;
+    color: var(--text-dim);
+    text-align: left;
+    border-left: 2px solid var(--accent);
+    padding-left: 1.25rem;
+}
+
+.bio-modal .modal-text .years {
+    display: inline-block;
+    margin-top: 1.5rem;
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-faint);
+    border-top: 1px solid var(--border);
+    padding-top: 0.75rem;
+}
+
+/* ── Footer ────────────────────────────────────────────────── */
+footer {
+    border-top: 1px solid var(--border);
+    background-color: var(--surface);
+    color: var(--text-faint);
+    padding: 1.25rem 2rem;
+    text-align: center;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+}
+
+/* ── Scrollbar ─────────────────────────────────────────────── */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--border);
+    border-radius: 0;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-dim);
+}
